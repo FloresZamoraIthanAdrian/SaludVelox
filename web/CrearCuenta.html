@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Crear Cuenta</title>
+    <link rel="icon" href= "images/EscudoVelox2.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel = "stylesheet" type = 'text/css' href = './Styles/Formulario.css'>
+    <script src="https://kit.fontawesome.com/9fb0a1aa63.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <div class = "container logo-nav-container">
+            <p class = "logo"><i class="fas fa-user-circle"></i> Crear <br class = 'espacioV'>Cuenta</p>
+            <div class = "espacio"></div>
+            <span class="menu-icon">Ver Menú  <i class="fas fa-chevron-down"></i></span>
+            <nav class = "navigation">
+                <ul>
+                    <li onclick="javascript:iniciarsesion()"><i class="fas fa-home"></i> Iniciar Sesión</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section>
+        <main>
+            <form action="" name = "formularioRegistro" onsubmit="return validarRegistro(this)" class="formulario">
+                <h4 class="formulario__titulo">Ingrese sus Datos</h4>
+                <input id="inputXD" onkeypress="return validarLetras(event)" type="text" name = "Nombre" class="formulario__input" placeholder="Nombre(s)">
+                <input id="inputXD" type="date" name = "FechaNacimiento" class="formulario__input" placeholder="Fecha de Nacimiento">
+                <input id="inputXD" type="email" name = "CorreoElectrónico" class="formulario__input" placeholder="Correo Electrónico">
+                <input id="inputXD" onkeypress="return validarAlfanumericos(event)" type="text" name = "Usuario" class="formulario__input" placeholder="Nombre de Usuario">
+                <input id="inputXD" onkeypress="return validarAlfanumericos(event)" type="password" name = "Contraseña" class="formulario__input" placeholder="Contraseña (6 caracteres mínimo)">
+                <input id="inputXD" onkeypress="return validarAlfanumericos(event)" type="password" name = "VerificarContraseña" class="formulario__input" placeholder="Verificar Contraseña">
+                <p class = "centro">Estoy deacuerdo con <a href="javascript:abrir()">Términos y Condiciones <i class="far fa-check-square"></i></a></p>
+                <div class="olvidar">
+                    <ul>
+                        <li>
+                            <input  type="submit" value="Registrarse" onclick="javascript:iniciarsesion()">
+                        </li>
+                    </ul>
+                </div>
+            </form>
+            <div class="ventana" id = "vent">
+                <p class="centro">Términos y Condiciones
+                    Estamos en proceso de escribir los Términos y Condiciones por favor espere
+                </p>
+                <div class = "olvidar">
+                    <ul>
+                        <li onclick="javascript:cerrar()"> Aceptar</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </section>
+    <footer>
+        <h3>Redes Sociales</h3>
+        <ul>
+            <li onclick="javascript:facebook()"><i class="fab fa-facebook-square"> Facebook </i></li>
+            <li onclick="javascript:instagram()"><i class="fab fa-instagram"> Instagram </i></li>
+            <li onclick="javascript:twitter()"><i class="fab fa-twitter">  Twitter </i></li>
+        </ul>
+        <h3>Correo Electrónico</h3>
+        <ul>
+            <li>velox.software.09@gmail.com</li>
+        </ul>
+        <h3>Página Web</h3>
+        <ul>
+            <li onclick="javascript:velox()">VeloxSoftware.com</a></li>
+        </ul>
+        <h4>Integrantes</h4>
+        <div class="nombres">
+            <ul>
+                <li onclick="javascript:velox()">Castañeda Rodríguez<br>Rafael Gil</li>
+                <li onclick="javascript:velox()">Coronado Segundo<br>Juan Yael</li>
+                <li onclick="javascript:velox()">Flores Zamora<br>Ithan Adrian</li>
+                <li onclick="javascript:velox()">Gallegos González<br>Gian Carlo</li>
+                <li onclick="javascript:velox()">Pérez López<br>Jesús Eduardo</li>
+                <li onclick="javascript:velox()">Salazar Valdez<br>Ángel Yahir</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="./Scripts/Basicos.js"></script>
+
+
+</body>
+</html>
