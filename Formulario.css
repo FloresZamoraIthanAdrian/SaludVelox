@@ -96,6 +96,27 @@ header{
 .imagenHumano:hover{
     box-shadow: 0 0 20px 1px rgba(0,0,0,0.7);
 }
+.fondoError{
+    background: #e6e3e3;
+    background: -moz-linear-gradient(-45deg,  #e6e3e3 0%, #dbd6d6 50%, #e6e3e3 50%, #dbd6d6 100%);
+    background: -webkit-linear-gradient(-45deg,  #e6e3e3 0%,#dbd6d6 50%,#e6e3e3 50%,#dbd6d6 100%);
+    background: linear-gradient(135deg,  #e6e3e3 0%,#dbd6d6 50%,#e6e3e3 50%,#dbd6d6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e3e3', endColorstr='#dbd6d6',GradientType=1 );
+    color: #9f0000;
+}
+.error{
+    text-align: center;
+    font-size: 70px;
+    margin-top: 300px;
+    margin-bottom: 40px;
+    font-family: 'Abril Fatface', cursive;
+}
+.error1{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+    font-family: 'Lobster', cursive;
+}
 .formulario{
     width: 500px;
     max-width: 100%;
