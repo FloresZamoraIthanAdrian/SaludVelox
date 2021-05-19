@@ -106,14 +106,14 @@ header{
 }
 .error{
     text-align: center;
-    font-size: 70px;
-    margin-top: 300px;
+    font-size: 50px;
+    margin-top: 100px;
     margin-bottom: 40px;
     font-family: 'Abril Fatface', cursive;
 }
 .error1{
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 40px;
     font-family: 'Lobster', cursive;
 }
@@ -249,6 +249,10 @@ header{
 }
 .imagen:hover{
     box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+}
+.imagen1{
+    width: 30%;
+    margin: 20px 35%;
 }
 .nombres{
     font-size: 0.9em;
