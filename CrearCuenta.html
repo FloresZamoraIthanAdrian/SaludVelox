@@ -30,6 +30,7 @@
     </header>
     <section>
         <main>
+            <a href="index.html"><image class="imagenHumano" src = 'imagenes/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c"></image></a>
             <form action="" name = "formularioRegistro" onsubmit="return validarRegistro(this)" class="formulario">
                 <h4 class="formulario__titulo">Ingrese sus Datos</h4>
                 <input id="inputXD" onkeypress="return validarLetras(event)" type="text" name = "Nombre" class="formulario__input" placeholder="Nombre(s)">
@@ -39,21 +40,15 @@
                 <input id="inputXD" onkeypress="return validarAlfanumericos(event)" type="password" name = "Contraseña" class="formulario__input" placeholder="Contraseña (6 caracteres mínimo)">
                 <input id="inputXD" onkeypress="return validarAlfanumericos(event)" type="password" name = "VerificarContraseña" class="formulario__input" placeholder="Verificar Contraseña">
                 <p class = "centro">Estoy deacuerdo con <a href="javascript:abrir()">Términos y Condiciones <i class="far fa-check-square"></i></a></p>
-                <div class="olvidar">
-                    <!-- En lo que se verifican los datos, pongo el onclick att:G
-                    PD: Esta cool la validación te salio muy bien 10/10 -->
-                    <input type="submit" value="Registrarse" onclick="javascript:iniciarsesion()">
-                </div>
+                <!-- En lo que se verifican los datos, pongo el onclick att:G
+                PD: Esta cool la validación te salio muy bien 10/10 -->
+                <input type="submit" value="Registrarse" onclick="javascript:iniciarsesion()" class = "olvidar">
             </form>
             <div class="ventana" id = "vent">
                 <p class="centro">Términos y Condiciones
                     Estamos en proceso de escribir los Términos y Condiciones por favor espere
                 </p>
-                <div class = "olvidar">
-                    <ul>
-                        <li onclick="javascript:cerrar()"> Aceptar</li>
-                    </ul>
-                </div>
+                <p onclick="javascript:cerrar()" class="olvidar">Aceptar</p>
             </div>
         </main>
     </section>

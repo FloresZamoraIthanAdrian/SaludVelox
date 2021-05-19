@@ -85,6 +85,17 @@ header{
             color: black;
             box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
         }
+.imagenHumano{
+    position: fixed;
+    width: 3%;
+    left: 95%;
+    top: 90%;
+    border-radius: 50%;
+    transition: all 0.5s linear;
+}
+.imagenHumano:hover{
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.7);
+}
 .formulario{
     width: 500px;
     max-width: 100%;
@@ -124,30 +135,24 @@ header{
     background: rgba(0,0,0,0.05);
     font-size: 1em;
 }
-.olvidar ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.olvidar{
     text-align: center;
-}
-    .olvidar ul li {
-        cursor: pointer;
-        display: inline-block;
-        background: #dbd6d6;
-        color: black;
-        display: block;
-        margin: 0 auto;
-        width: 30%;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        transition: all 0.4s linear;
-        border-radius: 5px;
-        }
-        .olvidar ul li:hover {
-            background: #9f0000;
-            color: white;
-            box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
-        }
+    cursor: pointer;
+    background: #dbd6d6;
+    color: black;
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
+    }
+    .olvidar:hover {
+        background: #9f0000;
+        color: white;
+        box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+    }
 .ventana{
     background: rgb(75, 75, 75);
     color: white;
@@ -283,5 +288,9 @@ footer ul{
         height: 40%;
         left: 15%;
         top: 80%;
+    }
+    .imagenHumano{
+        width: 10%;
+        left: 85%;
     }
 }
