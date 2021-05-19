@@ -16,11 +16,11 @@
 <body>
     <header>
         <div class = "container logo-nav-container">
-            <p class = "logo"><i class="fas fa-user-circle"></i> Crear <br class = 'espacioV'>Cuenta</p>
+            <p class = "logo animate__animated animate__zoomInLeft animate__slower"><i class="fas fa-user-circle"></i> Crear <br class = 'espacioV'>Cuenta</p>
             <div class = "espacio"></div>
             <span class="menu-icon">Ver Menú  <i class="fas fa-chevron-down"></i></span>
             <nav class = "navigation">
-                <ul>
+                <ul class="animate__animated animate__zoomInRight animate__slower">
                     <li onclick="javascript:iniciarsesion()"><i class="fas fa-home"></i> Iniciar Sesión</li>
                 </ul>
             </nav>
@@ -30,20 +30,25 @@
         <main>
             <form action="" name = "formularioRegistro" onsubmit="return validarRegistro(this)" class="formulario">
                 <h4 class="formulario__titulo">Ingrese sus Datos</h4>
-                <input id="inputXD" onkeypress="return validarLetras(event)" type="text" name = "Nombre" class="formulario__input" placeholder="Nombre(s)">
-                <input id="inputXD" type="date" name = "FechaNacimiento" class="formulario__input" placeholder="Fecha de Nacimiento">
-                <input id="inputXD" type="email" name = "CorreoElectrónico" class="formulario__input" placeholder="Correo Electrónico">
-                <input id="inputXD" onkeypress="return validarAlfanumericos(event)" type="text" name = "Usuario" class="formulario__input" placeholder="Nombre de Usuario">
-                <input id="inputXD" onkeypress="return validarAlfanumericos(event)" type="password" name = "Contraseña" class="formulario__input" placeholder="Contraseña (6 caracteres mínimo)">
-                <input id="inputXD" onkeypress="return validarAlfanumericos(event)" type="password" name = "VerificarContraseña" class="formulario__input" placeholder="Verificar Contraseña">
+                <input onkeypress="return validarLetras(event)" type="text" name = "Nombre" class="formulario__input" placeholder="Nombre(s)">
+                <input onkeypress="return validarLetras(event)" type="text" name = "appat" class="formulario__input" placeholder="Apellido paterno">
+                <input onkeypress="return validarLetras(event)" type="text" name = "apmat" class="formulario__input" placeholder="Apellido materno">
+                <input onkeypress="return validarNumeros(event)" type="number" name="edad" class="formulario__input" placeholder="Edad" min="14" max="99">
+                <input onkeypress="return validarNumeros(event)" type="number" name="semestre" class="formulario__input" placeholder="Semestre actual" min="1" max="6">
+                
+                <select name="genero" class="formulario__input">
+                    <option value="Maculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="none">Prefiero no decirlo</option>
+                </select>
+                
+                <input type="date" name = "FechaNacimiento" class="formulario__input" placeholder="Fecha de Nacimiento">
+                <input type="email" name = "CorreoElectrónico" class="formulario__input" placeholder="Correo Electrónico">
+                <input onkeypress="return validarAlfaNumericos(event)" type="text" name = "Usuario" class="formulario__input" placeholder="Nombre de Usuario">
+                <input onkeypress="return validarAlfaNumericos(event)" type="password" name = "Contraseña" class="formulario__input" placeholder="Contraseña (6 caracteres mínimo)">
+                <input onkeypress="return validarAlfaNumericos(event)" type="password" name = "VerificarContraseña" class="formulario__input" placeholder="Verificar Contraseña">
                 <p class = "centro">Estoy deacuerdo con <a href="javascript:abrir()">Términos y Condiciones <i class="far fa-check-square"></i></a></p>
-                <div class="olvidar">
-                    <ul>
-                        <li>
-                            <input  type="submit" value="Registrarse" onclick="javascript:iniciarsesion()">
-                        </li>
-                    </ul>
-                </div>
+                <input type="submit" value="Registrarse" onclick="javascript:iniciarsesion()" class = "olvidar">
             </form>
             <div class="ventana" id = "vent">
                 <p class="centro">Términos y Condiciones
@@ -86,6 +91,8 @@
     </footer>
 
     <script src="./Scripts/Basicos.js"></script>
+    <script src="./Scripts/ValidacionTeclado.js"></script>
+    <script src="./Scripts/ValidacionFormularios.js"></script>
 
 
 </body>
