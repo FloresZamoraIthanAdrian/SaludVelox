@@ -29,7 +29,7 @@
     
     <section>
         <main>
-            <form action="" name = "formularioRegistro" onsubmit="return validarRegistro(this)" class="formulario">
+            <form action="CrearCuenta" name = "formularioRegistro" onsubmit="return validarRegistro(this)" class="formulario">
                 <h4 class="formulario__titulo">Ingrese sus Datos</h4>
                 <input onkeypress="return validarLetras(event)" type="text" name = "Nombre" class="formulario__input" placeholder="Nombre(s)">
                 <input onkeypress="return validarLetras(event)" type="text" name = "appat" class="formulario__input" placeholder="Apellido paterno">
@@ -46,7 +46,7 @@
                 <input type="email" name = "CorreoElectrónico" class="formulario__input" placeholder="Correo Electrónico">
                 <input onkeypress="return validarAlfaNumericos(event)" type="text" name = "Usuario" class="formulario__input" placeholder="Nombre de Usuario">
                 <input onkeypress="return validarAlfaNumericos(event)" type="password" name = "Contraseña" class="formulario__input" placeholder="Contraseña (6 caracteres mínimo)">
-                <input onkeypress="return validarAlfaNumericos(event)" type="password" name = "VerificarContraseña" class="formulario__input" placeholder="Verificar Contraseña">
+                <input onkeypress="return validarAlfaNumericos(event)" type="password" name = "VerificarContrasena" class="formulario__input" placeholder="Verificar Contraseña">
                 <p class = "centro">Estoy deacuerdo con <a href="javascript:abrir()">Términos y Condiciones <i class="far fa-check-square"></i></a></p>
                 <input type="submit" value="Registrarse" onclick="javascript:iniciarsesion()" class = "olvidar">
             </form>

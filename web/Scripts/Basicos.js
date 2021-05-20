@@ -1,4 +1,4 @@
-jQuery('document').ready(function($){
++jQuery('document').ready(function($){
     var menuBtn = $('.menu-icon'),
         menu = $('.navigation ul');
 
@@ -33,7 +33,7 @@ function cerrar(){
     document.getElementById("vent").style.display="none";
 }
 function inicio(){
-    location.href = "index.html"
+    location.href = "index.html";
 }
 function iniciarsesion(){
     location.href = "IniciarSesion.html"
