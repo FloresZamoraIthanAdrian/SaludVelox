@@ -17,6 +17,12 @@ section{
 p{
     margin-bottom: 1.6em;
 }
+.espaciado{
+    display: none;
+}
+.noAparecer{
+    display: none;
+}
 .espacio{
     padding-top: 1em;
 }
@@ -70,7 +76,6 @@ header{
 }
 .navigation ul{
     list-style: none;
-    margin: 0;
     padding: 0;
 }
     .navigation ul li {
@@ -78,6 +83,7 @@ header{
         cursor: pointer;
         border-radius: 5px;
         padding: 0.5rem 1rem;
+        margin-left: 5px;
         transition: all 0.4s linear;
     }
         .navigation ul li:hover {
@@ -157,6 +163,10 @@ input, textarea{
 .nombres{
     font-size: 0.9em;
 }
+.titulos{
+    margin-bottom: 5px;
+    border-bottom: 1px solid silver;
+}
 footer{
     background: #9f0000;
     color: white;
@@ -212,13 +222,12 @@ main{
     .navigation ul.show{
         display: block;
     }
-        .navigation ul li {
-            display: block;
+        .navigation ul li{
+            display: inline-block;
+            text-align: center;
             border-radius: 5px;
-            width: 40%;
-            margin-top: 5px;
-            padding: 0.5rem 0;
-            left: 50%;
+            margin: 5px 10px;
+            padding: 0.5rem 5px;
             transition: all 0.5s linear;
         }
             .navigation ul li:hover {
@@ -226,6 +235,10 @@ main{
                 color: black;
                 box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
             }
+    #margen{
+        display: inline-block;
+        margin: 5px 5px;
+    }
     main{
         margin-bottom: 0;
         margin-top: 0;
@@ -250,6 +263,9 @@ main{
         display: block;
         padding: 15px;
     }
+    .espaciado{
+        display: block;
+    }
     .imagenHumano{
         width: 10%;
         left: 85%;
@@ -261,5 +277,17 @@ main{
     .imagen{
         width: 70%;
         margin: 15px 15%;
+    }
+    .noAparecer{
+        display: block;
+    }
+    .Aparecer{
+        display: none;
+    }
+    #margenNav{
+        margin-left: 30px;
+    }
+    #margenNav2{
+        margin-left: 75px;
     }
 }

@@ -59,6 +59,9 @@ function resultado(){
 function chat(){
     location.href = "Chat.html"
 }
+function info(){
+    location.href = "Info.html"
+}
 function velox(){
     window.open("https://giancarlogall.github.io/VeloxPagina/");
 }
