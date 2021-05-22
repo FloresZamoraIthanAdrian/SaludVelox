@@ -3,25 +3,30 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Formulario</title>
+    <title>Formulario | Salud Velox</title>
     <link rel="icon" href= "imagenes/EscudoVelox2.png">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts.js"></script>
-    <link rel = "stylesheet" type = 'text/css' href = 'Formulario.css'>
+    <script src="scripts/scripts.js"></script>
+    <link rel = "stylesheet" type = 'text/css' href = 'styles/styles.css'>
     <script src="https://kit.fontawesome.com/9fb0a1aa63.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <header>
         <div class = "container logo-nav-container">
-            <p class = "logo animate__animated animate__zoomInLeft animate__slow"><i class="far fa-smile"></i> Formulario</p>
+            <p class = "logo textoForm animate__animated animate__zoomInLeft" id = "textoForm"><i class="far fa-smile"></i> Formulario</p>
             <div class = "espacio"></div>
-            <nav class = "navigation">
-                <ul class="animate__animated animate__zoomInRight animate__slow">
-                    <li onclick="javascript:chat()"><i class="fas fa-door-open"></i> Regresar</li>
+            <span class="menu-icon animate__animated animate__zoomInRight">Ver Menú  <i class="fas fa-chevron-down"></i></span>
+            <nav>
+                <ul class = "animate__animated animate__zoomInRight">
+                    <li onclick="javascript:info()" id = "margenNav"><i class="fas fa-book-open"></i> Información</li>
+                    <li onclick="javascript:resultado()"><i class="fas fa-poll"></i> Resultados</li>
+                    <div class="espaciado"></div>
+                    <li onclick="javascript:cuenta()" id ="margenNav2"><i class="fas fa-user-circle"></i> Cuenta</li>
+                    <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Foro</li>
                 </ul>
             </nav>
         </div>
@@ -29,9 +34,9 @@
     <section>
         <main>
             <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'imagenes/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
-            <div class= "cuadro">
-                <div class="pregunta"> Esta es una pregunta prueba, esto tiene como fin ayudar al programador del frontend a ver las dimensiones de las preguntas verdaderas asi que ignora esto</div>
-                <form  action = "" class="formulario2">
+            <div class= "formulario_cuadro">
+                <div class="formulario_pregunta"> Esta es una pregunta prueba, esto tiene como fin ayudar al programador del frontend a ver las dimensiones de las preguntas verdaderas asi que ignora esto</div>
+                <form  action = "" class="formulario">
                     <div class="radio">
                         <input type="radio" name = "respuesta1" id = "Siempre">
                         <label for="Siempre"><div class="carita"><i class="far fa-smile"></i></div> Siempre</label>
@@ -63,15 +68,15 @@
         <ul>
             <li onclick="javascript:velox()">VeloxSoftware.com</a></li>
         </ul>
-        <h4>Integrantes</h4>
+        <h3>Integrantes</h3>
         <div class="nombres">
-            <ul>
-                <li onclick="javascript:velox()">Castañeda Rodríguez<br>Rafael Gil</li>
-                <li onclick="javascript:velox()">Coronado Segundo<br>Juan Yael</li>
-                <li onclick="javascript:velox()">Flores Zamora<br>Ithan Adrian</li>
-                <li onclick="javascript:velox()">Gallegos González<br>Gian Carlo</li>
-                <li onclick="javascript:velox()">Pérez López<br>Jesús Eduardo</li>
-                <li onclick="javascript:velox()">Salazar Valdez<br>Ángel Yahir</li>
+            <ul onclick="javascript:velox()">
+                <li>Castañeda Rodríguez<br>Rafael Gil</li>
+                <li>Coronado Segundo<br>Juan Yael</li>
+                <li>Flores Zamora<br>Ithan Adrian</li>
+                <li>Gallegos González<br>Gian Carlo</li>
+                <li>Pérez López<br>Jesús Eduardo</li>
+                <li>Salazar Valdez<br>Ángel Yahir</li>
             </ul>
         </div>
     </footer>

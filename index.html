@@ -3,25 +3,25 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Inicio</title>
+    <title>Inicio | Salud Velox</title>
     <link rel="icon" href= "imagenes/EscudoVelox2.png">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts.js"></script>
-    <link rel = "stylesheet" type = 'text/css' href = 'InicioEstilos.css'>
+    <script src="scripts/scripts.js"></script>
+    <link rel = "stylesheet" type = 'text/css' href = 'styles/styles.css'>
     <script src="https://kit.fontawesome.com/9fb0a1aa63.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
     <header>
         <div class = "container logo-nav-container">
-            <p class = "logo animate__animated animate__zoomInLeft animate__slow"><i class="fas fa-heartbeat"></i> Salud <br class = 'espacioV'>Velox</p>
+            <p class = "logo animate__animated animate__zoomInLeft"><i class="fas fa-heartbeat"></i> Salud <br class = 'espacioV'>Velox</p>
             <div class = "espacio"></div>
             <span class="menu-icon animate__animated animate__zoomInRight animate__slow">Ver Menú  <i class="fas fa-chevron-down"></i></span>
-            <nav class = "navigation">
-                <ul class = "animate__animated animate__zoomInRight animate__slow">
+            <nav>
+                <ul class = "animate__animated animate__zoomInRight">
                     <li onclick="javascript:iniciarsesion()" id = "margen"><i class="fas fa-home"></i> Iniciar Sesión</li>
                     <li onclick="javascript:crearcuenta()" id = "margen"><i class="fas fa-user-circle"></i> Crear Cuenta</li>
                 </ul>
@@ -33,7 +33,7 @@
             <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'imagenes/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
             <div class= "container1">
                 <video src="imagenes/software.mp4" controls></video>
-                <h3>Los objetivos y usos de este proyecto</h3>
+                <h4 class="info_titulo">Los objetivos y usos de este proyecto</h4>
                 <p>
                     Esta es una página creada por estudiantes de la empresa Velox Software para ayudar a otros estudiantes de Media Superior,
                     con posibles problemas de salud mental.
@@ -58,9 +58,9 @@
     <footer>
         <h3>Redes Sociales</h3>
         <ul>
-            <li onclick="javascript:facebook()"><i class="fab fa-facebook-square"> Facebook </i></li>
-            <li onclick="javascript:instagram()"><i class="fab fa-instagram"> Instagram </i></li>
-            <li onclick="javascript:twitter()"><i class="fab fa-twitter">  Twitter </i></li>
+            <li onclick="javascript:facebook()"><i class="fab fa-facebook-square"></i> Facebook</li>
+            <li onclick="javascript:instagram()"><i class="fab fa-instagram"></i> Instagram</li>
+            <li onclick="javascript:twitter()"><i class="fab fa-twitter"></i> Twitter</li>
         </ul>
         <h3>Correo Electrónico</h3>
         <ul>
@@ -70,15 +70,15 @@
         <ul>
             <li onclick="javascript:velox()">VeloxSoftware.com</a></li>
         </ul>
-        <h4>Integrantes</h4>
+        <h3>Integrantes</h3>
         <div class="nombres">
-            <ul>
-                <li onclick="javascript:velox()">Castañeda Rodríguez<br>Rafael Gil</li>
-                <li onclick="javascript:velox()">Coronado Segundo<br>Juan Yael</li>
-                <li onclick="javascript:velox()">Flores Zamora<br>Ithan Adrian</li>
-                <li onclick="javascript:velox()">Gallegos González<br>Gian Carlo</li>
-                <li onclick="javascript:velox()">Pérez López<br>Jesús Eduardo</li>
-                <li onclick="javascript:velox()">Salazar Valdez<br>Ángel Yahir</li>
+            <ul onclick="javascript:velox()">
+                <li>Castañeda Rodríguez<br>Rafael Gil</li>
+                <li>Coronado Segundo<br>Juan Yael</li>
+                <li>Flores Zamora<br>Ithan Adrian</li>
+                <li>Gallegos González<br>Gian Carlo</li>
+                <li>Pérez López<br>Jesús Eduardo</li>
+                <li>Salazar Valdez<br>Ángel Yahir</li>
             </ul>
         </div>
     </footer>
