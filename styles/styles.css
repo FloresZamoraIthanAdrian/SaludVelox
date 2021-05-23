@@ -101,14 +101,13 @@ h3{
     margin-left: 38%;
     border-bottom: 1px solid silver;
 }
+/*------------------------------------------------------------------------*/
+/*Imagenes*/
 .imagen{
-    width: 30%;
+    width: 20%;
     margin: 15px 35%;
     border-radius: 5px;
     transition: all 0.5s linear;
-}
-.imagen:hover{
-    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
 }
 .imagenHumano{
     position: fixed;
@@ -121,6 +120,7 @@ h3{
     .imagenHumano:hover{
         box-shadow: 0 0 20px 1px rgba(0,0,0,0.7);
     }
+/*------------------------------------------------------------------------*/
 /*Espaciados*/
 .espaciado{
     display: none;
@@ -229,7 +229,7 @@ textarea{
 .formulario_pregunta{
     border-top: 2px solid silver ;
     padding-top: 20px;
-    text-align: justify;
+    text-align: center;
     font-size: 1em;
     margin: auto 5%;
 }
@@ -244,19 +244,19 @@ textarea{
     .formulario .radio label{
         margin: 5px;
         color: black;
-        padding: 5px 25px;
+        padding: 2px;
+        width: 17%;
         display: inline-block;
         position: relative;
         font-size: 1em;
         border-radius: 3px;
         cursor: pointer;
-        transition: all 0.5s ease;
+        transition: all 0.7s ease;
     }
         .formulario .radio label:hover{
             background: silver;
         }
         .formulario input[type = "radio"]:checked + label{
-            padding: 5px 15px;
             background: #9f0000;
             color: white;
         }
@@ -267,7 +267,7 @@ textarea{
 }
 .info_cuadro{
     display: inline-block;
-    width: 40%;
+    width: 25%;
     margin-bottom: 25px;
     margin-left: 5%;
     padding: 20px 10px;
@@ -276,12 +276,12 @@ textarea{
     box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
     transition: all 0.7s;
 }
-.info_cuadro:hover{
-    box-shadow: 0 0 20px 1px rgba(0,0,0,0.7);
-}
+    .info_cuadro:hover{
+        box-shadow: 0 0 20px 1px rgba(0,0,0,0.7);
+    }
 .info_titulo{
-    width: 50%;
-    margin-left: 25%;
+    width: 60%;
+    margin-left: 20%;
     padding-bottom: 5px;
     padding-top: 5px;
     text-decoration: none;
@@ -293,14 +293,14 @@ textarea{
     border-top: 1px solid silver;
 }
 .info_imagen{
-    height: 200px;
+    height: 150px;
     margin: 5px auto;
     transition: all 0.5s linear;
     border-radius: 10px;
     padding: 5px;
 }
-.info_margen_cuadro{
-    margin-left: 30%;
+.info_margen_cuadro1{
+    margin-left: 20%;
 }
 /*------------------------------------------------------------------------*/
 /*Error404.html*/
@@ -332,13 +332,15 @@ textarea{
 /*------------------------------------------------------------------------*/
 /*Botones*/
 .boton{
+    border-style: none;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
+    border: 1px solid #9f0000;
     background: #dbd6d6;
-    color: black;
+    color: #9f0000;
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
     width: 40%;
     text-decoration: none;
     padding: 0.5rem 1rem;
@@ -347,7 +349,31 @@ textarea{
     }
     .boton:hover {
         background: #9f0000;
+        border: 1px solid #dbd6d6;
         color: white;
+        box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+    }
+.boton2{
+    border-style: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background: #9f0000;
+    color: white;
+    border-style: none;
+    border: 1px solid #dbd6d6;
+    display: block;
+    margin: 10px auto;
+    width: 40%;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
+    }
+    .boton2:hover {
+        background: #dbd6d6;
+        border: 1px solid #9f0000;
+        color: #9f0000;
         box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
     }
 /*------------------------------------------------------------------------*/
@@ -364,7 +390,8 @@ textarea{
         display: block;
         cursor: pointer;
         border-radius: 5px;
-        padding:  0.5rem 1rem;
+        font-size: 0.8em;
+        padding:  0.5rem;
         transition: all 0.5s linear;
     }
     .menu-icon:hover{
@@ -401,6 +428,9 @@ textarea{
         margin-top: 0;
         padding-top: 10rem;
     }
+    .margen_superior{
+        padding-top: 4rem;
+    }
     section{
         margin-top: 0;
         padding-top: 50px;
@@ -415,8 +445,9 @@ textarea{
         left: 85%;
     }
     .imagen{
-        width: 70%;
+        width: 50%;
         margin: 15px 15%;
+        padding: 10px;
     }
     h3{
         letter-spacing: 7px;
@@ -458,12 +489,13 @@ textarea{
         display: block;
     }
     .info_cuadro{
+        width: 40%;
         margin-left: 3%;
     }
     .info_imagen{
         height: 100px;
     }
-    .info_margen_cuadro{
+    .info_margen_cuadro2{
         margin-left: 25%
     }
     /*------------------------------------------------------------------------*/
@@ -479,4 +511,8 @@ textarea{
         margin-left: 75px;
     }
     /*------------------------------------------------------------------------*/
+    /*Formulario.html*/
+    .formulario .radio label{
+        width: 90%;
+    }
 }
