@@ -3,6 +3,7 @@ package Control;
 import Usuario.Usuario;
 import java.sql.*;
 import java.util.*;
+import javax.servlet.http.HttpSession;
 
 public class AccionesUsuario {
     
@@ -36,6 +37,42 @@ public class AccionesUsuario {
             System.out.println(ed.getMessage());
         }
         return state;
+    }
+    
+    public static Usuario listarDatosUsuario(int id_usu){
+        
+        Usuario u = new Usuario();
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "select * from alumnos where id_alumno = ?";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setInt(1, id_usu);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs.next()){
+                u.setId(rs.getInt(1));
+                u.setNombre(rs.getString(2));
+                u.setAppat(rs.getString(3));
+                u.setApmat(rs.getString(4));
+                u.setCorreo(rs.getString(5));
+                u.setEdad(rs.getInt(6));
+                u.setSemestre(rs.getInt(7));
+                u.setGenero(rs.getString(8));
+            }
+            
+            System.out.println("Exito al listar los datos del usuario");
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Error al conseguir los datos del usuario");
+            System.out.println(ed.getMessage());
+        }
+        return u;
     }
     
 }

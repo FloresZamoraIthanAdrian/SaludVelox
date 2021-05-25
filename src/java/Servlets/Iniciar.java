@@ -8,47 +8,38 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class CrearCuenta extends HttpServlet {
+public class Iniciar extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-            int id, semestre, edad, num_reportes;
-            String nombre, appat, apmat, correo, genero, nom_usu, pass_usu;
-            
-            nombre = request.getParameter("Nombre");
-            appat = request.getParameter("appat");
-            apmat = request.getParameter("apmat");
-            correo = request.getParameter("CorreoElectrónico");
-            genero = request.getParameter("genero");
-            nom_usu = request.getParameter("Usuario");
-            pass_usu = request.getParameter("VerificarContrasena");
-            edad = Integer.parseInt(request.getParameter("edad"));
-            semestre = Integer.parseInt(request.getParameter("semestre"));
-            
+
+            String correo, pass_usu;
+
+            correo = request.getParameter("correo");
+            pass_usu = request.getParameter("Contrasena");
+
             Usuario u = new Usuario();
-            
-            u.setNombre(nombre);
-            u.setAppat(appat);
-            u.setApmat(apmat);
+
             u.setCorreo(correo);
-            u.setGenero(genero);
-            u.setNom_usu(nom_usu);
             u.setPass_usu(pass_usu);
-            u.setEdad(edad);
-            u.setSemestre(semestre);
-            
-            int state = AccionesUsuario.registrarUsuario(u);
-            
-            if(state > 0){
-                response.sendRedirect("IniciarSesion.jsp");
-            }else{
-                response.sendRedirect("Error404.html");
+
+            int state = 0;
+
+            if (state == 1) {
+
+                HttpSession sesion = request.getSession();
+                sesion.setAttribute("user", correo);
+                System.out.println(sesion.getAttribute(correo));
+                response.sendRedirect("Info.jap");
+                
+            } else {
+                response.sendRedirect("Info.jsp");
             }
-            
+
         }
     }
 

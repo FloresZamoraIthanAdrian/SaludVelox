@@ -36,7 +36,7 @@ function inicio(){
     location.href = "index.html";
 }
 function iniciarsesion(){
-    location.href = "IniciarSesion.html"
+    location.href = "IniciarSesion.jsp"
 }
 function crearcuenta(){
     location.href = "CrearCuenta.html"

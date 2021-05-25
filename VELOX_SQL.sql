@@ -3,7 +3,7 @@ create database velox;
 use velox;
 
 create table alumnos(
-id_usu int not null auto_increment, 
+id_alumno int not null auto_increment, 
 nombre varchar(30), 
 appat varchar(30), 
 apmat varchar(30), 
@@ -11,7 +11,7 @@ correo varchar(75),
 edad int, 
 semestre int, 
 genero varchar(25),
-primary key(id_usu), 
+primary key(id_alumno), 
 key(edad), 
 key(genero), 
 key(semestre));
@@ -23,21 +23,40 @@ correo varchar(30),
 pass_usu varchar(30), 
 num_reportes int,
 primary key(id_usu), 
-foreign key (id_usu) references alumnos(id_usu),
+foreign key (id_usu) references alumnos(id_alumno),
 key(num_reportes));
 
 create table reportes(
-id_usu int not null,
- primary key(id_usu),
- foreign key (id_usu) references usuario(id_usu)
+id_reporte int not null,
+ primary key(id_reporte),
+ foreign key (id_reporte) references usuario(id_usu)
  );
  
  create table enfermedades(
- id_usu int not null,
- padecimiento varchar(75),
- primary key(id_usu),
- foreign key (id_usu) references alumnos(id_usu),
- key(padecimiento)
+ id_enfermedad int not null,
+ depresion tinyint(0),
+ ansiedad tinyint(0),
+ tc_alimentaria tinyint(0),
+ t_conducta tinyint(0),
+ tda_tdah tinyint(0),
+ dislexia tinyint(0),
+ autismo tinyint(0),
+ bipolaridad tinyint(0),
+ asperger tinyint(0),
+ t_obsesivo_compulsivo tinyint(0),
+ primary key(id_enfermedad),
+ foreign key (id_enfermedad) references alumnos(id_alumno),
+ key(depresion),
+ key(ansiedad),
+ key(ansiedad),
+ key(tc_alimentaria),
+ key(t_conducta),
+ key(tda_tdah),
+ key(dislexia),
+ key(autismo),
+ key(bipolaridad),
+ key(asperger),
+ key(t_obsesivo_compulsivo)
  );
  
  create table chat(
@@ -50,9 +69,11 @@ id_usu int not null,
 describe alumnos;
 describe usuario;
 describe reportes;
+describe enfermedades;
 
 select * from alumnos;
 select * from usuario;
+select * from reportes;
 
 DELIMITER $$
 CREATE PROCEDURE PruebaInsertar2
@@ -76,4 +97,15 @@ values (nom_usu, correo2, pass_usu);
 END $$
 DELIMITER 
 
-call PruebaInsertar2('Owen2', 'Flores', 'Zamora', 'owen@gmail.com',  21, 4, 'Masculino', 'alecxei2', 'owen@hotmail.com', '9876542');
+DELIMITER $$
+CREATE PROCEDURE datosUsuarioId(
+id_usu int
+)
+BEGIN
+select * from alumnos where id_alumno = id_usu;
+select * from usuario where id_usu = id_usu;
+select * from enfermedades where id_enfermedad = id_usu;
+END $$
+DELIMITER 
+
+call datosUsuarioId(1);

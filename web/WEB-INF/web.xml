@@ -4,9 +4,17 @@
         <servlet-name>CrearCuenta</servlet-name>
         <servlet-class>Servlets.CrearCuenta</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Iniciar</servlet-name>
+        <servlet-class>Servlets.Iniciar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CrearCuenta</servlet-name>
         <url-pattern>/CrearCuenta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Iniciar</servlet-name>
+        <url-pattern>/Iniciar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
