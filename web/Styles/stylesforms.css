@@ -1,0 +1,279 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 1rem;
+    line-height: 1.6em;
+    margin: 0;
+}
+section{
+    background: #e6e3e3;
+    background: -moz-linear-gradient(-45deg,  #e6e3e3 0%, #dbd6d6 50%, #e6e3e3 50%, #dbd6d6 100%);
+    background: -webkit-linear-gradient(-45deg,  #e6e3e3 0%,#dbd6d6 50%,#e6e3e3 50%,#dbd6d6 100%);
+    background: linear-gradient(135deg,  #e6e3e3 0%,#dbd6d6 50%,#e6e3e3 50%,#dbd6d6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e3e3', endColorstr='#dbd6d6',GradientType=1 );
+    padding-bottom: 4rem;
+    padding-top: 11rem;
+    margin-bottom: 0;
+}
+header{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: #9f0000;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    align-items: center;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav ul li {
+    display: inline-block;
+    cursor: pointer;
+    background: #9f0000;
+    color: white;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
+}
+nav ul li:hover {
+    background: #dbd6d6;
+    color: black;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+}
+footer{
+    background: #9f0000;
+    padding: 4rem 0;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: white;
+}
+footer ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+
+}
+footer ul li {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: all 0.5s linear;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+footer ul li:hover {
+    background: #dbd6d6;
+    color: black;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+}
+/*------------------------------------------------------------------------*/
+/*Global*/
+.container{
+    width: 85%;
+    max-width: 900px;
+    margin: auto;
+    text-align: justify;
+}
+p{
+    margin-bottom: 1.6em;
+}
+.centro{
+    text-align: center;
+}
+.logo-nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo{
+    position: relative;
+    font-size: 1.5em;
+    letter-spacing: 10px;
+}
+
+h3{
+    letter-spacing: 7px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 24%;
+    margin-left: 38%;
+    border-bottom: 1px solid silver;
+}
+.nombres{
+    font-size: 0.9em;
+}
+/*------------------------------------------------------------------------*/
+/*Imagenes*/
+.imagenHumano{
+    position: fixed;
+    width: 3%;
+    left: 95%;
+    top: 90%;
+    border-radius: 50%;
+    transition: all 0.5s linear;
+}
+.imagenHumano:hover{
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.7);
+}
+.imagen{
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 25px;
+    width: 30%;
+    transition: all 0.5s linear;
+}
+.imagen:hover{
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+}
+/*------------------------------------------------------------------------*/
+/*Espaciados*/
+.espacio{
+    padding-top: 1em;
+}
+.espacioV{
+    display: none;
+}
+.espacioV1{
+    height: 30px;
+}
+/*------------------------------------------------------------------------*/
+/*Formularios*/
+.formulario{
+    width: 500px;
+    max-width: 100%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+    position: relative;
+}
+.formulario__titulo{
+    text-align: center;
+    margin-top: 0;
+    color: black;
+}
+.formulario__input, .formulario__submit{
+    margin-left: auto;
+    margin-right: auto;
+}
+.formulario__input{
+    display: block; 
+    width: 95%;
+    font-size: 1em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: transparent;
+    border: 1px solid rgba(0,0,0,0.7);
+    border-radius: 10px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    position: relative;
+    transition: all 0.3s;
+}
+.formulario__input:focus{
+    outline: 1px solid rgba(0,0,0,0.3);
+    width: 100%;
+    background: rgba(0,0,0,0.05);
+    font-size: 1em;
+}
+/*------------------------------------------------------------------------*/
+/*Botones*/
+.boton{
+    text-align: center;
+    cursor: pointer;
+    background: #dbd6d6;
+    color: black;
+    display: inline-block;
+    margin: 15px 30%;
+    width: 40%;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
+}
+.boton:hover {
+    background: #9f0000;
+    color: white;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+}
+/*------------------------------------------------------------------------*/
+/*CreaCuenta.html_Ventana*/
+.ventana{
+    background: rgb(75, 75, 75);
+    color: white;
+    font-size: 1em;
+    position: absolute;
+    display: none;
+    padding: auto;
+    border: 2px solid white;
+    border-radius: 25px;
+    width: 50%;
+    height: 40%;
+    left: 25%;
+    top: 80%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+}
+/*------------------------------------------------------------------------*/
+@media only screen and (max-width: 950px) {
+    header{
+        padding: 1.3rem 0;
+    }
+    main{
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-top: 9rem;
+        margin-top: 0;
+    }
+    section{
+        padding-top: 50px;
+        margin-top: 0;
+    }
+    /*------------------------------------------------------------------------*/
+    /*Espaciados*/
+
+    .espacioV{
+        display: block;
+        height: 10px;
+    }
+    /*------------------------------------------------------------------------*/
+    /*Formulario*/
+    .formulario{
+        width: 300px;
+    }
+    /*------------------------------------------------------------------------*/
+    /*Global*/
+    .logo{
+        position: relative;
+        font-size: 1.5em;
+        letter-spacing: 5px;
+    }
+    /*------------------------------------------------------------------------*/
+    /*CrearCuenta.html_ventana*/
+    .ventana{
+        width: 70%;
+        height: 40%;
+        left: 15%;
+        top: 80%;
+    }
+    /*------------------------------------------------------------------------*/
+    /*Imagenes*/
+    .imagenHumano{
+        width: 10%;
+        left: 85%;
+    }
+}

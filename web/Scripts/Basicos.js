@@ -1,4 +1,4 @@
-+jQuery('document').ready(function($){
+jQuery('document').ready(function($){
     var menuBtn = $('.menu-icon'),
         menu = $('.navigation ul');
 
@@ -18,13 +18,13 @@ $(document).ready(function () {
     $("input").on('paste', function (e) {
         e.preventDefault();
         alert('Esta acción está prohibida');
-    })
+    });
 
     $("input").on('copy', function (e) {
         e.preventDefault();
         alert('Esta acción está prohibida');
-    })
-})
+    });
+});
 
 function abrir(){
     document.getElementById("vent").style.display="block";
