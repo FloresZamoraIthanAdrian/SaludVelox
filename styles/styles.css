@@ -236,7 +236,6 @@ textarea{
 .formulario{
     margin: auto 5%;
     padding: 20px;
-    border-bottom: 2px solid silver ;
 }
     .formulario input[type = "radio"]{
         display: none;
@@ -251,7 +250,7 @@ textarea{
         font-size: 1em;
         border-radius: 3px;
         cursor: pointer;
-        transition: all 0.7s ease;
+        transition: all 0.5s ease;
     }
         .formulario .radio label:hover{
             background: silver;
@@ -260,6 +259,9 @@ textarea{
             background: #9f0000;
             color: white;
         }
+.formulario .formulario_respuestas_extensas label{
+    width: 50%;
+}
 /*------------------------------------------------------------------------*/
 /*Info.html*/
 .info_titulo_responsive{
@@ -515,12 +517,18 @@ textarea{
     .formulario .radio label{
         width: 90%;
     }
+    .formulario_pregunta{
+        text-align: justify;
+    }
+    .formulario .formulario_respuestas_extensas label{
+        width: 95%;
+    }
     /*------------------------------------------------------------------------*/
     /*Botones*/
     .boton{
-        width: 50%;
+        width: 65%;
     }
     .boton2{
-        width: 50%;
+        width: 65%;
     }
 }
