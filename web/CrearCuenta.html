@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Crear Cuenta</title>
+    <link rel="icon" href= "images/EscudoVelox2.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel = "stylesheet" type = 'text/css' href = './Styles/Formulario.css'>
+    <script src="https://kit.fontawesome.com/9fb0a1aa63.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <div class = "container logo-nav-container">
+            <p class = "logo animate__animated animate__zoomInLeft animate__slower"><i class="fas fa-user-circle"></i> Crear <br class = 'espacioV'>Cuenta</p>
+            <div class = "espacio"></div>
+            <span class="menu-icon">Ver Menú  <i class="fas fa-chevron-down"></i></span>
+            <nav class = "navigation">
+                <ul class="animate__animated animate__zoomInRight animate__slower">
+                    <a style='text-decoration: none; color: white;' href="IniciarSesion.jsp"><li><i class="fas fa-home"></i> Iniciar Sesión</li></a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section>
+        <main>
+            <form action="CrearCuenta" name = "formularioRegistro" onsubmit="return validarRegistro(this)" class="formulario">
+                <h4 class="formulario__titulo">Ingrese sus Datos</h4>
+                <input onkeypress="return validarLetras(event)" type="text" name = "Nombre" class="formulario__input" placeholder="Nombre(s)">
+                <input onkeypress="return validarLetras(event)" type="text" name = "appat" class="formulario__input" placeholder="Apellido paterno">
+                <input onkeypress="return validarLetras(event)" type="text" name = "apmat" class="formulario__input" placeholder="Apellido materno">
+                <input onkeypress="return validarNumeros(event)" type="number" name="edad" class="formulario__input" placeholder="Edad" min="14" max="99">
+                <input onkeypress="return validarNumeros(event)" type="number" name="semestre" class="formulario__input" placeholder="Semestre actual" min="1" max="6">
+                
+                <select name="genero" class="formulario__input">
+                    <option value="Maculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="none">Prefiero no decirlo</option>
+                </select>
+                
+                <input type="email" name = "CorreoElectrónico" class="formulario__input" placeholder="Correo Electrónico">
+                <input onkeypress="return validarAlfaNumericos(event)" type="text" name = "Usuario" class="formulario__input" placeholder="Nombre de Usuario">
+                <input onkeypress="return validarAlfaNumericos(event)" type="password" name = "Contraseña" class="formulario__input" placeholder="Contraseña (6 caracteres mínimo)">
+                <input onkeypress="return validarAlfaNumericos(event)" type="password" name = "VerificarContrasena" class="formulario__input" placeholder="Verificar Contraseña">
+                <p class = "centro">Estoy deacuerdo con <a href="javascript:abrir()">Términos y Condiciones <i class="far fa-check-square"></i></a></p>
+                <input type="submit" value="Registrarse" onclick="javascript:iniciarsesion()" class = "olvidar">
+            </form>
+            <div class="ventana" id = "vent">
+                <p class="centro">Términos y Condiciones
+                    Estamos en proceso de escribir los Términos y Condiciones por favor espere
+                </p>
+                <div class = "olvidar">
+                    <ul>
+                        <li onclick="javascript:cerrar()"> Aceptar</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </section>
+    
+    <footer>
+        <h3>Redes Sociales</h3>
+        <ul>
+            <li onclick="javascript:facebook()"><i class="fab fa-facebook-square"> Facebook </i></li>
+            <li onclick="javascript:instagram()"><i class="fab fa-instagram"> Instagram </i></li>
+            <li onclick="javascript:twitter()"><i class="fab fa-twitter">  Twitter </i></li>
+        </ul>
+        <h3>Correo Electrónico</h3>
+        <ul>
+            <li>velox.software.09@gmail.com</li>
+        </ul>
+        <h3>Página Web</h3>
+        <ul>
+            <li onclick="javascript:velox()">VeloxSoftware.com</a></li>
+        </ul>
+        <h4>Integrantes</h4>
+        <div class="nombres">
+            <ul>
+                <li onclick="javascript:velox()">Castañeda Rodríguez<br>Rafael Gil</li>
+                <li onclick="javascript:velox()">Coronado Segundo<br>Juan Yael</li>
+                <li onclick="javascript:velox()">Flores Zamora<br>Ithan Adrian</li>
+                <li onclick="javascript:velox()">Gallegos González<br>Gian Carlo</li>
+                <li onclick="javascript:velox()">Pérez López<br>Jesús Eduardo</li>
+                <li onclick="javascript:velox()">Salazar Valdez<br>Ángel Yahir</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="./Scripts/Basicos.js"></script>
+    <script src="./Scripts/ValidacionTeclado.js"></script>
+    <script src="./Scripts/ValidacionFormularios.js"></script>
+
+
+</body>
+</html>

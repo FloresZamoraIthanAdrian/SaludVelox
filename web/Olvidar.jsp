@@ -1,0 +1,98 @@
+<%@page import="Usuario.Usuario"%>
+<%@page import="Control.AccionesUsuario"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Contraseña | Salud Velox</title>
+        <link rel="icon" href= "./images/EscudoVelox2.png">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="./Scripts/ValidacionFormularios.js"></script>
+        <link rel = "stylesheet" type = 'text/css' href = './Styles/stylesforms.css'>
+        <script src="https://kit.fontawesome.com/9fb0a1aa63.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+    <body>
+        
+        <header>
+            <div class = "container logo-nav-container">
+                <p class = "logo animate__animated animate__zoomInLeft"><i class="fas fa-key"></i> Cambiar <br class = 'espacioV'>Contraseña</p>
+                <div class = "espacio"></div>
+            </div>
+        </header>
+        <section>
+            
+            <main>
+                <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
+
+                <div class="formulario">
+                    
+                    <%
+                        HttpSession sesion = request.getSession();
+                        String usuer, id;
+
+                        if (sesion.getAttribute("user") != null) {
+                            usuer = sesion.getAttribute("user").toString();
+                            id = sesion.getAttribute("id_usuS").toString();
+                            int id_usu = Integer.parseInt(id);
+
+                            Usuario u = AccionesUsuario.listarDatosUser(id_usu);
+
+                        } else {
+                            out.print("<script>location.replace('IniciarSesion.jsp');</script>");
+                        }
+                    %>
+                    
+                    <form action="" onsubmit="return cambiarContrasena(this)" name="cambiarContrasenaForm">
+                        <h4 class="formulario__titulo animate__animated animate__rubberBand animate__infinite animate__slower">Complete los siguientes campos para cambiar la contraseña.</h4>
+                        <p class="centro">Digite el correo que registro al crear la cuenta.</p>
+                        <input type="text" name = "correoRec" class="formulario__input" placeholder="CorreoElectrónico">
+                        <p class="centro">Digite la antigua contraseña.</p>
+                        <input onkeypress="return validarAlfaNumericos(event)" type="password" name = "antiguaContrasena" class="formulario__input" placeholder="Contraseña (6 caracteres mínimo)">
+                        <p class="centro">Digite la nueva contraseña.</p>
+                        <input onkeypress="return validarAlfaNumericos(event)" type="password" name = "nuevaContrasena" class="formulario__input" placeholder="Nueva Contraseña">
+                        <input onkeypress="return validarAlfaNumericos(event)" type="password" name = "VerificarContrasena" class="formulario__input" placeholder="Las contraseñas deben coincidir">
+                        <input type="submit" value="Cambiar Contraseña" onclick="" class = "boton">
+                    </form>
+            </main>
+                    
+        </section>
+                    
+        <footer>
+            <h3>Redes Sociales</h3>
+            <ul>
+                <li onclick="javascript:facebook()"><i class="fab fa-facebook-square"></i> Facebook</li>
+                <li onclick="javascript:instagram()"><i class="fab fa-instagram"></i> Instagram</li>
+                <li onclick="javascript:twitter()"><i class="fab fa-twitter"></i> Twitter</li>
+            </ul>
+            <h3>Correo Electrónico</h3>
+            <ul>
+                <li>velox.software.09@gmail.com</li>
+            </ul>
+            <h3>Página Web</h3>
+            <ul>
+                <li onclick="javascript:velox()">VeloxSoftware.com</a></li>
+            </ul>
+            <h3>Integrantes</h3>
+            <div class="nombres">
+                <ul onclick="javascript:velox()">
+                    <li>Castañeda Rodríguez<br>Rafael Gil</li>
+                    <li>Coronado Segundo<br>Juan Yael</li>
+                    <li>Flores Zamora<br>Ithan Adrian</li>
+                    <li>Gallegos González<br>Gian Carlo</li>
+                    <li>Pérez López<br>Jesús Eduardo</li>
+                    <li>Salazar Valdez<br>Ángel Yahir</li>
+                </ul>
+            </div>
+        </footer>
+
+        <script src="./Scripts/Basicos.js"></script>
+        <script src="./Scripts/ValidacionFormularios.js"></script>
+        <script src='./Scripts/ValidacionTeclado.js'></script>
+
+    </body>
+</html>
