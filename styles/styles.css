@@ -232,6 +232,7 @@ textarea{
     text-align: center;
     font-size: 1em;
     margin: auto 5%;
+    margin-bottom: 10px;
 }
 .formulario{
     margin: auto;
