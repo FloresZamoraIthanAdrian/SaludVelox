@@ -29,30 +29,47 @@
                 </div>
                 <div class = "espacio"></div>
                 <span class="menu-icon animate__animated animate__zoomInRight">Ver Menú  <i class="fas fa-chevron-down"></i></span>
-                <nav>
+                <script>
+                    jQuery('document').ready(function ($) {
+                        var menuBtn = $('.menu-icon'),
+                                menu = $('.nav ul');
+
+                        menuBtn.click(function () {
+                            if (menu.hasClass('show')) {
+
+                                menu.removeClass('show');
+
+                            } else {
+
+                                menu.addClass('show')
+                            }
+                        });
+                    });
+                </script>  
+                <nav class="nav">
                     <ul class = "animate__animated animate__zoomInRight animate__slow">
                         <a style="text-decoration: none; color: white;" href="Formulario.jsp" ><li id ="margenNav"><i class="far fa-smile"></i> ¡Formularios!</li></a>
                         <a style="text-decoration: none; color: white;" href="Resultado.jsp" ><li><i class="fas fa-poll"></i> Resultados</li></a>
                         <div class="espaciado"></div>
                         <a style="text-decoration: none; color: white;" href="Cuenta.jsp" ><li id ="margenNav2"><i class="fas fa-user-circle"></i> Cuenta</li></a>
                         <a style="text-decoration: none; color: white;" href="Chat.jsp" ><li><i class="fas fa-comments"></i> Foro</li></a>
-                            <%
-                                HttpSession sesion = request.getSession();
-                                String usuer, id;
+                                <%
+                                    HttpSession sesion = request.getSession();
+                                    String usuer, id;
 
-                                if (sesion.getAttribute("user") != null) {
-                                    usuer = sesion.getAttribute("user").toString();
-                                    id = sesion.getAttribute("id_usuS").toString();
-                                    int id_usu = Integer.parseInt(id);
+                                    if (sesion.getAttribute("user") != null) {
+                                        usuer = sesion.getAttribute("user").toString();
+                                        id = sesion.getAttribute("id_usuS").toString();
+                                        int id_usu = Integer.parseInt(id);
 
-                                    Usuario u = AccionesUsuario.listarDatosUser(id_usu);
+                                        Usuario u = AccionesUsuario.listarDatosUser(id_usu);
 
-                                    out.print("<a style='text-decoration: none; color: white;' href='IniciarSesion.jsp?cerrar=true'><li>Cerrar Sesion de " + u.getNom_usu() + "</li></a>");
+                                        out.print("<a style='text-decoration: none; color: white;' href='IniciarSesion.jsp?cerrar=true'><li>Cerrar Sesion de " + u.getNom_usu() + "</li></a>");
 
-                                } else {
-                                    out.print("<script>location.replace('IniciarSesion.jsp');alert('Contraseña o usuario incorrectos');</script>");
-                                }
-                            %>
+                                    } else {
+                                        out.print("<script>location.replace('IniciarSesion.jsp');alert('Contraseña o usuario incorrectos');</script>");
+                                    }
+                                %>
                     </ul>
                 </nav>
             </div>
@@ -139,104 +156,104 @@
                     </div>
                 </a>
                 <div class="container1">
-                <h4 class="info_titulo">Ansiedad</h4>
-                <p>
-                    La ansiedad es un sentimiento de miedo, temor e inquietud. Puede hacer que sude, se sienta inquieto y tenso, y tener palpitaciones. Puede ser una reacción normal al estrés. Por ejemplo, puede sentirse ansioso cuando se enfrenta a un problema difícil en el trabajo, antes de tomar un examen o antes de tomar una decisión importante. Si bien la ansiedad puede ayudar a enfrentar una situación, además de darle un impulso de energía o ayudarle a concentrarse, para las personas con trastornos de ansiedad el miedo no es temporal y puede ser abrumadora.
+                    <h4 class="info_titulo">Ansiedad</h4>
+                    <p>
+                        La ansiedad es un sentimiento de miedo, temor e inquietud. Puede hacer que sude, se sienta inquieto y tenso, y tener palpitaciones. Puede ser una reacción normal al estrés. Por ejemplo, puede sentirse ansioso cuando se enfrenta a un problema difícil en el trabajo, antes de tomar un examen o antes de tomar una decisión importante. Si bien la ansiedad puede ayudar a enfrentar una situación, además de darle un impulso de energía o ayudarle a concentrarse, para las personas con trastornos de ansiedad el miedo no es temporal y puede ser abrumadora.
                     <div id="depresion"></div>
-                </p>
-                <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
-            </div>
-            <div class="container1">
-                <h4 class="info_titulo">Depresión</h4>
-                <p>
-                    La depresión se puede describir como el hecho de sentirse triste, melancólico, infeliz, abatido o derrumbado. La mayoría de nosotros se siente de esta manera de vez en cuando durante períodos cortos.
-                    La depresión clínica es un trastorno del estado anímico en el cual los sentimientos de tristeza, pérdida, ira o frustración interfieren con la vida diaria durante un período de algunas semanas o más.
+                    </p>
+                    <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
+                </div>
+                <div class="container1">
+                    <h4 class="info_titulo">Depresión</h4>
+                    <p>
+                        La depresión se puede describir como el hecho de sentirse triste, melancólico, infeliz, abatido o derrumbado. La mayoría de nosotros se siente de esta manera de vez en cuando durante períodos cortos.
+                        La depresión clínica es un trastorno del estado anímico en el cual los sentimientos de tristeza, pérdida, ira o frustración interfieren con la vida diaria durante un período de algunas semanas o más.
                     <div id="estres"></div>
-                </p>
-                <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
-            </div>
-            <div class="container1">
-                <h4 class="info_titulo">Estrés</h4>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iste obcaecati omnis ipsa quo facere distinctio ut veniam incidunt, cupiditate ipsum commodi hic asperiores sequi qui possimus, sit minus architecto!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iste obcaecati omnis ipsa quo facere distinctio ut veniam incidunt, cupiditate ipsum commodi hic asperiores sequi qui possimus, sit minus architecto!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iste obcaecati omnis ipsa quo facere distinctio ut veniam incidunt, cupiditate ipsum commodi hic asperiores sequi qui possimus, sit minus architecto!
+                    </p>
+                    <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
+                </div>
+                <div class="container1">
+                    <h4 class="info_titulo">Estrés</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iste obcaecati omnis ipsa quo facere distinctio ut veniam incidunt, cupiditate ipsum commodi hic asperiores sequi qui possimus, sit minus architecto!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iste obcaecati omnis ipsa quo facere distinctio ut veniam incidunt, cupiditate ipsum commodi hic asperiores sequi qui possimus, sit minus architecto!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iste obcaecati omnis ipsa quo facere distinctio ut veniam incidunt, cupiditate ipsum commodi hic asperiores sequi qui possimus, sit minus architecto!
                     <div id="bipo"></div>
-                </p>
-                <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
-            </div>
-            <div class="container1">
-                <h4 class="info_titulo">Bipolaridad</h4>
-                <p>
-                    Trastorno que provoca altibajos emocionales, que van desde trastornos de depresión hasta episodios maníacos.
-                    Se desconoce la causa exacta del trastorno bipolar, pero es posible que tenga que ver con una combinación de factores genéticos y ambientales y de la alteración de las sustancias químicas y las estructuras del cerebro.
+                    </p>
+                    <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
+                </div>
+                <div class="container1">
+                    <h4 class="info_titulo">Bipolaridad</h4>
+                    <p>
+                        Trastorno que provoca altibajos emocionales, que van desde trastornos de depresión hasta episodios maníacos.
+                        Se desconoce la causa exacta del trastorno bipolar, pero es posible que tenga que ver con una combinación de factores genéticos y ambientales y de la alteración de las sustancias químicas y las estructuras del cerebro.
                     <div id="TOC"></div>
-                </p>
-                <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
-            </div>
-            <div class="container1">
-                <h4 class="info_titulo">Transtorno Obsesivo Compulsivo</h4>
-                <p>
-                    Pensamientos excesivos (obsesiones) que llevan a comportamientos repetitivos (compulsiones).
-                    El trastorno obsesivo compulsivo se caracteriza por los pensamientos irracionales y los temores (obsesiones) que provocan comportamientos compulsivos.                    
+                    </p>
+                    <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
+                </div>
+                <div class="container1">
+                    <h4 class="info_titulo">Transtorno Obsesivo Compulsivo</h4>
+                    <p>
+                        Pensamientos excesivos (obsesiones) que llevan a comportamientos repetitivos (compulsiones).
+                        El trastorno obsesivo compulsivo se caracteriza por los pensamientos irracionales y los temores (obsesiones) que provocan comportamientos compulsivos.                    
                     <div id="TCA"></div>
-                </p>
-                <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
-            </div>
-            <div class="container1">
-                <h4 class="info_titulo">Transtorno de Conducta Alimentaria</h4>
-                <p>
-                    Los trastornos de la conducta alimentaria son problemas relacionados con la forma en que comen las personas. Pueden ser muy perjudiciales para la salud de la persona, sus emociones y sus relaciones personales. Hay varios tipos distintos de trastornos de la conducta alimentaria.
+                    </p>
+                    <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
+                </div>
+                <div class="container1">
+                    <h4 class="info_titulo">Transtorno de Conducta Alimentaria</h4>
+                    <p>
+                        Los trastornos de la conducta alimentaria son problemas relacionados con la forma en que comen las personas. Pueden ser muy perjudiciales para la salud de la persona, sus emociones y sus relaciones personales. Hay varios tipos distintos de trastornos de la conducta alimentaria.
                     <div id="TC"></div>
-                </p>
-                <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
-            </div>
-            <div class="container1">
-                <h4 class="info_titulo">Transtorno de Conducta</h4>
-                <p>
-                    Es una serie de problemas conductuales y emocionales que se presentan en niños y adolescentes. Los problemas pueden involucrar comportamiento desafiante o impulsivo, consumo de drogas o actividad delictiva.
+                    </p>
+                    <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
+                </div>
+                <div class="container1">
+                    <h4 class="info_titulo">Transtorno de Conducta</h4>
+                    <p>
+                        Es una serie de problemas conductuales y emocionales que se presentan en niños y adolescentes. Los problemas pueden involucrar comportamiento desafiante o impulsivo, consumo de drogas o actividad delictiva.
                     <div id="Dislexia"></div>
-                </p>
-                <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
-            </div>
-            <div class="container1">
-                <h4 class="info_titulo">Dislexia</h4>
-                <p>
-                    La dislexia se presenta en niños con niveles normales de inteligencia y visión.
-                    Algunos de los síntomas son el retraso para aprender a hablar y leer, y la dificultad para aprender nuevas palabras.
-                    La mayoría de los niños con dislexia puede salir adelante en la escuela con la ayuda de tutores o programas de educación especializada.                    
+                    </p>
+                    <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
+                </div>
+                <div class="container1">
+                    <h4 class="info_titulo">Dislexia</h4>
+                    <p>
+                        La dislexia se presenta en niños con niveles normales de inteligencia y visión.
+                        Algunos de los síntomas son el retraso para aprender a hablar y leer, y la dificultad para aprender nuevas palabras.
+                        La mayoría de los niños con dislexia puede salir adelante en la escuela con la ayuda de tutores o programas de educación especializada.                    
                     <div id="Autismo"></div>
-                </p>
-                <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
-            </div>
-            <div class="container1">
-                <h4 class="info_titulo">Autismo</h4>
-                <p>
-                    El trastorno del espectro autista es una afección relacionada con el desarrollo del cerebro que afecta la manera en la que una persona percibe y socializa con otras personas, lo que causa problemas en la interacción social y la comunicación.
+                    </p>
+                    <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
+                </div>
+                <div class="container1">
+                    <h4 class="info_titulo">Autismo</h4>
+                    <p>
+                        El trastorno del espectro autista es una afección relacionada con el desarrollo del cerebro que afecta la manera en la que una persona percibe y socializa con otras personas, lo que causa problemas en la interacción social y la comunicación.
                     <div id="TDA"></div>
-                </p>
-                <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
-            </div>
-            <div class="container1">
-                <h4 class="info_titulo">Transtorno de Déficit de Atención</h4>
-                <p>
-                    Trastorno crónico caracterizado por la dificultad para prestar atención, la hiperactividad y la impulsividad.
-                    El ADHD suele comenzar en la niñez y puede persistir hasta la edad adulta. Puede ocasionar baja autoestima, problemas en las relaciones y dificultades en la escuela o el trabajo.
-                    Los síntomas incluyen hiperactividad y atención limitada.
-                    El tratamiento incluye medicamentos y terapia conversacional.
+                    </p>
+                    <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
+                </div>
+                <div class="container1">
+                    <h4 class="info_titulo">Transtorno de Déficit de Atención</h4>
+                    <p>
+                        Trastorno crónico caracterizado por la dificultad para prestar atención, la hiperactividad y la impulsividad.
+                        El ADHD suele comenzar en la niñez y puede persistir hasta la edad adulta. Puede ocasionar baja autoestima, problemas en las relaciones y dificultades en la escuela o el trabajo.
+                        Los síntomas incluyen hiperactividad y atención limitada.
+                        El tratamiento incluye medicamentos y terapia conversacional.
                     <div id="SA"></div>
-                </p>
-                <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
-            </div>
-            <div class="container1">
-                <h4 class="info_titulo">Síndrome de Asperger</h4>
-                <p>
-                    El síndrome de Asperger es un trastorno del espectro autista que suele ser menos grave.
-                    Las personas que padecen este trastorno pueden tener un comportamiento social inusual y un interés profundo en algunos temas específicos.
-                    La terapia conductual y de formación en la comunicación permite a los pacientes con trastornos del aprendizaje socializar mejor.
-                </p>
-                <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
-            </div>
+                    </p>
+                    <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
+                </div>
+                <div class="container1">
+                    <h4 class="info_titulo">Síndrome de Asperger</h4>
+                    <p>
+                        El síndrome de Asperger es un trastorno del espectro autista que suele ser menos grave.
+                        Las personas que padecen este trastorno pueden tener un comportamiento social inusual y un interés profundo en algunos temas específicos.
+                        La terapia conductual y de formación en la comunicación permite a los pacientes con trastornos del aprendizaje socializar mejor.
+                    </p>
+                    <a href = "#arriba" class="boton">Regresar <i class="far fa-arrow-alt-circle-up"></i></a>
+                </div>
             </main>
         </section>
         <footer>
@@ -265,6 +282,7 @@
                     <li>Salazar Valdez<br>Ángel Yahir</li>
                 </ul>
             </div>
-        </footer>
+        </footer>          
+
     </body>
 </html>

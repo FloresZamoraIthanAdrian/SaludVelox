@@ -19,10 +19,11 @@ public class CambiarContrasena extends HttpServlet {
 
             HttpSession sesion = request.getSession();
             int id = (int) sesion.getAttribute("id_usuS");
+            System.out.println(id);
             
             String correo, pass, oldPass;
             
-            correo = request.getParameter("CorreoElectrónico");
+            correo = request.getParameter("correoRec");
             oldPass = request.getParameter("antiguaContrasena");
             pass = request.getParameter("nuevaContrasena");
             
@@ -38,7 +39,8 @@ public class CambiarContrasena extends HttpServlet {
             if(state > 0){
                 response.sendRedirect("Cuenta.jsp");
             }else{
-                response.sendRedirect("Error404.html");
+                out.print("<script>alert('La antigua contraseña es incorrecta');</script>");
+                response.sendRedirect("Olvidar.jsp");
             }
             
         }

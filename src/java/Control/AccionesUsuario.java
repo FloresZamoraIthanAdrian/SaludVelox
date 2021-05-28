@@ -112,13 +112,14 @@ public class AccionesUsuario {
             
             Connection con = Conexion.getConnection();
             
-            String q = "update usuario set pass_usu = ? where correo = ? and pass_usu = ?";
+            String q = "update usuario set pass_usu = ? where correo = ? and pass_usu = ? and id_usu = ?;";
             
             PreparedStatement ps = con.prepareStatement(q);
             
-            ps.setString(1, u.getPass_usu());
+            ps.setString(1, u.getPass_usu_c());
             ps.setString(2, u.getCorreo());
-            ps.setString(3, u.getPass_usu_c());
+            ps.setString(3, u.getPass_usu());
+            ps.setInt(4, u.getId());
             
             state = ps.executeUpdate();
             System.out.println("Se actualizo la contrasena");

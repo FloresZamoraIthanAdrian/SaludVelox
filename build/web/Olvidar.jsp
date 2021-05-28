@@ -17,20 +17,26 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
     <body>
-        
+
         <header>
             <div class = "container logo-nav-container">
                 <p class = "logo animate__animated animate__zoomInLeft"><i class="fas fa-key"></i> Cambiar <br class = 'espacioV'>Contraseña</p>
                 <div class = "espacio"></div>
+                <nav class="nav">
+                    <ul class = "animate__animated animate__zoomInRight animate__slow">
+                        <div class="espaciado"></div>
+                        <a style="text-decoration: none; color: white;" href="Cuenta.jsp" ><li id ="margenNav2"><i class="fas fa-user-circle"></i> Cuenta</li></a>
+                    </ul>
+                </nav>
             </div>
         </header>
         <section>
-            
+
             <main>
                 <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
 
                 <div class="formulario">
-                    
+
                     <%
                         HttpSession sesion = request.getSession();
                         String usuer, id;
@@ -46,8 +52,8 @@
                             out.print("<script>location.replace('IniciarSesion.jsp');</script>");
                         }
                     %>
-                    
-                    <form action="" onsubmit="return cambiarContrasena(this)" name="cambiarContrasenaForm">
+
+                    <form action="CambiarContrasena" onsubmit="return cambiarContrasena(this)" name="cambiarContrasenaForm">
                         <h4 class="formulario__titulo animate__animated animate__rubberBand animate__infinite animate__slower">Complete los siguientes campos para cambiar la contraseña.</h4>
                         <p class="centro">Digite el correo que registro al crear la cuenta.</p>
                         <input type="text" name = "correoRec" class="formulario__input" placeholder="CorreoElectrónico">
@@ -59,9 +65,9 @@
                         <input type="submit" value="Cambiar Contraseña" onclick="" class = "boton">
                     </form>
             </main>
-                    
+
         </section>
-                    
+
         <footer>
             <h3>Redes Sociales</h3>
             <ul>
@@ -93,6 +99,24 @@
         <script src="./Scripts/Basicos.js"></script>
         <script src="./Scripts/ValidacionFormularios.js"></script>
         <script src='./Scripts/ValidacionTeclado.js'></script>
+
+        <script>
+                    jQuery('document').ready(function ($) {
+                        var menuBtn = $('.menu-icon'),
+                                menu = $('.nav ul');
+
+                        menuBtn.click(function () {
+                            if (menu.hasClass('show')) {
+
+                                menu.removeClass('show');
+
+                            } else {
+
+                                menu.addClass('show')
+                            }
+                        });
+                    });
+        </script>
 
     </body>
 </html>

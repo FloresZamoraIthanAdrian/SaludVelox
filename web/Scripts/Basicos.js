@@ -1,6 +1,6 @@
 jQuery('document').ready(function($){
     var menuBtn = $('.menu-icon'),
-        menu = $('nav ul');
+        menu = $('.nav ul');
 
     menuBtn.click(function(){
         if(menu.hasClass('show')){
