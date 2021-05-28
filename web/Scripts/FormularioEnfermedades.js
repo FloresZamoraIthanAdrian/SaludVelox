@@ -1,13 +1,17 @@
 console.log('Deteccion de enfermedades/Transtornos Mentales');
 
-var formularioEnfermedades = document.getElementById('formE').elements;
-console.log(formularioEnfermedades.length);
-
-function deteccion(formEN) {
-    //formularioEnfermedades.forEach(element => console.log(element));
-    for (var i = 0; i < formularioEnfermedades.length; i++) {
-        if (formularioEnfermedades[i].type == "radio" && formularioEnfermedades[i].checked){
-                alert(formularioEnfermedades.value)
+function procesarEnfermedades() {
+    var cont = 0;
+    var respuestas = [];
+    formulario = document.getElementById('formE').elements;
+    
+    for (var i = 0; i < formulario.length; i++) {
+        if (formulario[i].type == "radio" && formulario[i].checked) {
+            respuestas.push(formulario[i].value);
+            cont++;
         }
     }
+    
+    console.log(cont);
+    console.log(respuestas);
 }
