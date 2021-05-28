@@ -52,7 +52,7 @@
         <section>
         <main class="margen_superior">
             <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
-            <form action="" class="formulario" onsubmit="return deteccion(this)" id="f ormE value="f ormE" name="formEN">
+            <form action="" class="formulario" onsubmit="return deteccion(this)" id="formE" value="formE" name="formEN">
                 <ol class= "formulario_cuadro">
     <!--___________________________________________________________________Depresión_____________________________________________________________________-->
                     <li class="formulario_pregunta">Durante las últimas 2 semanas ha tenido poco interés en hacer las cosas</li>
