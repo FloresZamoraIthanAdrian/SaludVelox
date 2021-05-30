@@ -13,6 +13,16 @@
         <link rel = "stylesheet" type = 'text/css' href = './Styles/Styles.css'>
         <script src="https://kit.fontawesome.com/9fb0a1aa63.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <style>
+            #map {
+                height: 100%;
+            }
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -49,39 +59,17 @@
         </header>
         <section>
             <main>
+
                 <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
                 <div class= "container1">
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis delectus eum asperiores blanditiis adipisci voluptatibus quia laudantium, odio, temporibus sed dolores earum! Tempore voluptatum neque exercitationem quidem enim qui cum!
+                    <div id="map"></div>
 
+                    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+                    <script
+                        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+                        async
+                    ></script>
                     </p>
                 </div>
             </main>

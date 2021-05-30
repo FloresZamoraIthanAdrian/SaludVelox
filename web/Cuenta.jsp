@@ -12,6 +12,7 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel = "stylesheet" type = 'text/css' href = './Styles/Styles.css'>
+        <link rel = "stylesheet" type = 'text/css' href = './Styles/Formulario.css'>
         <script src="https://kit.fontawesome.com/9fb0a1aa63.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
@@ -52,30 +53,37 @@
                 <div class= "container1">
 
                     <p class = "logo animate__animated animate__zoomInLeft"><i class="fas fa-user-circle"></i><%= u.getNom_usu()%></p>
-                    
+
                     <%
                         Usuario up = AccionesUsuario.listarDatosUsuario(id_usu);
                     %>
-                    
-                    <p>
+
+                    <p style="font-size: 22px; padding-left: 20px;">
                         Nombre: <br>
-                        <%= up.getNombre() %><br><br>
+                        <%= up.getNombre()%><br><br>
                         Apellido Paterno: <br>
-                        <%= up.getAppat() %><br><br>
+                        <%= up.getAppat()%><br><br>
                         Apellido Materno: <br>
-                        <%= up.getApmat() %><br><br>
-                        Correo: <br>
-                        <%= up.getCorreo() %><br><br>
-                        Edad: <br>
-                        <%= up.getEdad() %><br><br>
-                        Semestre: <br>
-                        <%= up.getSemestre() %><br><br>
-                        Genero: <br>
-                        <%= up.getGenero() %><br><br>
-                        Nombre de usuario: <br>
-                        <%= u.getNom_usu() %><br><br>
+                        <%= up.getApmat()%><br><br>
                     </p>
-                    
+                    <form action="editarUsuario">
+                        <input style="margin-top: 0px; font-size: 22px; border: none;" id="editar" 
+                               value="<%= up.getCorreo()%>" type="email" name = "CorreoElectrónico" class="formulario__input" placeholder="Correo Electrónico">
+                        <input style="margin-top: 0px; font-size: 22px; border: none;" 
+                               value="<%= u.getNom_usu()%>"  type="text" name = "Usuario" class="formulario__input" placeholder="Nombre de Usuario">
+                        <input style="margin-top: 0px; font-size: 22px;border: none;" 
+                               value="<%= up.getEdad()%>" type="number" name="edad" class="formulario__input" placeholder="Edad" min="14" max="99">
+                        <input style="margin-top: 0px; font-size: 22px; border: none;" 
+                               value="<%= up.getSemestre()%>" type="number" name="semestre" class="formulario__input" placeholder="Semestre actual" min="1" max="6">
+
+                        <select name="genero" class="formulario__input">
+                            <option value="Maculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="none">Prefiero no decirlo</option>
+                        </select>
+                    </form>
+                    <button onclick="checkReadonly()" class="boton2 margen_boton">Editar datos</button>
+                    <!--Clave api: AIzaSyBhUcyT-3XTOqyrImnE4KjBvL25bZWsYAQ -->
                     <a class="boton" href="Olvidar.jsp"><i class="fas fa-key"></i> Cambiar mi Contraseña</a>
                 </div>
             </main>
@@ -114,25 +122,25 @@
                 </ul>
             </div>
         </footer>
-        
+
         <script src="./Scripts/Basicos.js"></script>
         <script>
-            jQuery('document').ready(function ($) {
-                var menuBtn = $('.menu-icon'),
-                        menu = $('.nav ul');
+                    jQuery('document').ready(function ($) {
+                        var menuBtn = $('.menu-icon'),
+                                menu = $('.nav ul');
 
-                menuBtn.click(function () {
-                    if (menu.hasClass('show')) {
+                        menuBtn.click(function () {
+                            if (menu.hasClass('show')) {
 
-                        menu.removeClass('show');
+                                menu.removeClass('show');
 
-                    } else {
+                            } else {
 
-                        menu.addClass('show')
-                    }
-                });
-            });
+                                menu.addClass('show')
+                            }
+                        });
+                    });
         </script>
-        
+
     </body>
 </html>
