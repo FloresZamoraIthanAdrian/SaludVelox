@@ -65,24 +65,43 @@
                         <%= up.getAppat()%><br><br>
                         Apellido Materno: <br>
                         <%= up.getApmat()%><br><br>
+                        Genero: <br><br>
+                        <%= up.getGenero() %>
                     </p>
                     <form action="editarUsuario">
-                        <input style="margin-top: 0px; font-size: 22px; border: none;" id="editar" 
-                               value="<%= up.getCorreo()%>" type="email" name = "CorreoElectrónico" class="formulario__input" placeholder="Correo Electrónico">
-                        <input style="margin-top: 0px; font-size: 22px; border: none;" 
-                               value="<%= u.getNom_usu()%>"  type="text" name = "Usuario" class="formulario__input" placeholder="Nombre de Usuario">
-                        <input style="margin-top: 0px; font-size: 22px;border: none;" 
-                               value="<%= up.getEdad()%>" type="number" name="edad" class="formulario__input" placeholder="Edad" min="14" max="99">
-                        <input style="margin-top: 0px; font-size: 22px; border: none;" 
-                               value="<%= up.getSemestre()%>" type="number" name="semestre" class="formulario__input" placeholder="Semestre actual" min="1" max="6">
-
-                        <select name="genero" class="formulario__input">
+                        
+                        <input type="hidden" readonly value="<%= id_usu %>" name="id_usuForm">
+                        
+                        <input style="margin-top: 0px; font-size: 22px; border: none; border-bottom: 2px solid #9f0000;" 
+                               value="<%= up.getCorreo()%>" type="email" 
+                               name = "CorreoElectrónico" class="formulario__input" placeholder="Correo Electrónico">
+                        
+                        <input style="margin-top: 0px; font-size: 22px; border: none; border-bottom: 2px solid #9f0000;" 
+                               value="<%= u.getNom_usu()%>"  type="text" name = "Usuario" 
+                               class="formulario__input" placeholder="Nombre de Usuario">
+                        
+                        <input style="margin-top: 0px; font-size: 22px;border: none; border-bottom: 2px solid #9f0000;" 
+                               value="<%= up.getEdad()%>" type="number" name="edad" class="formulario__input" 
+                               placeholder="Edad" min="14" max="99">
+                        
+                        <input style="margin-top: 0px; font-size: 22px; border: none; border-bottom: 2px solid #9f0000;" 
+                               value="<%= up.getSemestre()%>" type="number" name="semestre" class="formulario__input" 
+                               placeholder="Semestre actual" min="1" max="6">
+                        
+                        <select style="margin-top: 0px; font-size: 22px; border: none; border-bottom: 2px solid #9f0000;" 
+                                name="genero" class="formulario__input">
                             <option value="Maculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
-                            <option value="none">Prefiero no decirlo</option>
+                            <option value="Prefiero no decirlo">Prefiero no decirlo</option>
                         </select>
+                        
+                        <input style="margin-top: 0px; font-size: 22px; border: none; border-bottom: 2px solid #9f0000;" 
+                               type="password" placeholder="Para editar los datos debes resgistrar la contraseña"
+                               name="passwd" class="formulario__input">
+                        
+                        <input type="submit" class="boton" value="Editar Datos">
+                        
                     </form>
-                    <button onclick="checkReadonly()" class="boton2 margen_boton">Editar datos</button>
                     <!--Clave api: AIzaSyBhUcyT-3XTOqyrImnE4KjBvL25bZWsYAQ -->
                     <a class="boton" href="Olvidar.jsp"><i class="fas fa-key"></i> Cambiar mi Contraseña</a>
                 </div>

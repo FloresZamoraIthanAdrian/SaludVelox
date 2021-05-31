@@ -12,6 +12,10 @@
         <servlet-name>CambiarContrasena</servlet-name>
         <servlet-class>Servlets.CambiarContrasena</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>editarUsuario</servlet-name>
+        <servlet-class>Servlets.editarUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CrearCuenta</servlet-name>
         <url-pattern>/CrearCuenta</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>CambiarContrasena</servlet-name>
         <url-pattern>/CambiarContrasena</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>editarUsuario</servlet-name>
+        <url-pattern>/editarUsuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

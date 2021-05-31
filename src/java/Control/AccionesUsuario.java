@@ -2,8 +2,6 @@ package Control;
 
 import Usuario.Usuario;
 import java.sql.*;
-import java.util.*;
-import javax.servlet.http.HttpSession;
 
 public class AccionesUsuario {
     
@@ -129,6 +127,35 @@ public class AccionesUsuario {
             System.out.println("Error a cambiar la contrasena del usuario");
             System.out.println(ed.getMessage());
         }
+        return state;
+    }
+    
+    public static int editarDatosUsuario(Usuario u){
+        
+        int state = 0;
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "{call editarUsuarioXD(?, ?, ?, ?, ?, ?, ?)}";
+            
+            CallableStatement proc = con.prepareCall(q);
+            proc.setInt(1, u.getId());
+            proc.setString(2, u.getPass_usu());
+            proc.setInt(3, u.getEdad());
+            proc.setInt(4, u.getSemestre());
+            proc.setString(5, u.getGenero());
+            proc.setString(6, u.getCorreo());
+            proc.setString(7, u.getNom_usu());
+            
+            state = proc.executeUpdate();
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Error al editar los datos del usuario");
+            System.out.println(ed.getMessage());
+        }
+        
         return state;
     }
     
