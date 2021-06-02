@@ -22,7 +22,7 @@ public class CrearCuenta extends HttpServlet {
             nombre = request.getParameter("Nombre");
             appat = request.getParameter("appat");
             apmat = request.getParameter("apmat");
-            correo = request.getParameter("CorreoElectrónico");
+            correo = request.getParameter("Correo");
             genero = request.getParameter("genero");
             nom_usu = request.getParameter("Usuario");
             pass_usu = request.getParameter("VerificarContrasena");

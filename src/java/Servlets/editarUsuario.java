@@ -41,7 +41,7 @@ public class editarUsuario extends HttpServlet {
             if(state > 0){
                 response.sendRedirect("Cuenta.jsp");
             }else{
-                response.sendRedirect("Error404.html");
+                response.sendRedirect("Cuenta.jsp");
             }
             
         }

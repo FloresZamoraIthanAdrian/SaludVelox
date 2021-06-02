@@ -456,16 +456,6 @@ textarea{
         border-bottom: 1px solid silver;
     }
     /*------------------------------------------------------------------------*/
-    /*Chat.html*/
-    textarea{
-        width: 100%;
-        right: 0%;
-    }
-    .input__submit{
-        width: 100%;
-        right: 0%;
-    }
-    /*------------------------------------------------------------------------*/
     /*Espacios*/
     .espacioV{
         display: block;

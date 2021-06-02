@@ -66,41 +66,41 @@
                         Apellido Materno: <br>
                         <%= up.getApmat()%><br><br>
                         Genero: <br><br>
-                        <%= up.getGenero() %>
+                        <%= up.getGenero()%>
                     </p>
-                    <form action="editarUsuario">
-                        
-                        <input type="hidden" readonly value="<%= id_usu %>" name="id_usuForm">
-                        
+                    <form action="editarUsuario" method="post" id="editarDatos">
+
+                        <input type="hidden" readonly value="<%= id_usu%>" name="id_usuForm">
+
                         <input style="margin-top: 0px; font-size: 22px; border: none; border-bottom: 2px solid #9f0000;" 
                                value="<%= up.getCorreo()%>" type="email" 
                                name = "CorreoElectrónico" class="formulario__input" placeholder="Correo Electrónico">
-                        
+
                         <input style="margin-top: 0px; font-size: 22px; border: none; border-bottom: 2px solid #9f0000;" 
                                value="<%= u.getNom_usu()%>"  type="text" name = "Usuario" 
                                class="formulario__input" placeholder="Nombre de Usuario">
-                        
+
                         <input style="margin-top: 0px; font-size: 22px;border: none; border-bottom: 2px solid #9f0000;" 
                                value="<%= up.getEdad()%>" type="number" name="edad" class="formulario__input" 
                                placeholder="Edad" min="14" max="99">
-                        
+
                         <input style="margin-top: 0px; font-size: 22px; border: none; border-bottom: 2px solid #9f0000;" 
                                value="<%= up.getSemestre()%>" type="number" name="semestre" class="formulario__input" 
                                placeholder="Semestre actual" min="1" max="6">
-                        
+
                         <select style="margin-top: 0px; font-size: 22px; border: none; border-bottom: 2px solid #9f0000;" 
                                 name="genero" class="formulario__input">
                             <option value="Maculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Prefiero no decirlo">Prefiero no decirlo</option>
                         </select>
-                        
+
                         <input style="margin-top: 0px; font-size: 22px; border: none; border-bottom: 2px solid #9f0000;" 
                                type="password" placeholder="Para editar los datos debes resgistrar la contraseña"
                                name="passwd" class="formulario__input">
-                        
+
                         <input type="submit" class="boton" value="Editar Datos">
-                        
+
                     </form>
                     <!--Clave api: AIzaSyBhUcyT-3XTOqyrImnE4KjBvL25bZWsYAQ -->
                     <a class="boton" href="Olvidar.jsp"><i class="fas fa-key"></i> Cambiar mi Contraseña</a>
@@ -142,23 +142,92 @@
             </div>
         </footer>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
         <script src="./Scripts/Basicos.js"></script>
+
         <script>
-                    jQuery('document').ready(function ($) {
-                        var menuBtn = $('.menu-icon'),
-                                menu = $('.nav ul');
-
-                        menuBtn.click(function () {
-                            if (menu.hasClass('show')) {
-
-                                menu.removeClass('show');
-
-                            } else {
-
-                                menu.addClass('show')
+                    $(document).ready(function () {
+                        $("#editarDatos").validate({
+                            rules: {
+                                edad: {
+                                    required: true,
+                                    number: true,
+                                    min: 14,
+                                    max: 99
+                                },
+                                semestre: {
+                                    required: true,
+                                    numbrer: true,
+                                    min: 1,
+                                    max: 6,
+                                    minlength: 1
+                                },
+                                CorreoElectrónico: {
+                                    required: true,
+                                    email: true
+                                },
+                                Usuario: {
+                                    required: true,
+                                    minlength: 3,
+                                    maxlength: 30
+                                },
+                                passwd: {
+                                    required: true,
+                                    minlength: 3,
+                                    maxlength: 20
+                                }
+                            },
+                            messages: {
+                                edad: {
+                                    required: "Por favor ingresa la edad",
+                                    number: "Ingresa solo números por favor",
+                                    min: "Debes ser mayor de 14 años",
+                                    max: "Debes ser menor de 99 años"
+                                },
+                                semestre: {
+                                    required: "Por favor ingresa el semestre",
+                                    number: "Ingresa solo números por favor",
+                                    min: "Debes ser mayor a 1",
+                                    max: "Debes ser menor a 6",
+                                    minlength: "Los semestres solo son de un número"
+                                },
+                                CorreoElectrónico: {
+                                    required: "Por favor ingresa el correo",
+                                    email: "Ingresa un correo con formato valido"
+                                },
+                                Usuario: {
+                                    required: "Por favor ingresa el usuario",
+                                    minlength: "El usuario debe tener más de 3 caracteres ",
+                                    maxlength: "El usuario debe tener menos de 30 caracteres"
+                                },
+                                passwd: {
+                                    required: "Para editar datos se requiere la contraseña",
+                                    minlength: "La contraseña debe tener más de 3 caracteres ",
+                                    maxlength: "La contraseña debe tener menos de 10 caracteres"
+                                }
                             }
                         });
                     });
+
+        </script>
+
+        <script>
+            jQuery('document').ready(function ($) {
+                var menuBtn = $('.menu-icon'),
+                        menu = $('.nav ul');
+
+                menuBtn.click(function () {
+                    if (menu.hasClass('show')) {
+
+                        menu.removeClass('show');
+
+                    } else {
+
+                        menu.addClass('show')
+                    }
+                });
+            });
         </script>
 
     </body>

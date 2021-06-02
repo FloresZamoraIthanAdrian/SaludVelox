@@ -29,13 +29,13 @@
 
         <section>
             <main>
-                <form action="CrearCuenta" name = "formularioRegistro" onsubmit="return validarRegistro(this)" class="formulario">
+                <form action="CrearCuenta" id="basic-form" name = "formularioRegistro" method="post" class="formulario">
                     <h4 class="formulario__titulo">Ingrese sus Datos</h4>
-                    <input onkeypress="return validarLetras(event)" type="text" name = "Nombre" class="formulario__input" placeholder="Nombre(s)">
-                    <input onkeypress="return validarLetras(event)" type="text" name = "appat" class="formulario__input" placeholder="Apellido paterno">
-                    <input onkeypress="return validarLetras(event)" type="text" name = "apmat" class="formulario__input" placeholder="Apellido materno">
-                    <input onkeypress="return validarNumeros(event)" type="number" name="edad" class="formulario__input" placeholder="Edad" min="14" max="99">
-                    <input onkeypress="return validarNumeros(event)" type="number" name="semestre" class="formulario__input" placeholder="Semestre actual" min="1" max="6">
+                    <input name = "Nombre" class="formulario__input" placeholder="Nombre(s)">
+                    <input name = "appat" class="formulario__input" placeholder="Apellido paterno">
+                    <input name = "apmat" class="formulario__input" placeholder="Apellido materno">
+                    <input type="number" name="edad" class="formulario__input" placeholder="Edad" min="14" max="99">
+                    <input name="semestre" class="formulario__input" placeholder="Semestre actual" min="1" max="6">
 
                     <select name="genero" class="formulario__input">
                         <option value="Maculino">Masculino</option>
@@ -43,12 +43,12 @@
                         <option value="none">Prefiero no decirlo</option>
                     </select>
 
-                    <input type="email" name = "CorreoElectrónico" class="formulario__input" placeholder="Correo Electrónico">
-                    <input onkeypress="return validarAlfaNumericos(event)" type="text" name = "Usuario" class="formulario__input" placeholder="Nombre de Usuario">
-                    <input onkeypress="return validarAlfaNumericos(event)" type="password" name = "Contraseña" class="formulario__input" placeholder="Contraseña (6 caracteres mínimo)">
-                    <input onkeypress="return validarAlfaNumericos(event)" type="password" name = "VerificarContrasena" class="formulario__input" placeholder="Verificar Contraseña">
+                    <input type="email" name = "Correo" class="formulario__input" placeholder="Correo Electrónico">
+                    <input name = "Usuario" class="formulario__input" placeholder="Nombre de Usuario">
+                    <input type="password" name = "Contraseña" class="formulario__input" placeholder="Contraseña (6 caracteres mínimo)">
+                    <input type="password" name = "VerificarContrasena" class="formulario__input" placeholder="Verificar Contraseña">
                     <p class = "centro">Estoy deacuerdo con <a href="javascript:abrir()">Términos y Condiciones <i class="far fa-check-square"></i></a></p>
-                    <input type="submit" value="Registrarse" onclick="javascript:iniciarsesion()" class = "olvidar">
+                    <input type="submit" value="Registrarse" class = "olvidar">
                 </form>
                 <div class="ventana" id = "vent">
                     <p class="centro">Términos y Condiciones
@@ -91,26 +91,133 @@
             </div>
         </footer>
 
-        <script src="./Scripts/Basicos.js"></script>
-        <script src="./Scripts/ValidacionTeclado.js"></script>
-        <script src="./Scripts/ValidacionFormularios.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
         <script>
-                        jQuery('document').ready(function ($) {
-                            var menuBtn = $('.menu-icon'),
-                                    menu = $('.nav ul');
-
-                            menuBtn.click(function () {
-                                if (menu.hasClass('show')) {
-
-                                    menu.removeClass('show');
-
-                                } else {
-
-                                    menu.addClass('show')
+                        $(document).ready(function () {
+                            $("#basic-form").validate({
+                                rules: {
+                                    Nombre: {
+                                        required: true,
+                                        minlength: 3,
+                                        maxlength: 30
+                                    },
+                                    appat: {
+                                        required: true,
+                                        minlength: 3,
+                                        maxlength: 30
+                                    },
+                                    apmat: {
+                                        required: true,
+                                        minlength: 3,
+                                        maxlength: 30
+                                    },
+                                    edad: {
+                                        required: true,
+                                        number: true,
+                                        min: 14,
+                                        max: 99
+                                    },
+                                    semestre: {
+                                        required: true,
+                                        numbrer: true,
+                                        min: 1,
+                                        max: 6,
+                                        minlength: 1
+                                    },
+                                    Correo: {
+                                        required: true,
+                                        email: true
+                                    },
+                                    Usuario: {
+                                        required: true,
+                                        minlength: 3,
+                                        maxlength: 30
+                                    },
+                                    Contraseña: {
+                                        required: true,
+                                        minlength: 3,
+                                        maxlength: 20
+                                    },
+                                    VerificarContrasena: {
+                                        equalTo: "#Contraseña",
+                                        required: true,
+                                        minlength: 3,
+                                        maxlength: 20
+                                    }
+                                },
+                                messages: {
+                                    Nombre: {
+                                        required: "Por favor ingresa el nombre",
+                                        minlength: "El nombre debe tener más de 3 caracteres ",
+                                        maxlength: "El nombre debe tener menos de 30 caracteres"
+                                    },
+                                    appat: {
+                                        required: "Ingresa el Apellido Paterno",
+                                        minlength: "El apellido paterno debe tener más de 3 caracteres ",
+                                        maxlength: "El apellido paterno debe tener menos de 30 caracteres"
+                                    },
+                                    apmat: {
+                                        required: "Ingresa el Apellido Materno",
+                                        minlength: "El apellido materno debe tener más de 3 caracteres ",
+                                        maxlength: "El apellido materno debe tener menos de 30 caracteres"
+                                    },
+                                    edad: {
+                                        required: "Por favor ingresa la edad",
+                                        number: "Ingresa solo números por favor",
+                                        min: "Debes ser mayor de 14 años",
+                                        max: "Debes ser menor de 99 años"
+                                    },
+                                    semestre: {
+                                        required: "Por favor ingresa el semestre",
+                                        number: "Ingresa solo números por favor",
+                                        min: "Debes ser mayor a 1",
+                                        max: "Debes ser menor a 6",
+                                        minlength: "Los semestres solo son de un número"
+                                    },
+                                    Correo: {
+                                        required: "Por favor ingresa el correo",
+                                        email: "Ingresa un correo con formato valido"
+                                    },
+                                    Usuario: {
+                                        required: "Por favor ingresa el usuario",
+                                        minlength: "El usuario debe tener más de 3 caracteres ",
+                                        maxlength: "El usuario debe tener menos de 30 caracteres"
+                                    },
+                                    Contraseña: {
+                                        required: "Por favor ingresa la contraseña",
+                                        minlength: "La contraseña debe tener más de 3 caracteres ",
+                                        maxlength: "La contraseña debe tener menos de 10 caracteres"
+                                    },
+                                    VerificarContrasena: {
+                                        equalTo: "La contraseña debe ser igual a la anterior",
+                                        minlength: "La contraseña debe tener más de 3 caracteres ",
+                                        maxlength: "La contraseña debe tener menos de 10 caracteres",
+                                        required: 'Este campo es requerido'
+                                    }
                                 }
                             });
                         });
+
+        </script>
+
+        <script>
+            jQuery('document').ready(function ($) {
+                var menuBtn = $('.menu-icon'),
+                        menu = $('.nav ul');
+
+                menuBtn.click(function () {
+                    if (menu.hasClass('show')) {
+
+                        menu.removeClass('show');
+
+                    } else {
+
+                        menu.addClass('show')
+                    }
+                });
+            });
         </script>
 
     </body>

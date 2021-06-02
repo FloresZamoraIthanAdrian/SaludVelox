@@ -52,7 +52,7 @@
                         <a style="text-decoration: none; color: white;" href="Resultado.jsp" ><li><i class="fas fa-poll"></i> Resultados</li></a>
                         <div class="espaciado"></div>
                         <a style="text-decoration: none; color: white;" href="Cuenta.jsp" ><li id ="margenNav2"><i class="fas fa-user-circle"></i> Cuenta</li></a>
-                        <a style="text-decoration: none; color: white;" href="Chat.jsp" ><li><i class="fas fa-comments"></i> Foro</li></a>
+                        <a style="text-decoration: none; color: white;" href="https://chat-velox.herokuapp.com/" ><li><i class="fas fa-comments"></i> Foro</li></a>
                                 <%
                                     HttpSession sesion = request.getSession();
                                     String usuer, id;
