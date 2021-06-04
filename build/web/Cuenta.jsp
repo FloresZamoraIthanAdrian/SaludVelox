@@ -22,10 +22,10 @@
                 <p class = "logo animate__animated animate__zoomInLeft"><i class="fas fa-user-circle"></i>Cuenta</p>
                 <div class = "espacio"></div>
                 <span class="menu-icon animate__animated animate__zoomInRight">Ver Menú  <i class="fas fa-chevron-down"></i></span>
-                <nav>
+                <nav class="nav">
                     <ul class = "animate__animated animate__zoomInRight">
                         <li onclick="javascript:formulario()" id ="margenNav"><i class="far fa-smile"></i> ¡Formularios!</li>
-                        <li onclick="javascript:info()"><i class="fas fa-book-open"></i> Información</li>
+                        <li onclick="javascript:info()"><i class="fas fa-book-open"></i> Estadísticas</li>
                         <div class="espaciado"></div>
                         <li onclick="javascript:resultado()" id = "margenNav2"><i class="fas fa-poll"></i> Resultados</li>
                         <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Foro</li>
@@ -103,7 +103,7 @@
 
                     </form>
                     <!--Clave api: AIzaSyBhUcyT-3XTOqyrImnE4KjBvL25bZWsYAQ -->
-                    <a class="boton" href="Olvidar.jsp"><i class="fas fa-key"></i> Cambiar mi Contraseña</a>
+                    <a class="boton" class="olvidar" href="Olvidar.jsp"><i class="fas fa-key"></i> Cambiar mi Contraseña</a>
                 </div>
             </main>
         </section>
@@ -144,75 +144,115 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-        <script src="./Scripts/Basicos.js"></script>
 
         <script>
-                    $(document).ready(function () {
-                        $("#editarDatos").validate({
-                            rules: {
-                                edad: {
-                                    required: true,
-                                    number: true,
-                                    min: 14,
-                                    max: 99
-                                },
-                                semestre: {
-                                    required: true,
-                                    numbrer: true,
-                                    min: 1,
-                                    max: 6,
-                                    minlength: 1
-                                },
-                                CorreoElectrónico: {
-                                    required: true,
-                                    email: true
-                                },
-                                Usuario: {
-                                    required: true,
-                                    minlength: 3,
-                                    maxlength: 30
-                                },
-                                passwd: {
-                                    required: true,
-                                    minlength: 3,
-                                    maxlength: 20
-                                }
-                            },
-                            messages: {
-                                edad: {
-                                    required: "Por favor ingresa la edad",
-                                    number: "Ingresa solo números por favor",
-                                    min: "Debes ser mayor de 14 años",
-                                    max: "Debes ser menor de 99 años"
-                                },
-                                semestre: {
-                                    required: "Por favor ingresa el semestre",
-                                    number: "Ingresa solo números por favor",
-                                    min: "Debes ser mayor a 1",
-                                    max: "Debes ser menor a 6",
-                                    minlength: "Los semestres solo son de un número"
-                                },
-                                CorreoElectrónico: {
-                                    required: "Por favor ingresa el correo",
-                                    email: "Ingresa un correo con formato valido"
-                                },
-                                Usuario: {
-                                    required: "Por favor ingresa el usuario",
-                                    minlength: "El usuario debe tener más de 3 caracteres ",
-                                    maxlength: "El usuario debe tener menos de 30 caracteres"
-                                },
-                                passwd: {
-                                    required: "Para editar datos se requiere la contraseña",
-                                    minlength: "La contraseña debe tener más de 3 caracteres ",
-                                    maxlength: "La contraseña debe tener menos de 10 caracteres"
-                                }
-                            }
-                        });
-                    });
+                    function info() {
+                        location.href = "Info.jsp"
+                    }
+                    function cuenta() {
+                        location.href = "Cuenta.jsp";
+                    }
+                    function formulario() {
+                        location.href = "Formulario.jsp"
+                    }
+                    function resultado() {
+                        location.href = "Resultado.jsp"
+                    }
+                    function chat() {
+                        location.href = "https://chat-velox.herokuapp.com/"
+                    }
+                    function velox() {
+                        window.open("https://giancarlogall.github.io/VeloxPagina/Velox.html");
+                    }
+                    function facebook() {
+                        window.open("https://www.facebook.com/VeloxSoftware");
+                    }
+                    function instagram() {
+                        window.open("https://www.instagram.com/veloxsoftware/");
+                    }
+                    function twitter() {
+                        window.open("https://twitter.com/SoftwareVelox");
+                    }
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                $("#editarDatos").validate({
+                    rules: {
+                        edad: {
+                            required: true,
+                            number: true,
+                            min: 14,
+                            max: 99
+                        },
+                        semestre: {
+                            required: true,
+                            numbrer: true,
+                            min: 1,
+                            max: 6,
+                            minlength: 1
+                        },
+                        CorreoElectrónico: {
+                            required: true,
+                            email: true
+                        },
+                        Usuario: {
+                            required: true,
+                            minlength: 3,
+                            maxlength: 30
+                        },
+                        passwd: {
+                            required: true,
+                            minlength: 3,
+                            maxlength: 20
+                        }
+                    },
+                    messages: {
+                        edad: {
+                            required: "Por favor ingresa la edad",
+                            number: "Ingresa solo números por favor",
+                            min: "Debes ser mayor de 14 años",
+                            max: "Debes ser menor de 99 años"
+                        },
+                        semestre: {
+                            required: "Por favor ingresa el semestre",
+                            number: "Ingresa solo números por favor",
+                            min: "Debes ser mayor a 1",
+                            max: "Debes ser menor a 6",
+                            minlength: "Los semestres solo son de un número"
+                        },
+                        CorreoElectrónico: {
+                            required: "Por favor ingresa el correo",
+                            email: "Ingresa un correo con formato valido"
+                        },
+                        Usuario: {
+                            required: "Por favor ingresa el usuario",
+                            minlength: "El usuario debe tener más de 3 caracteres ",
+                            maxlength: "El usuario debe tener menos de 30 caracteres"
+                        },
+                        passwd: {
+                            required: "Para editar datos se requiere la contraseña",
+                            minlength: "La contraseña debe tener más de 3 caracteres ",
+                            maxlength: "La contraseña debe tener menos de 10 caracteres"
+                        }
+                    }
+                });
+            });
 
         </script>
 
         <script>
+            $(document).ready(function () {
+                $("input").on('paste', function (e) {
+                    e.preventDefault();
+                    alert('Esta acción está prohibida');
+                });
+
+                $("input").on('copy', function (e) {
+                    e.preventDefault();
+                    alert('Esta acción está prohibida');
+                });
+            });
             jQuery('document').ready(function ($) {
                 var menuBtn = $('.menu-icon'),
                         menu = $('.nav ul');

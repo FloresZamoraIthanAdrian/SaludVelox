@@ -20,13 +20,13 @@
     <body>
         <header>
             <div class = "container logo-nav-container">
-                <p class = "logo textoForm animate__animated animate__zoomInLeft"><i class="fas fa-poll"></i> Resultados</p>
+                <p class = "logo textoForm animate__animated animate__zoomInLeft"><i class="fas fa-poll"></i> Mis resultados</p>
                 <div class = "espacio"></div>
                 <span class="menu-icon animate__animated animate__zoomInRight">Ver Menú  <i class="fas fa-chevron-down"></i></span>
                 <nav>
                     <ul class = "animate__animated animate__zoomInRight">
                         <li onclick="javascript:formulario()" id ="margenNav"><i class="far fa-smile"></i> ¡Formularios!</li>
-                        <li onclick="javascript:info()"><i class="fas fa-book-open"></i> Información</li>
+                        <li onclick="javascript:info()"><i class="fas fa-book-open"></i> Estadísticas</li>
                         <div class="espaciado"></div>
                         <li onclick="javascript:cuenta()" id ="margenNav2"><i class="fas fa-user-circle"></i> Cuenta</li>
                         <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Foro</li>
@@ -51,40 +51,11 @@
             </div>
         </header>
         <section>
-            
-            <%
-                Enfermedad enf = AccionesEnfermedad.padecimientosGeneralesDepresion();
-                Enfermedad enf1 = AccionesEnfermedad.padecimientosGeneralesAnsiedad();
-                Enfermedad enf2 = AccionesEnfermedad.padecimientosGeneralesTa();
-                Enfermedad enf3 = AccionesEnfermedad.padecimientosGeneralesTc();
-                Enfermedad enf4 = AccionesEnfermedad.padecimientosGeneralesTDA_TDAH();
-                Enfermedad enf5 = AccionesEnfermedad.padecimientosGeneralesDislexia();
-                Enfermedad enf6 = AccionesEnfermedad.padecimientosGeneralesAutismo();
-                Enfermedad enf7 = AccionesEnfermedad.padecimientosGeneralesBipolaridad();
-                Enfermedad enf8 = AccionesEnfermedad.padecimientosGeneralesAsperger();
-                Enfermedad enf9 = AccionesEnfermedad.padecimientosGeneralesTobCompulsivo();
-                
-            %>
-            
+
             <main>
 
                 <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
                 <div class= "container1">
-                    
-                    <input type="hidden" id="depresion" value="<%= enf.getDepresion() %>">
-                    <input type="hidden" id="ansiedad" value="<%= enf1.getAnsiedad() %>">
-                    <input type="hidden" id="tc_alimentaria" value="<%= enf2.getTc_alimentaria() %>">
-                    <input type="hidden" id="t_conducta" value="<%= enf3.getT_conducta() %>">
-                    <input type="hidden" id="tda_tdah" value="<%= enf4.getTda_tdah() %>">
-                    <input type="hidden" id="dislexia" value="<%= enf5.getDislexia() %>">
-                    <input type="hidden" id="autismo" value="<%= enf6.getAutismo() %>">
-                    <input type="hidden" id="bipolaridad" value="<%= enf7.getBipolaridad() %>">
-                    <input type="hidden" id="asperger" value="<%= enf8.getAsperger() %>">
-                    <input type="hidden" id="t_obesivo" value="<%= enf9.getT_obsesivo_compulsivo() %>">
-                    
-                    <div class="container">
-                        <canvas id="myChart" width="100 px" height="100 px"></canvas>
-                    </div>
 
                 </div>
             </main>
@@ -97,61 +68,33 @@
         </section>
 
         <script>
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var depresion = document.getElementById('depresion').value;
-            var ansiedad = document.getElementById('ansiedad').value;
-            var tc_alimentaria = document.getElementById('tc_alimentaria').value;
-            var t_conducta = document.getElementById('t_conducta').value;
-            var tda_tdah = document.getElementById('tda_tdah').value;
-            var dislexia = document.getElementById('dislexia').value;
-            var autismo = document.getElementById('autismo').value;
-            var bipolaridad = document.getElementById('bipolaridad').value;
-            var asperger = document.getElementById('asperger').value;
-            var t_obesivo = document.getElementById('t_obesivo').value;
-            
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Depresión', 'Ansiedad', 'Transtornos Alimenticios', 
-                        'Transtornos de Conducta', 'TDA/TDAH', 'Dislexia', 'Autismo', 'Bipolaridad', 'Asperger', 'Transtorno Obsesivo Compulsivo'],
-                    datasets: [{
-                            label: 'Grafica de enfermedades diagnosticadas en los usuarios',
-                            data: [depresion, ansiedad, tc_alimentaria, t_conducta, tda_tdah, dislexia, autismo, bipolaridad, asperger, t_obesivo],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)',
-                                'rgba(0, 248, 132, 0.2)',
-                                'rgba(198, 0, 248, 0.2)', 
-                                'rgba(144, 142, 144, 0.2)', 
-                                'rgba(0, 255, 255, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)',
-                                'rgba(0, 248, 132, 1)',
-                                'rgba(198, 0, 248, 1)',
-                                'rgba(144, 142, 144, 1)', 
-                                'rgba(0, 255, 255, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
+            function info() {
+                location.href = "Info.jsp"
+            }
+            function cuenta() {
+                location.href = "Cuenta.jsp";
+            }
+            function formulario() {
+                location.href = "Formulario.jsp"
+            }
+            function resultado() {
+                location.href = "Resultado.jsp"
+            }
+            function chat() {
+                location.href = "https://chat-velox.herokuapp.com/"
+            }
+            function velox() {
+                window.open("https://giancarlogall.github.io/VeloxPagina/Velox.html");
+            }
+            function facebook() {
+                window.open("https://www.facebook.com/VeloxSoftware");
+            }
+            function instagram() {
+                window.open("https://www.instagram.com/veloxsoftware/");
+            }
+            function twitter() {
+                window.open("https://twitter.com/SoftwareVelox");
+            }
         </script>
 
         <footer>

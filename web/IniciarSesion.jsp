@@ -120,6 +120,17 @@
 
         <script>
             $(document).ready(function () {
+                $("input").on('paste', function (e) {
+                    e.preventDefault();
+                    alert('Esta acción está prohibida');
+                });
+
+                $("input").on('copy', function (e) {
+                    e.preventDefault();
+                    alert('Esta acción está prohibida');
+                });
+            });
+            $(document).ready(function () {
                 $("#iniciarSesion").validate({
                     rules: {
                         CorreoElectronico: {

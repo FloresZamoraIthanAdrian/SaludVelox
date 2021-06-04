@@ -25,7 +25,7 @@
         <header>
             <div class = "container logo-nav-container">
                 <div class="info_titulo_principal">
-                    <p class = "logo animate__animated animate__zoomInLeft"><i class="fas fa-book-open"></i> Información</p>
+                    <p class = "logo animate__animated animate__zoomInLeft"><i class="fas fa-book-open"></i> Estadísticas</p>
                 </div>
                 <div class="info_titulo_responsive">
                     <p class = "logo animate__animated animate__zoomInLeft"><i class="fas fa-book-open"></i> Info</p>
@@ -77,7 +77,15 @@
             %>
 
             <main>
-
+                <div id="arriba"></div>
+                <div class="container1">
+                    loremdmsaiodmsadoiadaosimdasoidmasiodmsaidmsaodmsadiomsadisamd
+                    dsajdsajp[dojsa[dpojsad[pjsad[opqei10-2e91-0dsa.][dp21=0-3-
+                    das0d90-3 [pkdqw][dwq\[doadas1d23sa1090*/-/*---**-/*-/*-d/sa
+                    asodk m902842=039-84=1994=029384 hifdh sfkpsdf=-09=-d0a=-s0d
+                    dsad-=m0 23 99m09cu0n 80 v ]jsa]lmfd,c
+                    as;.cAS?lp[dfsiad0i -023 2940-9324=0329-40 c-0348nc2-3094n-2
+                </div>
                 <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
                 <div class= "container1">
 
@@ -154,7 +162,7 @@
                                 'rgba(144, 142, 144, 1)',
                                 'rgba(0, 255, 255, 1)'
                             ],
-                            borderWidth: 1
+                            borderWidth: 1.5
                         }]
                 },
                 options: {
