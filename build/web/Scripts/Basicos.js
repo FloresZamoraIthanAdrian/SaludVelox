@@ -63,7 +63,7 @@ function chat(){
 }
 
 function info(){
-    location.href "Info.jsp";
+    location.href = "Info.jsp";
 }
 
 function velox(){

@@ -5,10 +5,8 @@
         <group>
             <file>file:/C:/Users/addRian/Documents/NetBeansProjects/SaludVeloxG/web/Resultado.jsp</file>
             <file>file:/C:/Users/addRian/Documents/NetBeansProjects/SaludVeloxG/web/Cuenta.jsp</file>
-            <file>file:/C:/Users/addRian/Documents/NetBeansProjects/SaludVeloxG/web/index.html</file>
-            <file>file:/C:/Users/addRian/Documents/NetBeansProjects/SaludVeloxG/web/Scripts/FormularioEnfermedades.js</file>
-            <file>file:/C:/Users/addRian/Documents/NetBeansProjects/SaludVeloxG/web/CrearCuenta.html</file>
-            <file>file:/C:/Users/addRian/Documents/NetBeansProjects/SaludVeloxG/web/Formulario.jsp</file>
+            <file>file:/C:/Users/addRian/Documents/NetBeansProjects/SaludVeloxG/src/java/Control/AccionesEnfermedad.java</file>
+            <file>file:/C:/Users/addRian/Documents/NetBeansProjects/SaludVeloxG/src/java/Control/AccionesUsuario.java</file>
         </group>
     </open-files>
 </project-private>

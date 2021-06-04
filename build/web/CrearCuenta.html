@@ -9,19 +9,34 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <link rel = "stylesheet" type = 'text/css' href = './Styles/Formulario.css'>
+        <link rel = "stylesheet" type = 'text/css' href = 'Styles/Formulario.css'>
         <script src="https://kit.fontawesome.com/9fb0a1aa63.js" crossorigin="anonymous"></script>
-
+        <style>nav ul{
+                list-style: none;
+                padding: 0;
+            }
+            nav ul li {
+                display: inline-block;
+                cursor: pointer;
+                border-radius: 5px;
+                padding: 0.5rem 1rem;
+                margin-left: 5px;
+                transition: all 0.4s linear;
+            }
+            nav ul li:hover {
+                background: #dbd6d6;
+                color: black;
+                box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+            }</style>
     </head>
     <body>
         <header>
             <div class = "container logo-nav-container">
                 <p class = "logo animate__animated animate__zoomInLeft animate__slower"><i class="fas fa-user-circle"></i> Crear <br class = 'espacioV'>Cuenta</p>
                 <div class = "espacio"></div>
-                <span class="menu-icon">Ver Menú  <i class="fas fa-chevron-down"></i></span>
                 <nav class = "nav">
-                    <ul class="animate__animated animate__zoomInRight animate__slower">
-                        <a style='text-decoration: none; color: white;' href='IniciarSesion.jsp'><li style="list-style: none;">Iniciar Sesion</li></a>
+                    <ul>
+                        <li onclick="iniciarsesion()" id = "margen"><i class="fas fa-home"></i> Iniciar Sesión</li>
                     </ul>
                 </nav>
             </div>
@@ -56,7 +71,7 @@
                     </p>
                     <div class = "olvidar">
                         <ul>
-                            <li onclick="javascript:cerrar()"> Aceptar</li>
+                            <li onclick="cerrar()"> Aceptar</li>
                         </ul>
                     </div>
                 </div>
@@ -66,9 +81,9 @@
         <footer>
             <h3>Redes Sociales</h3>
             <ul>
-                <li onclick="javascript:facebook()"><i class="fab fa-facebook-square"> Facebook </i></li>
-                <li onclick="javascript:instagram()"><i class="fab fa-instagram"> Instagram </i></li>
-                <li onclick="javascript:twitter()"><i class="fab fa-twitter">  Twitter </i></li>
+                <li onclick="facebook()"><i class="fab fa-facebook-square"> Facebook </i></li>
+                <li onclick="instagram()"><i class="fab fa-instagram"> Instagram </i></li>
+                <li onclick="twitter()"><i class="fab fa-twitter">  Twitter </i></li>
             </ul>
             <h3>Correo Electrónico</h3>
             <ul>
@@ -76,17 +91,17 @@
             </ul>
             <h3>Página Web</h3>
             <ul>
-                <li onclick="javascript:velox()">VeloxSoftware.com</li>
+                <li onclick="velox()">VeloxSoftware.com</li>
             </ul>
             <h4>Integrantes</h4>
             <div class="nombres">
                 <ul>
-                    <li onclick="javascript:velox()">Castañeda Rodríguez<br>Rafael Gil</li>
-                    <li onclick="javascript:velox()">Coronado Segundo<br>Juan Yael</li>
-                    <li onclick="javascript:velox()">Flores Zamora<br>Ithan Adrian</li>
-                    <li onclick="javascript:velox()">Gallegos González<br>Gian Carlo</li>
-                    <li onclick="javascript:velox()">Pérez López<br>Jesús Eduardo</li>
-                    <li onclick="javascript:velox()">Salazar Valdez<br>Ángel Yahir</li>
+                    <li onclick="velox()">Castañeda Rodríguez<br>Rafael Gil</li>
+                    <li onclick="velox()">Coronado Segundo<br>Juan Yael</li>
+                    <li onclick="velox()">Flores Zamora<br>Ithan Adrian</li>
+                    <li onclick="velox()">Gallegos González<br>Gian Carlo</li>
+                    <li onclick="velox()">Pérez López<br>Jesús Eduardo</li>
+                    <li onclick="velox()">Salazar Valdez<br>Ángel Yahir</li>
                 </ul>
             </div>
         </footer>
@@ -95,110 +110,134 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
         <script>
-                        $(document).ready(function () {
-                            $("#basic-form").validate({
-                                rules: {
-                                    Nombre: {
-                                        required: true,
-                                        minlength: 3,
-                                        maxlength: 30
-                                    },
-                                    appat: {
-                                        required: true,
-                                        minlength: 3,
-                                        maxlength: 30
-                                    },
-                                    apmat: {
-                                        required: true,
-                                        minlength: 3,
-                                        maxlength: 30
-                                    },
-                                    edad: {
-                                        required: true,
-                                        number: true,
-                                        min: 14,
-                                        max: 99
-                                    },
-                                    semestre: {
-                                        required: true,
-                                        numbrer: true,
-                                        min: 1,
-                                        max: 6,
-                                        minlength: 1
-                                    },
-                                    Correo: {
-                                        required: true,
-                                        email: true
-                                    },
-                                    Usuario: {
-                                        required: true,
-                                        minlength: 3,
-                                        maxlength: 30
-                                    },
-                                    Contraseña: {
-                                        required: true,
-                                        minlength: 3,
-                                        maxlength: 20
-                                    },
-                                    VerificarContrasena: {
-                                        equalTo: "#Contraseña",
-                                        required: true,
-                                        minlength: 3,
-                                        maxlength: 20
-                                    }
-                                },
-                                messages: {
-                                    Nombre: {
-                                        required: "Por favor ingresa el nombre",
-                                        minlength: "El nombre debe tener más de 3 caracteres ",
-                                        maxlength: "El nombre debe tener menos de 30 caracteres"
-                                    },
-                                    appat: {
-                                        required: "Ingresa el Apellido Paterno",
-                                        minlength: "El apellido paterno debe tener más de 3 caracteres ",
-                                        maxlength: "El apellido paterno debe tener menos de 30 caracteres"
-                                    },
-                                    apmat: {
-                                        required: "Ingresa el Apellido Materno",
-                                        minlength: "El apellido materno debe tener más de 3 caracteres ",
-                                        maxlength: "El apellido materno debe tener menos de 30 caracteres"
-                                    },
-                                    edad: {
-                                        required: "Por favor ingresa la edad",
-                                        number: "Ingresa solo números por favor",
-                                        min: "Debes ser mayor de 14 años",
-                                        max: "Debes ser menor de 99 años"
-                                    },
-                                    semestre: {
-                                        required: "Por favor ingresa el semestre",
-                                        number: "Ingresa solo números por favor",
-                                        min: "Debes ser mayor a 1",
-                                        max: "Debes ser menor a 6",
-                                        minlength: "Los semestres solo son de un número"
-                                    },
-                                    Correo: {
-                                        required: "Por favor ingresa el correo",
-                                        email: "Ingresa un correo con formato valido"
-                                    },
-                                    Usuario: {
-                                        required: "Por favor ingresa el usuario",
-                                        minlength: "El usuario debe tener más de 3 caracteres ",
-                                        maxlength: "El usuario debe tener menos de 30 caracteres"
-                                    },
-                                    Contraseña: {
-                                        required: "Por favor ingresa la contraseña",
-                                        minlength: "La contraseña debe tener más de 3 caracteres ",
-                                        maxlength: "La contraseña debe tener menos de 10 caracteres"
-                                    },
-                                    VerificarContrasena: {
-                                        equalTo: "La contraseña debe ser igual a la anterior",
-                                        minlength: "La contraseña debe tener más de 3 caracteres ",
-                                        maxlength: "La contraseña debe tener menos de 10 caracteres",
-                                        required: 'Este campo es requerido'
-                                    }
-                                }
-                            });
-                        });
+                        function abrir() {
+                            document.getElementById("vent").style.display = "block";
+                        }
+                        function cerrar() {
+                            document.getElementById("vent").style.display = "none";
+                        }
+                        function iniciarsesion() {
+                            location.href = "IniciarSesion.jsp";
+                        }
+                        function velox() {
+                            window.open("https://giancarlogall.github.io/VeloxPagina/Velox.html");
+                        }
+                        function facebook() {
+                            window.open("https://www.facebook.com/VeloxSoftware");
+                        }
+                        function instagram() {
+                            window.open("https://www.instagram.com/veloxsoftware/");
+                        }
+                        function twitter() {
+                            window.open("https://twitter.com/SoftwareVelox");
+                        }
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                $("#basic-form").validate({
+                    rules: {
+                        Nombre: {
+                            required: true,
+                            minlength: 3,
+                            maxlength: 30
+                        },
+                        appat: {
+                            required: true,
+                            minlength: 3,
+                            maxlength: 30
+                        },
+                        apmat: {
+                            required: true,
+                            minlength: 3,
+                            maxlength: 30
+                        },
+                        edad: {
+                            required: true,
+                            number: true,
+                            min: 14,
+                            max: 99
+                        },
+                        semestre: {
+                            required: true,
+                            numbrer: true,
+                            min: 1,
+                            max: 6,
+                            minlength: 1
+                        },
+                        Correo: {
+                            required: true,
+                            email: true
+                        },
+                        Usuario: {
+                            required: true,
+                            minlength: 3,
+                            maxlength: 30
+                        },
+                        Contraseña: {
+                            required: true,
+                            minlength: 3,
+                            maxlength: 20
+                        },
+                        VerificarContrasena: {
+                            equalTo: "#Contraseña",
+                            required: true,
+                            minlength: 3,
+                            maxlength: 20
+                        }
+                    },
+                    messages: {
+                        Nombre: {
+                            required: "Por favor ingresa el nombre",
+                            minlength: "El nombre debe tener más de 3 caracteres ",
+                            maxlength: "El nombre debe tener menos de 30 caracteres"
+                        },
+                        appat: {
+                            required: "Ingresa el Apellido Paterno",
+                            minlength: "El apellido paterno debe tener más de 3 caracteres ",
+                            maxlength: "El apellido paterno debe tener menos de 30 caracteres"
+                        },
+                        apmat: {
+                            required: "Ingresa el Apellido Materno",
+                            minlength: "El apellido materno debe tener más de 3 caracteres ",
+                            maxlength: "El apellido materno debe tener menos de 30 caracteres"
+                        },
+                        edad: {
+                            required: "Por favor ingresa la edad",
+                            number: "Ingresa solo números por favor",
+                            min: "Debes ser mayor de 14 años",
+                            max: "Debes ser menor de 99 años"
+                        },
+                        semestre: {
+                            required: "Por favor ingresa el semestre",
+                            number: "Ingresa solo números por favor",
+                            min: "Debes ser mayor a 1",
+                            max: "Debes ser menor a 6",
+                            minlength: "Los semestres solo son de un número"
+                        },
+                        Correo: {
+                            required: "Por favor ingresa el correo",
+                            email: "Ingresa un correo con formato valido"
+                        },
+                        Usuario: {
+                            required: "Por favor ingresa el usuario",
+                            minlength: "El usuario debe tener más de 3 caracteres ",
+                            maxlength: "El usuario debe tener menos de 30 caracteres"
+                        },
+                        Contraseña: {
+                            required: "Por favor ingresa la contraseña",
+                            minlength: "La contraseña debe tener más de 3 caracteres ",
+                            maxlength: "La contraseña debe tener menos de 20 caracteres"
+                        },
+                        VerificarContrasena: {
+                            equalTo: "La contraseña debe ser igual a la anterior",
+                            minlength: "La contraseña debe tener más de 3 caracteres ",
+                            maxlength: "La contraseña debe tener menos de 20 caracteres",
+                            required: 'Este campo es requerido'
+                        }
+                    }
+                });
+            });
 
         </script>
 

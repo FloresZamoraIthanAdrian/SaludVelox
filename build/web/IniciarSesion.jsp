@@ -10,7 +10,6 @@
         <link rel="icon" href= "images/EscudoVelox2.png">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="./Scripts/Basicos.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel = "stylesheet" type = 'text/css' href = 'Styles/stylesforms.css'>
         <script src="https://kit.fontawesome.com/9fb0a1aa63.js" crossorigin="anonymous"></script>
@@ -36,13 +35,13 @@
                 <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:chat()"></image>
                 <div class="formulario">
 
-                    <form method="post" action="IniciarSesion.jsp" onssubmit='' name = "formularioInicio" >
+                    <form method="post" action="IniciarSesion.jsp" id="iniciarSesion" name = "formularioInicio" >
 
                         <h4 class="formulario__titulo animate__animated animate__rubberBand animate__infinite animate__slower">¡Bienvenido!</h4>
 
 
                         <input id="Correo" type="email" name = "CorreoElectronico" class="formulario__input" placeholder="Correo Electrónico" >
-                        <input id="Pass" onkeypress="return validarAlfaNumericos(event)" type="password" name = "Contrasena" class="formulario__input" placeholder="Contraseña" >
+                        <input id="Pass" type="password" name = "Contrasena" class="formulario__input" placeholder="Contraseña" >
 
                         <input type="submit" name="btnIngresar" value="Iniciar Sesión" class="boton">
 
@@ -119,26 +118,70 @@
             </div>
         </footer>
 
-        <script src="./Scripts/Basicos.js"></script>
-        <script src="./Scripts/ValidacionTeclado.js"></script>
-        <script src="./Scripts/ValidacionFormularios.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#iniciarSesion").validate({
+                    rules: {
+                        CorreoElectronico: {
+                            required: true,
+                            email: true
+                        },
+                        Contrasena: {
+                            required: true,
+                            minlength: 3,
+                            maxlength: 20
+                        }
+                    },
+                    messages: {
+                        CorreoElectronico: {
+                            required: "Por favor ingresa el correo",
+                            email: "Ingresa un correo con formato valido"
+                        },
+                        Contrasena: {
+                            required: "Por favor ingresa la contraseña",
+                            minlength: "La contraseña debe tener más de 3 caracteres ",
+                            maxlength: "La contraseña debe tener menos de 20 caracteres"
+                        }
+                    }
+                });
+            });
+
+        </script>
 
         <script>
-                    jQuery('document').ready(function ($) {
-                        var menuBtn = $('.menu-icon'),
-                                menu = $('.nav ul');
+            function crearcuenta() {
+                location.href = "CrearCuenta.html"
+            }
+            function velox() {
+                window.open("https://giancarlogall.github.io/VeloxPagina/Velox.html");
+            }
+            function facebook() {
+                window.open("https://www.facebook.com/VeloxSoftware");
+            }
+            function instagram() {
+                window.open("https://www.instagram.com/veloxsoftware/");
+            }
+            function twitter() {
+                window.open("https://twitter.com/SoftwareVelox");
+            }
+        </script>
 
-                        menuBtn.click(function () {
-                            if (menu.hasClass('show')) {
+        <script>
+            jQuery('document').ready(function ($) {
+                var menuBtn = $('.menu-icon'),
+                        menu = $('.nav ul');
 
-                                menu.removeClass('show');
+                menuBtn.click(function () {
+                    if (menu.hasClass('show')) {
 
-                            } else {
+                        menu.removeClass('show');
 
-                                menu.addClass('show')
-                            }
-                        });
-                    });
+                    } else {
+
+                        menu.addClass('show')
+                    }
+                });
+            });
         </script>
 
     </body>

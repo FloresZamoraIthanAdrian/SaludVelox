@@ -4,7 +4,7 @@ import Usuario.Usuario;
 import java.sql.*;
 
 public class AccionesUsuario {
-    
+     
     public static int registrarUsuario(Usuario u){
         
         int state = 0;

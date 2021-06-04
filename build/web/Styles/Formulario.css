@@ -157,6 +157,7 @@ header{
     font-size: 1em;
 }
 .olvidar{
+    font-size: 20px;
     text-align: center;
     cursor: pointer;
     background: #dbd6d6;
@@ -329,7 +330,7 @@ p.note {
   color: red;
 }
 
-input, textarea {
+textarea {
   border-radius: 5px;
   border: 1px solid #ccc;
   padding: 4px;
@@ -374,4 +375,23 @@ input.error, textarea.error {
     border: 1px dashed red;
     font-weight: 300;
     color: red;
+}
+
+.boton{
+    text-align: center;
+    cursor: pointer;
+    background: #dbd6d6;
+    color: black;
+    display: inline-block;
+    margin: 15px 30%;
+    width: 40%;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
+}
+.boton:hover {
+    background: #9f0000;
+    color: white;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
 }
