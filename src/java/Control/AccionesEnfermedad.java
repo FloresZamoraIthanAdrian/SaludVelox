@@ -10,6 +10,44 @@ import java.util.List;
 
 public class AccionesEnfermedad {
     
+    public static Enfermedad listarTranstornosUsuarios(int id_usu){
+        
+        Enfermedad enf = new Enfermedad();
+
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "select * from enfermedades where id_enfermedad = ?";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            ps.setInt(1, id_usu);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()){
+                
+                enf.setDepresion(rs.getInt("depresion"));
+                enf.setAnsiedad(rs.getInt("ansiedad"));
+                enf.setTc_alimentaria(rs.getInt("tc_alimentaria"));
+                enf.setT_conducta(rs.getInt("t_conducta"));
+                enf.setTda_tdah(rs.getInt("tda_tdah"));
+                enf.setDislexia(rs.getInt("dislexia"));
+                enf.setAutismo(rs.getInt("autismo"));
+                enf.setBipolaridad(rs.getInt("bipolaridad"));
+                enf.setAsperger(rs.getInt("asperger"));
+                enf.setT_obsesivo_compulsivo(rs.getInt("t_obsesivo_compulsivo"));
+                
+            }
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Error al listar las enfermedades del usuario");
+            System.out.println(ed.getMessage());
+        }
+        
+        return enf;
+    }
+    
     public static Enfermedad padecimientosGeneralesDepresion(){
         Enfermedad enf = new Enfermedad();
         try{

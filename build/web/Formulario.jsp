@@ -12,6 +12,7 @@
         <link rel = "stylesheet" type = 'text/css' href = 'Styles/Styles.css'>
         <script src="https://kit.fontawesome.com/9fb0a1aa63.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     </head>
     <body>
         <header>
