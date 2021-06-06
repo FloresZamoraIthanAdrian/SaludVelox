@@ -8,9 +8,9 @@ public class Conexion {
         
         String url, userName, password;
         //url = "jdbc:mysql://143.198.166.146/velox";
-        url = "jdbc:mysql://localhost/velox";
+        url = "jdbc:mysql://143.198.166.146/velox";
         userName = "root";
-        password = "tutankamon5728118064";
+        password = "n0m3l0";
         //password = "#TUTANKAMON5728118064";
         
         Connection con = null;
