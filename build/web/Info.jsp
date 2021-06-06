@@ -73,18 +73,23 @@
                 Enfermedad enf7 = AccionesEnfermedad.padecimientosGeneralesBipolaridad();
                 Enfermedad enf8 = AccionesEnfermedad.padecimientosGeneralesAsperger();
                 Enfermedad enf9 = AccionesEnfermedad.padecimientosGeneralesTobCompulsivo();
+                Enfermedad enf10 = AccionesEnfermedad.padecimientosGeneralesEstres();
 
             %>
 
             <main>
                 <div id="arriba"></div>
                 <div class="container1">
-                    loremdmsaiodmsadoiadaosimdasoidmasiodmsaidmsaodmsadiomsadisamd
-                    dsajdsajp[dojsa[dpojsad[pjsad[opqei10-2e91-0dsa.][dp21=0-3-
-                    das0d90-3 [pkdqw][dwq\[doadas1d23sa1090*/-/*---**-/*-/*-d/sa
-                    asodk m902842=039-84=1994=029384 hifdh sfkpsdf=-09=-d0a=-s0d
-                    dsad-=m0 23 99m09cu0n 80 v ]jsa]lmfd,c
-                    as;.cAS?lp[dfsiad0i -023 2940-9324=0329-40 c-0348nc2-3094n-2
+                    La salud mental incluye nuestro bienestar emocional, psicológico y social.
+                    Afecta la forma en que pensamos, sentimos y actuamos cuando enfrentamos la vida.
+                    También ayuda a determinar cómo manejamos el estrés, nos relacionamos con los 
+                    demás y tomamos decisiones. La salud mental es importante en todas las etapas
+                    de la vida, desde la niñez y la adolescencia hasta la adultez y la vejez.
+                    Por eso es importante reconocer estos transtornos en la vida 
+                    de las demas personas.
+                    <br>
+                    La siguiente es una grafica, donde se muestra el numero de 
+                    los usuaarios que fueron diagnosticado con ese transtorno.
                 </div>
                 <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
                 <div class= "container1">
@@ -99,6 +104,7 @@
                     <input type="hidden" id="bipolaridad" value="<%= enf7.getBipolaridad()%>">
                     <input type="hidden" id="asperger" value="<%= enf8.getAsperger()%>">
                     <input type="hidden" id="t_obesivo" value="<%= enf9.getT_obsesivo_compulsivo()%>">
+                    <input type="hidden" id="estres" value="<%= enf10.getEstres() %>>"
 
                     <div class="container">
                         <canvas id="myChart" width="100 px" height="100 px"></canvas>
@@ -129,6 +135,7 @@
             var bipolaridad = document.getElementById('bipolaridad').value;
             var asperger = document.getElementById('asperger').value;
             var t_obesivo = document.getElementById('t_obesivo').value;
+            var estres = document.getElementById('estres').value;
 
             var myChart = new Chart(ctx, {
                 type: 'bar',
@@ -137,7 +144,7 @@
                         'Transtornos de Conducta', 'TDA/TDAH', 'Dislexia', 'Autismo', 'Bipolaridad', 'Asperger', 'Transtorno Obsesivo Compulsivo'],
                     datasets: [{
                             label: 'Grafica de enfermedades diagnosticadas en los usuarios',
-                            data: [depresion, ansiedad, tc_alimentaria, t_conducta, tda_tdah, dislexia, autismo, bipolaridad, asperger, t_obesivo],
+                            data: [depresion, ansiedad, tc_alimentaria, t_conducta, tda_tdah, dislexia, autismo, bipolaridad, asperger, t_obesivo, estres],
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
                                 'rgba(54, 162, 235, 0.2)',
@@ -148,7 +155,8 @@
                                 'rgba(0, 248, 132, 0.2)',
                                 'rgba(198, 0, 248, 0.2)',
                                 'rgba(144, 142, 144, 0.2)',
-                                'rgba(0, 255, 255, 0.2)'
+                                'rgba(0, 255, 255, 0.2)', 
+                                'rgba(45, 6, 97, 0.2)'
                             ],
                             borderColor: [
                                 'rgba(255, 99, 132, 1)',
@@ -160,7 +168,8 @@
                                 'rgba(0, 248, 132, 1)',
                                 'rgba(198, 0, 248, 1)',
                                 'rgba(144, 142, 144, 1)',
-                                'rgba(0, 255, 255, 1)'
+                                'rgba(0, 255, 255, 1)',
+                                'rgba(45, 6, 97, 1)'
                             ],
                             borderWidth: 1.5
                         }]
@@ -198,7 +207,6 @@
                     <li>Flores Zamora<br>Ithan Adrian</li>
                     <li>Gallegos González<br>Gian Carlo</li>
                     <li>Pérez López<br>Jesús Eduardo</li>
-                    <li>Salazar Valdez<br>Ángel Yahir</li>
                 </ul>
             </div>
         </footer>          

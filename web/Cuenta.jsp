@@ -137,7 +137,6 @@
                     <li>Flores Zamora<br>Ithan Adrian</li>
                     <li>Gallegos González<br>Gian Carlo</li>
                     <li>Pérez López<br>Jesús Eduardo</li>
-                    <li>Salazar Valdez<br>Ángel Yahir</li>
                 </ul>
             </div>
         </footer>

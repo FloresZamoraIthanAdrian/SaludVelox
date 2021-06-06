@@ -16,6 +16,10 @@
         <servlet-name>editarUsuario</servlet-name>
         <servlet-class>Servlets.editarUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>controlEnfermedades</servlet-name>
+        <servlet-class>Servlets.controlEnfermedades</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CrearCuenta</servlet-name>
         <url-pattern>/CrearCuenta</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>editarUsuario</servlet-name>
         <url-pattern>/editarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>controlEnfermedades</servlet-name>
+        <url-pattern>/controlEnfermedades</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -2,7 +2,7 @@ package Usuario;
 
 public class Enfermedad {
 
-    private int id_enfermedad, tda_tdah, dislexia, autismo, bipolaridad, asperger;
+    private int id_enfermedad, tda_tdah, dislexia, autismo, bipolaridad, asperger, estres;
     private int t_obsesivo_compulsivo, depresion, ansiedad, tc_alimentaria, t_conducta;
 
     public int getId_enfermedad() {
@@ -91,6 +91,14 @@ public class Enfermedad {
 
     public void setT_conducta(int t_conducta) {
         this.t_conducta = t_conducta;
+    }
+
+    public int getEstres() {
+        return estres;
+    }
+
+    public void setEstres(int estres) {
+        this.estres = estres;
     }
     
 }

@@ -25,8 +25,6 @@ public class AccionesUsuario {
             proc.setString(8, u.getCorreo());
             proc.setString(9, u.getPass_usu());
             
-            //call PruebaInsertar4('Prueba1', 'Ramirez', 'Hernadez', 17, 5, 'Prefiero no decirlo', 'nones123', 'nones123@gmail.com', '123')
-            
             state = proc.executeUpdate();
             System.out.println("Agregar usuario a dos tablas de manera exitosa");
             con.close();

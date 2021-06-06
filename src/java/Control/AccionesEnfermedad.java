@@ -10,6 +10,39 @@ import java.util.List;
 
 public class AccionesEnfermedad {
     
+    public static int controlEnfermedades(Enfermedad enf){
+        
+        int state = 0;
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "{call insertarEnfermedades(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            
+            CallableStatement  proc = con.prepareCall(q);
+            proc.setInt(1, enf.getId_enfermedad());
+            proc.setInt(2, enf.getDepresion());
+            proc.setInt(3, enf.getAnsiedad());
+            proc.setInt(4, enf.getTc_alimentaria());
+            proc.setInt(5, enf.getT_conducta());
+            proc.setInt(6, enf.getTda_tdah());
+            proc.setInt(7, enf.getDislexia());
+            proc.setInt(8, enf.getAutismo());
+            proc.setInt(9, enf.getBipolaridad());
+            proc.setInt(10, enf.getAsperger());
+            proc.setInt(11, enf.getT_obsesivo_compulsivo());
+            proc.setInt(12, enf.getEstres());
+            
+            state = proc.executeUpdate();
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Error al manipular los transtornos del usuario");
+            System.out.println(ed.getMessage());
+        }
+        return state;
+    }
+    
     public static Enfermedad listarTranstornosUsuarios(int id_usu){
         
         Enfermedad enf = new Enfermedad();
@@ -227,6 +260,24 @@ public class AccionesEnfermedad {
             System.out.println(ed.getMessage());
         }
         return enf9;
+    }
+    
+    public static Enfermedad padecimientosGeneralesEstres(){
+        Enfermedad enf10 = new Enfermedad();
+        try{
+            Connection con = Conexion.getConnection();
+            String q = "select count(*) estres from enfermedades where estres > 0";
+            PreparedStatement ps = con.prepareStatement(q);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                enf10.setEstres(rs.getInt(1));
+            }
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al tratar de listar los padecimientos generales");
+            System.out.println(ed.getMessage());
+        }
+        return enf10;
     }
     
 }
