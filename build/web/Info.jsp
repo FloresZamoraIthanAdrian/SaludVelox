@@ -53,7 +53,7 @@
 
                                     out.print("<a style='text-decoration: none; color: white;' href='IniciarSesion.jsp?cerrar=true'><li>Cerrar Sesion de " + u.getNom_usu() + "</li></a>");
 
-                                
+
                             %>
                     </ul>
                 </nav>
@@ -62,8 +62,7 @@
 
         <section>
 
-            <%
-                Enfermedad enf = AccionesEnfermedad.padecimientosGeneralesDepresion();
+            <%                Enfermedad enf = AccionesEnfermedad.padecimientosGeneralesDepresion();
                 Enfermedad enf1 = AccionesEnfermedad.padecimientosGeneralesAnsiedad();
                 Enfermedad enf2 = AccionesEnfermedad.padecimientosGeneralesTa();
                 Enfermedad enf3 = AccionesEnfermedad.padecimientosGeneralesTc();
@@ -87,33 +86,31 @@
                     de la vida, desde la niñez y la adolescencia hasta la adultez y la vejez.
                     Por eso es importante reconocer estos transtornos en la vida 
                     de las demas personas.
-                    <br><br>
-                    La siguiente es una grafica, de los <em><%= enf.getNum_diagnosticado() %></em> donde se muestra el numero de 
-                    los usuarios que fueron diagnosticado con cierto transtorno.
-
-                    <input type="hidden" id="depresion" value="<%= enf.getDepresion()%>">
-                    <input type="hidden" id="ansiedad" value="<%= enf1.getAnsiedad()%>">
-                    <input type="hidden" id="tc_alimentaria" value="<%= enf2.getTc_alimentaria()%>">
-                    <input type="hidden" id="t_conducta" value="<%= enf3.getT_conducta()%>">
-                    <input type="hidden" id="tda_tdah" value="<%= enf4.getTda_tdah()%>">
-                    <input type="hidden" id="dislexia" value="<%= enf5.getDislexia()%>">
-                    <input type="hidden" id="autismo" value="<%= enf6.getAutismo()%>">
-                    <input type="hidden" id="bipolaridad" value="<%= enf7.getBipolaridad()%>">
-                    <input type="hidden" id="asperger" value="<%= enf8.getAsperger()%>">
-                    <input type="hidden" id="t_obesivo" value="<%= enf9.getT_obsesivo_compulsivo()%>">
-                    <input type="hidden" id="estres" value="<%= enf10.getEstres() %>>">
-                    
-                    <div class="container">
-                        <canvas id="myChart" width="100 px" height="100 px"></canvas>
-                    </div>
-
+                    <br>
                 </div>
+                <div class="container1">
+                        La siguiente es una grafica, de los <em><%= enfC.getNum_diagnosticado()%></em> donde se muestra el numero de 
+                        los usuarios que fueron diagnosticado con cierto transtorno.
+
+                        <input type="hidden" id="depresion" value="<%= enf.getDepresion()%>">
+                        <input type="hidden" id="ansiedad" value="<%= enf1.getAnsiedad()%>">
+                        <input type="hidden" id="tc_alimentaria" value="<%= enf2.getTc_alimentaria()%>">
+                        <input type="hidden" id="t_conducta" value="<%= enf3.getT_conducta()%>">
+                        <input type="hidden" id="tda_tdah" value="<%= enf4.getTda_tdah()%>">
+                        <input type="hidden" id="dislexia" value="<%= enf5.getDislexia()%>">
+                        <input type="hidden" id="autismo" value="<%= enf6.getAutismo()%>">
+                        <input type="hidden" id="bipolaridad" value="<%= enf7.getBipolaridad()%>">
+                        <input type="hidden" id="asperger" value="<%= enf8.getAsperger()%>">
+                        <input type="hidden" id="t_obesivo" value="<%= enf9.getT_obsesivo_compulsivo()%>">
+                        <input type="hidden" id="estres" value="<%= enf10.getEstres()%>>">
+
+                        <div class="container">
+                            <canvas id="myChart" width="100 px" height="100 px"></canvas>
+                        </div>
+                    </div>
             </main>
 
-            <%                }
-
-                
-                    else {
+            <%                } else {
                     out.print("<script>location.replace('IniciarSesion.jsp');alert('Debes iniciar sesion para acceder a esta pagina');</script>");
                 }
             %>
@@ -152,7 +149,7 @@
                                 'rgba(0, 248, 132, 0.2)',
                                 'rgba(198, 0, 248, 0.2)',
                                 'rgba(144, 142, 144, 0.2)',
-                                'rgba(0, 255, 255, 0.2)', 
+                                'rgba(0, 255, 255, 0.2)',
                                 'rgba(45, 6, 97, 0.2)'
                             ],
                             borderColor: [
