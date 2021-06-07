@@ -1,5 +1,7 @@
 <%@page import="Control.AccionesUsuario"%>
 <%@page import="Usuario.Usuario"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,12 +22,12 @@
             <div class = "container logo-nav-container">
                 <p class = "logo textoForm animate__animated animate__zoomInLeft" id = "textoForm"><i class="far fa-smile"></i> Formulario</p>
                 <div class = "espacio"></div>
-                <span class="menu-icon animate__animated animate__zoomInRight">Ver Menú  <i class="fas fa-chevron-down"></i></span>
-                <nav>
+                <span class="menu-icon animate__animated animate__zoomInRight">Ver MenÃº  <i class="fas fa-chevron-down"></i></span>
+                <nav class="nav">
                     <ul class = "animate__animated animate__zoomInRight">
                         <li onclick="javascript:resultado()"><i class="fas fa-poll"></i> Resultados</li>
                         <div class="espaciado"></div>
-                        <li onclick="javascript:info()"><i class="fas fa-book-open"></i> Estadísticas</li>
+                        <li onclick="javascript:info()"><i class="fas fa-book-open"></i> EstadÃ­sticas</li>
                         <li onclick="javascript:cuenta()" id ="margenNav2"><i class="fas fa-user-circle"></i> Cuenta</li>
                         <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Foro</li>
 
@@ -51,7 +53,7 @@
 
         <section>
             <main class="margen_superior">
-                <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
+                <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="PresiÃ³name para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
                 <form action="controlEnfermedades" class="formulario" id="formE" value="formE" name="formEN">
                     <input type="hidden" value="<%= id_usu  %>" name="id_usu">
                     <%
@@ -957,22 +959,22 @@
                 <li onclick="javascript:instagram()"><i class="fab fa-instagram"> Instagram </i></li>
                 <li onclick="javascript:twitter()"><i class="fab fa-twitter">  Twitter </i></li>
             </ul>
-            <h3>Correo Electrónico</h3>
+            <h3>Correo ElectrÃ³nico</h3>
             <ul>
                 <li>velox.software.09@gmail.com</li>
             </ul>
-            <h3>Página Web</h3>
+            <h3>PÃ¡gina Web</h3>
             <ul>
                 <li onclick="javascript:velox()">VeloxSoftware.com</a></li>
             </ul>
             <h3>Integrantes</h3>
             <div class="nombres">
                 <ul onclick="javascript:velox()">
-                    <li>Castañeda Rodríguez<br>Rafael Gil</li>
+                    <li>CastaÃ±eda RodrÃ­guez<br>Rafael Gil</li>
                     <li>Coronado Segundo<br>Juan Yael</li>
                     <li>Flores Zamora<br>Ithan Adrian</li>
-                    <li>Gallegos González<br>Gian Carlo</li>
-                    <li>Pérez López<br>Jesús Eduardo</li>
+                    <li>Gallegos GonzÃ¡lez<br>Gian Carlo</li>
+                    <li>PÃ©rez LÃ³pez<br>JesÃºs Eduardo</li>
                 </ul>
             </div>
         </footer>

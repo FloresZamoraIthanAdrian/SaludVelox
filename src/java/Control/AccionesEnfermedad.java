@@ -43,6 +43,27 @@ public class AccionesEnfermedad {
         return state;
     }
     
+    public static Enfermedad numUsuarioSDiagnosticados(){
+        Enfermedad enfC = new Enfermedad();
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "select count(*) id_enfermedad";
+            PreparedStatement ps = con.prepareStatement(q);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs.next()){
+                enfC.setNum_diagnosticado(rs.getInt(1));
+            }
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al contar el numero de usuarios diagnosticados");
+            System.out.println(ed.getMessage());
+        }
+        return enfC;
+        
+    }
+    
     public static Enfermedad listarTranstornosUsuarios(int id_usu){
         
         Enfermedad enf = new Enfermedad();

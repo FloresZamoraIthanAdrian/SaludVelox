@@ -83,7 +83,6 @@ function procesarDislexia(respuestas) {
     if ((resp[50] == resp[51]) && (resp[52] == resp[53]) && (resp[54] == resp[55]) && (resp[56] == resp[57])) {
         document.getElementById('dislexia').value = "1";
     } else {
-        alert("No tienes Dislexia");
         document.getElementById('dislexia').value = "0";
     }
 }

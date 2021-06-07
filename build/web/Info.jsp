@@ -74,7 +74,7 @@
                 Enfermedad enf8 = AccionesEnfermedad.padecimientosGeneralesAsperger();
                 Enfermedad enf9 = AccionesEnfermedad.padecimientosGeneralesTobCompulsivo();
                 Enfermedad enf10 = AccionesEnfermedad.padecimientosGeneralesEstres();
-
+                Enfermedad enfC = AccionesEnfermedad.numUsuarioSDiagnosticados();
             %>
 
             <main>
@@ -87,12 +87,9 @@
                     de la vida, desde la niñez y la adolescencia hasta la adultez y la vejez.
                     Por eso es importante reconocer estos transtornos en la vida 
                     de las demas personas.
-                    <br>
-                    La siguiente es una grafica, donde se muestra el numero de 
-                    los usuaarios que fueron diagnosticado con ese transtorno.
-                </div>
-                <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
-                <div class= "container1">
+                    <br><br>
+                    La siguiente es una grafica, de los <em><%= enf.getNum_diagnosticado() %></em> donde se muestra el numero de 
+                    los usuarios que fueron diagnosticado con cierto transtorno.
 
                     <input type="hidden" id="depresion" value="<%= enf.getDepresion()%>">
                     <input type="hidden" id="ansiedad" value="<%= enf1.getAnsiedad()%>">
@@ -104,8 +101,8 @@
                     <input type="hidden" id="bipolaridad" value="<%= enf7.getBipolaridad()%>">
                     <input type="hidden" id="asperger" value="<%= enf8.getAsperger()%>">
                     <input type="hidden" id="t_obesivo" value="<%= enf9.getT_obsesivo_compulsivo()%>">
-                    <input type="hidden" id="estres" value="<%= enf10.getEstres() %>>"
-
+                    <input type="hidden" id="estres" value="<%= enf10.getEstres() %>>">
+                    
                     <div class="container">
                         <canvas id="myChart" width="100 px" height="100 px"></canvas>
                     </div>

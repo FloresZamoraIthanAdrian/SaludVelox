@@ -4,6 +4,7 @@ public class Enfermedad {
 
     private int id_enfermedad, tda_tdah, dislexia, autismo, bipolaridad, asperger, estres;
     private int t_obsesivo_compulsivo, depresion, ansiedad, tc_alimentaria, t_conducta;
+    private int num_diagnosticado;
 
     public int getId_enfermedad() {
         return id_enfermedad;
@@ -99,6 +100,14 @@ public class Enfermedad {
 
     public void setEstres(int estres) {
         this.estres = estres;
+    }
+
+    public int getNum_diagnosticado() {
+        return num_diagnosticado;
+    }
+
+    public void setNum_diagnosticado(int num_diagnosticado) {
+        this.num_diagnosticado = num_diagnosticado;
     }
     
 }
