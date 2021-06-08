@@ -20,6 +20,50 @@
         <servlet-name>controlEnfermedades</servlet-name>
         <servlet-class>Servlets.controlEnfermedades</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>diagDepresion</servlet-name>
+        <servlet-class>Usuario.diagDepresion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>diagAnsiedad</servlet-name>
+        <servlet-class>Servlets.diagAnsiedad</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>diagTConductaAlimentaria</servlet-name>
+        <servlet-class>Servlets.diagTConductaAlimentaria</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>diagTConducta</servlet-name>
+        <servlet-class>Servlets.diagTConducta</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>diagTDA</servlet-name>
+        <servlet-class>Servlets.diagTDA</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>diagDislexia</servlet-name>
+        <servlet-class>Servlets.diagDislexia</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>diagAutismo</servlet-name>
+        <servlet-class>Servlets.diagAutismo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>diagBipolaridad</servlet-name>
+        <servlet-class>Servlets.diagBipolaridad</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>diagAsperger</servlet-name>
+        <servlet-class>Servlets.diagAsperger</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>diagObsesivo</servlet-name>
+        <servlet-class>Servlets.diagObsesivo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>diagEstres</servlet-name>
+        <servlet-class>Servlets.diagEstres</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CrearCuenta</servlet-name>
         <url-pattern>/CrearCuenta</url-pattern>
@@ -39,6 +83,50 @@
     <servlet-mapping>
         <servlet-name>controlEnfermedades</servlet-name>
         <url-pattern>/controlEnfermedades</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>diagDepresion</servlet-name>
+        <url-pattern>/diagDepresion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>diagAnsiedad</servlet-name>
+        <url-pattern>/diagAnsiedad</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>diagTConductaAlimentaria</servlet-name>
+        <url-pattern>/diagTConductaAlimentaria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>diagTConducta</servlet-name>
+        <url-pattern>/diagTConducta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>diagTDA</servlet-name>
+        <url-pattern>/diagTDA</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>diagDislexia</servlet-name>
+        <url-pattern>/diagDislexia</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>diagAutismo</servlet-name>
+        <url-pattern>/diagAutismo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>diagBipolaridad</servlet-name>
+        <url-pattern>/diagBipolaridad</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>diagAsperger</servlet-name>
+        <url-pattern>/diagAsperger</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>diagObsesivo</servlet-name>
+        <url-pattern>/diagObsesivo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>diagEstres</servlet-name>
+        <url-pattern>/diagEstres</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

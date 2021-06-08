@@ -1,6 +1,7 @@
 package Control;
 
 import Usuario.Enfermedad;
+import Usuario.Usuario;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,36 +11,363 @@ import java.util.List;
 
 public class AccionesEnfermedad {
     
-    public static int controlEnfermedades(Enfermedad enf){
+    public static int controlEstres(Enfermedad end, Usuario u)  {
         
         int state = 0;
         
         try{
             
             Connection con = Conexion.getConnection();
-            String q = "{call insertarEnfermedades(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            String q = "{call controEstres(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
             
             CallableStatement  proc = con.prepareCall(q);
-            proc.setInt(1, enf.getId_enfermedad());
-            proc.setInt(2, enf.getDepresion());
-            proc.setInt(3, enf.getAnsiedad());
-            proc.setInt(4, enf.getTc_alimentaria());
-            proc.setInt(5, enf.getT_conducta());
-            proc.setInt(6, enf.getTda_tdah());
-            proc.setInt(7, enf.getDislexia());
-            proc.setInt(8, enf.getAutismo());
-            proc.setInt(9, enf.getBipolaridad());
-            proc.setInt(10, enf.getAsperger());
-            proc.setInt(11, enf.getT_obsesivo_compulsivo());
-            proc.setInt(12, enf.getEstres());
+            proc.setInt(1, u.getId());
+            proc.setInt(2, end.getResp1());
+            proc.setInt(3, end.getResp2());
+            proc.setInt(4, end.getResp3());
+            proc.setInt(5, end.getResp4());
+            proc.setInt(6, end.getResp5());
+            proc.setInt(7, end.getResp6());
+            proc.setInt(8, end.getResp7());
+            proc.setInt(9, end.getResp8());
+            proc.setInt(10, end.getResp9());
+            proc.setInt(11, end.getResp10());
             
             state = proc.executeUpdate();
             con.close();
             
         }catch(Exception ed){
-            System.out.println("Error al manipular los transtornos del usuario");
+            System.out.println("Modulo de control de conducta");
             System.out.println(ed.getMessage());
         }
+        
+        return state;
+    }
+    
+    public static int controlObsesivoCompulsivo(Enfermedad end, Usuario u){
+        
+        int state = 0;
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "{call controlOC(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            
+            CallableStatement  proc = con.prepareCall(q);
+            proc.setInt(1, u.getId());
+            proc.setInt(2, end.getResp1());
+            proc.setInt(3, end.getResp2());
+            proc.setInt(4, end.getResp3());
+            proc.setInt(5, end.getResp4());
+            proc.setInt(6, end.getResp5());
+            proc.setInt(7, end.getResp6());
+            proc.setInt(8, end.getResp7());
+            proc.setInt(9, end.getResp8());
+            proc.setInt(10, end.getResp9());
+            proc.setInt(11, end.getResp10());
+            
+            state = proc.executeUpdate();
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Modulo de control de conducta");
+            System.out.println(ed.getMessage());
+        }
+        
+        return state;
+    }
+    
+    public static int controlAsperger(Enfermedad end, Usuario u){
+        
+        int state = 0;
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "{call controlAsperger(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            
+            CallableStatement  proc = con.prepareCall(q);
+            proc.setInt(1, u.getId());
+            proc.setInt(2, end.getResp1());
+            proc.setInt(3, end.getResp2());
+            proc.setInt(4, end.getResp3());
+            proc.setInt(5, end.getResp4());
+            proc.setInt(6, end.getResp5());
+            proc.setInt(7, end.getResp6());
+            proc.setInt(8, end.getResp7());
+            proc.setInt(9, end.getResp8());
+            proc.setInt(10, end.getResp9());
+            proc.setInt(11, end.getResp10());
+            
+            state = proc.executeUpdate();
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Modulo de control de conducta");
+            System.out.println(ed.getMessage());
+        }
+        
+        return state;
+    }
+    
+    public static int controlBipolaridad(Enfermedad end, Usuario u){
+        
+        int state = 0;
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "{call controlBipolaridad_uwu_(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            
+            CallableStatement  proc = con.prepareCall(q);
+            proc.setInt(1, u.getId());
+            proc.setInt(2, end.getResp1());
+            proc.setInt(3, end.getResp2());
+            proc.setInt(4, end.getResp3());
+            proc.setInt(5, end.getResp4());
+            proc.setInt(6, end.getResp5());
+            proc.setInt(7, end.getResp6());
+            proc.setInt(8, end.getResp7());
+            proc.setInt(9, end.getResp8());
+            proc.setInt(10, end.getResp9());
+            proc.setInt(11, end.getResp10());
+            
+            state = proc.executeUpdate();
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Modulo de control de conducta");
+            System.out.println(ed.getMessage());
+        }
+        
+        return state;
+    }
+    
+    public static int controlAutismo(Enfermedad end, Usuario u){
+        
+        int state = 0;
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "{call controlAutismo(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            
+            CallableStatement  proc = con.prepareCall(q);
+            proc.setInt(1, u.getId());
+            proc.setInt(2, end.getResp1());
+            proc.setInt(3, end.getResp2());
+            proc.setInt(4, end.getResp3());
+            proc.setInt(5, end.getResp4());
+            proc.setInt(6, end.getResp5());
+            proc.setInt(7, end.getResp6());
+            proc.setInt(8, end.getResp7());
+            proc.setInt(9, end.getResp8());
+            proc.setInt(10, end.getResp9());
+            
+            state = proc.executeUpdate();
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Modulo de control de conducta");
+            System.out.println(ed.getMessage());
+        }
+        
+        return state;
+    }
+    
+    public static int controlDislexia(Enfermedad end, Usuario u){
+        
+        int state = 0;
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "{call controlDislexiaXD(?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            
+            CallableStatement  proc = con.prepareCall(q);
+            proc.setInt(1, u.getId());
+            proc.setInt(2, end.getResp1());
+            proc.setInt(3, end.getResp2());
+            proc.setInt(4, end.getResp3());
+            proc.setInt(5, end.getResp4());
+            proc.setInt(6, end.getResp5());
+            proc.setInt(7, end.getResp6());
+            proc.setInt(8, end.getResp7());
+            proc.setInt(9, end.getResp8());
+            
+            state = proc.executeUpdate();
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Modulo de control de conducta");
+            System.out.println(ed.getMessage());
+        }
+        
+        return state;
+    }
+    
+    public static int controlTDA(Enfermedad end, Usuario u){
+        
+        int state = 0;
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "{call controlTDA_nwn_(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            
+            CallableStatement  proc = con.prepareCall(q);
+            proc.setInt(1, u.getId());
+            proc.setInt(2, end.getResp1());
+            proc.setInt(3, end.getResp2());
+            proc.setInt(4, end.getResp3());
+            proc.setInt(5, end.getResp4());
+            proc.setInt(6, end.getResp5());
+            proc.setInt(7, end.getResp6());
+            proc.setInt(8, end.getResp7());
+            proc.setInt(9, end.getResp8());
+            proc.setInt(10, end.getResp9());
+            
+            state = proc.executeUpdate();
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Modulo de control de conducta");
+            System.out.println(ed.getMessage());
+        }
+        
+        return state;
+    }
+    
+    public static int controlConducta(Enfermedad end, Usuario u){
+        
+        int state = 0;
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "{call controlConducta_uwu_(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            
+            CallableStatement  proc = con.prepareCall(q);
+            proc.setInt(1, u.getId());
+            proc.setInt(2, end.getResp1());
+            proc.setInt(3, end.getResp2());
+            proc.setInt(4, end.getResp3());
+            proc.setInt(5, end.getResp4());
+            proc.setInt(6, end.getResp5());
+            proc.setInt(7, end.getResp6());
+            proc.setInt(8, end.getResp7());
+            proc.setInt(9, end.getResp8());
+            proc.setInt(10, end.getResp9());
+            proc.setInt(11, end.getResp10());
+            
+            state = proc.executeUpdate();
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Modulo de control de conducta");
+            System.out.println(ed.getMessage());
+        }
+        
+        return state;
+    }
+    
+    public static int controlConductaAlimentaria(Enfermedad end, Usuario u){
+        
+        int state = 0;
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "{call controlConductaAlimentaria_uwu_(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            
+            CallableStatement  proc = con.prepareCall(q);
+            proc.setInt(1, u.getId());
+            proc.setInt(2, end.getResp1());
+            proc.setInt(3, end.getResp2());
+            proc.setInt(4, end.getResp3());
+            proc.setInt(5, end.getResp4());
+            proc.setInt(6, end.getResp5());
+            proc.setInt(7, end.getResp6());
+            proc.setInt(8, end.getResp7());
+            proc.setInt(9, end.getResp8());
+            proc.setInt(10, end.getResp9());
+            proc.setInt(11, end.getResp10());
+            proc.setInt(12, end.getResp11());
+            
+            state = proc.executeUpdate();
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Modulo de control de conducta alimentaria");
+            System.out.println(ed.getMessage());
+        }
+        
+        return state;
+    }
+    
+    public static int controlAnsiedad(Enfermedad end, Usuario u){
+        
+        int state = 0;
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "{call controlAnsiedad_nwn__(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            
+            CallableStatement  proc = con.prepareCall(q);
+            proc.setInt(1, u.getId());
+            proc.setInt(2, end.getResp1());
+            proc.setInt(3, end.getResp2());
+            proc.setInt(4, end.getResp3());
+            proc.setInt(5, end.getResp4());
+            proc.setInt(6, end.getResp5());
+            proc.setInt(7, end.getResp6());
+            proc.setInt(8, end.getResp7());
+            proc.setInt(9, end.getResp8());
+            proc.setInt(10, end.getResp9());
+            proc.setInt(11, end.getResp10());
+            proc.setInt(12, end.getResp11());
+            
+            state = proc.executeUpdate();
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Modulo de control de ansiedad");
+            System.out.println(ed.getMessage());
+        }
+        
+        return state;
+    }
+    
+    public static int controlDepresion(Enfermedad end, Usuario u){
+        
+        int state = 0;
+        
+        try{
+            
+            Connection con = Conexion.getConnection();
+            String q = "{call controlDepresion_unu__(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            
+            CallableStatement  proc = con.prepareCall(q);
+            proc.setInt(1, u.getId());
+            proc.setInt(2, end.getResp1());
+            proc.setInt(3, end.getResp2());
+            proc.setInt(4, end.getResp3());
+            proc.setInt(5, end.getResp4());
+            proc.setInt(6, end.getResp5());
+            proc.setInt(7, end.getResp6());
+            proc.setInt(8, end.getResp7());
+            proc.setInt(9, end.getResp8());
+            proc.setInt(10, end.getResp9());
+            
+            state = proc.executeUpdate();
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("Modulo de control de depresion");
+            System.out.println(ed.getMessage());
+        }
+        
         return state;
     }
     

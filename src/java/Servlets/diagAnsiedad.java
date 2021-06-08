@@ -2,6 +2,7 @@ package Servlets;
 
 import Control.AccionesEnfermedad;
 import Usuario.Enfermedad;
+import Usuario.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -9,52 +10,54 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class controlEnfermedades extends HttpServlet {
+
+public class diagAnsiedad extends HttpServlet {
+
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
 
-            int id_usu, depresion, ansiedad, tc_alimentaria, t_conducta, tda_tdah;
-            int dislexia, autismo, bipolaridad, asperger, t_obesesivo, estres;
+            int id_usu, resp1, resp2, resp3, resp4, resp5, resp6, resp7, resp8, resp9, resp10, resp11;
             
             id_usu = Integer.parseInt(request.getParameter("id_usu"));
-            depresion = Integer.parseInt(request.getParameter("depresion"));
-            ansiedad = Integer.parseInt(request.getParameter("ansiedad"));
-            tc_alimentaria = Integer.parseInt(request.getParameter("tc_alimen"));
-            t_conducta = Integer.parseInt(request.getParameter("t_conducta"));
-            tda_tdah = Integer.parseInt(request.getParameter("tda_tdah"));
-            dislexia = Integer.parseInt(request.getParameter("dislexia"));
-            autismo = Integer.parseInt(request.getParameter("autismo"));
-            bipolaridad = Integer.parseInt(request.getParameter("bipolaridad"));
-            asperger = Integer.parseInt(request.getParameter("asperger"));
-            t_obesesivo = Integer.parseInt(request.getParameter("t_obsesivo_compulsivo"));
-            estres = Integer.parseInt(request.getParameter("estres"));
+            resp1 = Integer.parseInt(request.getParameter("respuesta9"));
+            resp2 = Integer.parseInt(request.getParameter("respuesta10"));
+            resp3 = Integer.parseInt(request.getParameter("respuesta11"));
+            resp4 = Integer.parseInt(request.getParameter("respuesta12"));
+            resp5 = Integer.parseInt(request.getParameter("respuesta13"));
+            resp6 = Integer.parseInt(request.getParameter("respuesta14"));
+            resp7 = Integer.parseInt(request.getParameter("respuesta15"));
+            resp8 = Integer.parseInt(request.getParameter("respuesta16"));
+            resp9 = Integer.parseInt(request.getParameter("respuesta17"));
+            resp10 = Integer.parseInt(request.getParameter("respuesta18"));
+            resp11 = Integer.parseInt(request.getParameter("respuesta19"));
             
-            Enfermedad enf = new Enfermedad();
-            enf.setId_enfermedad(id_usu);
-            enf.setDepresion(depresion);
-            enf.setAnsiedad(ansiedad);
-            enf.setTc_alimentaria(tc_alimentaria);
-            enf.setT_conducta(t_conducta);
-            enf.setTda_tdah(tda_tdah);
-            enf.setDislexia(dislexia);
-            enf.setAutismo(autismo);
-            enf.setBipolaridad(bipolaridad);
-            enf.setAsperger(asperger);
-            enf.setT_obsesivo_compulsivo(t_obesesivo);
-            enf.setEstres(estres);
+            Usuario u = new Usuario();
+            Enfermedad end = new Enfermedad();
             
-            System.out.println(enf.getId_enfermedad());
+            u.setId(id_usu);
+            end.setResp1(resp1);
+            end.setResp2(resp2);
+            end.setResp3(resp3);
+            end.setResp4(resp4);
+            end.setResp5(resp5);
+            end.setResp6(resp6);
+            end.setResp7(resp7);
+            end.setResp8(resp8);
+            end.setResp9(resp9);
+            end.setResp10(resp10);
+            end.setResp11(resp11);
             
-            int state = 0;
+            int state = AccionesEnfermedad.controlAnsiedad(end, u);
             
             if(state > 0){
-                response.sendRedirect("Resultado.jsp");
+                response.sendRedirect("Formulario.jsp");
             }else{
                 response.sendRedirect("Error404.html");
             }
+            
             
         }
     }

@@ -90,7 +90,7 @@
                 </div>
                 <div class="container1">
                         La siguiente es una grafica, de los <em><%= enfC.getNum_diagnosticado()%></em> donde se muestra el numero de 
-                        los usuarios que fueron diagnosticado con cierto transtorno.
+                        los usuarios registrados y cuantos fueron diagnosticados con cierto transtorno.
 
                         <input type="hidden" id="depresion" value="<%= enf.getDepresion()%>">
                         <input type="hidden" id="ansiedad" value="<%= enf1.getAnsiedad()%>">
