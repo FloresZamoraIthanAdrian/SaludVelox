@@ -10,6 +10,10 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <link rel = "stylesheet" type = 'text/css' href = 'Styles/Estilos.css'>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lobster&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <title>Información | Salud Velox</title>
         <link rel="icon" href= "images/EscudoVelox2.png">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -39,7 +43,7 @@
                         <li onclick="javascript:resultado()"><i class="fas fa-poll"></i> Resultados</li>
                         <div class="espaciado"></div>
                         <li onclick="javascript:cuenta()" id ="margenNav2"><i class="fas fa-user-circle"></i> Cuenta</li>
-                        <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Foro</li>
+                        <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Chat</li>
                             <%
                                 HttpSession sesion = request.getSession();
                                 String usuer, id;
@@ -205,7 +209,18 @@
             </div>
         </footer>          
 
+        <noscript>
+        <div class="sinJS">
+            <p class="error_titulo">ERROR</p>
+            <image src = "images/Js.svg" class="error_imagen animate__animated animate__jello animate__infinite animate__slower"></image>
+            <p class="error_subtitulo">Esta página web necesita Javascript</p>
+        </div>
+        </noscript>
+
         <script>
+            function info() {
+                location.href = "Info.jsp"
+            }
             function cuenta() {
                 location.href = "Cuenta.jsp";
             }
@@ -216,7 +231,7 @@
                 location.href = "Resultado.jsp"
             }
             function chat() {
-                location.href = "https://chat-velox.herokuapp.com/"
+                window.open("https://chat-velox.herokuapp.com/");
             }
             function velox() {
                 window.open("https://giancarlogall.github.io/VeloxPagina/Velox.html");

@@ -1,0 +1,37 @@
+/*Esto solo lo ones en la hoja de estilos que se llama styleforms.css*/
+.error_titulo{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    font-family: 'Abril Fatface', cursive;
+    color: #9f0000;
+}
+.error_subtitulo{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 40px;
+    font-family: 'Lobster', cursive;
+    color: #9f0000;
+}
+.error_imagen{
+    width: 30%;
+    margin: 20px 35%;
+}
+/*____________________________________________________________________________________________________*/
+/*Esto lo pones en todas las hojas de estilos*/
+.sinJS{
+    width: 100%;
+    z-index: 100;
+    background: #e6e3e3;
+    background: -moz-linear-gradient(-45deg,  #e6e3e3 0%, #dbd6d6 50%, #e6e3e3 50%, #dbd6d6 100%);
+    background: -webkit-linear-gradient(-45deg,  #e6e3e3 0%,#dbd6d6 50%,#e6e3e3 50%,#dbd6d6 100%);
+    background: linear-gradient(135deg,  #e6e3e3 0%,#dbd6d6 50%,#e6e3e3 50%,#dbd6d6 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e3e3', endColorstr='#dbd6d6',GradientType=1 );
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: block;
+}

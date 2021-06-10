@@ -16,6 +16,11 @@ public class diagDepresion extends HttpServlet {
 
             int id_usu, resp1, resp2, resp3, resp4, resp5, resp6, resp7, resp8, resp9;
             
+            int id_enfermedad = Integer.parseInt(request.getParameter("id_transtorno"));
+                    
+            String fecha;
+            fecha = request.getParameter("fechaActual");
+            
             id_usu = Integer.parseInt(request.getParameter("id_usu"));
             resp1 = Integer.parseInt(request.getParameter("respuesta"));
             resp2 = Integer.parseInt(request.getParameter("respuesta1"));
@@ -27,21 +32,17 @@ public class diagDepresion extends HttpServlet {
             resp8 = Integer.parseInt(request.getParameter("respuesta7"));
             resp9 = Integer.parseInt(request.getParameter("respuesta8"));
             
+            int total = resp1 + resp2 + resp3 + resp4 + resp5 + resp6 + resp7 + resp8 +  resp9;
+            
             Usuario u = new Usuario();
             Enfermedad end = new Enfermedad();
             
             u.setId(id_usu);
-            end.setResp1(resp1);
-            end.setResp2(resp2);
-            end.setResp3(resp3);
-            end.setResp4(resp4);
-            end.setResp5(resp5);
-            end.setResp6(resp6);
-            end.setResp7(resp7);
-            end.setResp8(resp8);
-            end.setResp9(resp9);
+            end.setId_enfermedad(id_enfermedad);
+            end.setPuntaje(total);
+            end.setFecha(fecha);
             
-            int state = AccionesEnfermedad.controlDepresion(end, u);
+            int state = AccionesEnfermedad.controlEnfermedad(end, u);
             
             if(state > 0){
                 response.sendRedirect("Formulario.jsp");

@@ -7,6 +7,10 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <link rel = "stylesheet" type = 'text/css' href = 'Styles/Estilos.css'>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lobster&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <title>Contraseña | Salud Velox</title>
         <link rel="icon" href= "./images/EscudoVelox2.png">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -98,7 +102,43 @@
         <script src="./Scripts/Basicos.js"></script>
         <script src="./Scripts/ValidacionFormularios.js"></script>
         <script src='./Scripts/ValidacionTeclado.js'></script>
+        <noscript>
+        <div class="sinJS">
+            <p class="error_titulo">ERROR</p>
+            <image src = "images/Js.svg" class="error_imagen animate__animated animate__jello animate__infinite animate__slower"></image>
+            <p class="error_subtitulo">Esta página web necesita Javascript</p>
+        </div>
+        </noscript>
 
+        <script>
+            function info() {
+                location.href = "Info.jsp"
+            }
+            function cuenta() {
+                location.href = "Cuenta.jsp";
+            }
+            function formulario() {
+                location.href = "Formulario.jsp"
+            }
+            function resultado() {
+                location.href = "Resultado.jsp"
+            }
+            function chat() {
+                window.open("https://chat-velox.herokuapp.com/");
+            }
+            function velox() {
+                window.open("https://giancarlogall.github.io/VeloxPagina/Velox.html");
+            }
+            function facebook() {
+                window.open("https://www.facebook.com/VeloxSoftware");
+            }
+            function instagram() {
+                window.open("https://www.instagram.com/veloxsoftware/");
+            }
+            function twitter() {
+                window.open("https://twitter.com/SoftwareVelox");
+            }
+        </script>
         <script>
                     jQuery('document').ready(function ($) {
                         var menuBtn = $('.menu-icon'),

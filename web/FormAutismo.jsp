@@ -7,6 +7,10 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <link rel = "stylesheet" type = 'text/css' href = 'Styles/Estilos.css'>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lobster&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <title>Formulario | Salud Velox</title>
         <link rel="icon" href= "images/EscudoVelox2.png">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -29,7 +33,7 @@
                         <div class="espaciado"></div>
                         <li onclick="javascript:info()"><i class="fas fa-book-open"></i> Estadísticas</li>
                         <li onclick="javascript:cuenta()" id ="margenNav2"><i class="fas fa-user-circle"></i> Cuenta</li>
-                        <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Foro</li>
+                        <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Chat</li>
 
                         <%
                             HttpSession sesion = request.getSession();
@@ -51,12 +55,26 @@
             </div>
 
         </header>
+                    
+                    <script>window.onload = function () {
+                var fecha = new Date();
+                var mes = fecha.getMonth() + 1;
+                var dia = fecha.getDate();
+                var ano = fecha.getFullYear();
+                if (dia < 10)
+                    dia = '0' + dia;
+                if (mes < 10)
+                    mes = '0' + mes
+                document.getElementById('fechaActual').value = ano + "-" + mes + "-" + dia;
+            }</script>
 
         <section>
             <main class="margen_superior">
                 <ol class="formulario_cuadro">
                     <form action="diagAutismo" class="formulario">
                         <input type="hidden" value="<%= id_usu%>" name="id_usu">
+                        <input type="hidden" name="fechaActual" id="fechaActual">
+                        <input type="hidden" name="id_transtorno" value="7">
                         <li class="formulario_pregunta">¿Es capaz de hablar usando frases u oraciones cortas?</li>
                         <div class="radio">
                             <input type="radio" name = "respuesta57" value = "1" id = "Si38">
@@ -171,7 +189,13 @@
             </div>
         </footer>
 
-
+<noscript>
+        <div class="sinJS">
+            <p class="error_titulo">ERROR</p>
+            <image src = "images/Js.svg" class="error_imagen animate__animated animate__jello animate__infinite animate__slower"></image>
+            <p class="error_subtitulo">Esta página web necesita Javascript</p>
+        </div>
+        </noscript>
 
         <script>
             function info() {
@@ -187,7 +211,7 @@
                 location.href = "Resultado.jsp"
             }
             function chat() {
-                location.href = "https://chat-velox.herokuapp.com/"
+                window.open("https://chat-velox.herokuapp.com/");
             }
             function velox() {
                 window.open("https://giancarlogall.github.io/VeloxPagina/Velox.html");

@@ -10,6 +10,10 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <link rel = "stylesheet" type = 'text/css' href = 'Styles/Estilos.css'>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lobster&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <title>Resultados | Salud Velox</title>
         <link rel="icon" href= "images/EscudoVelox2.png">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -92,7 +96,7 @@
                         <li onclick="javascript:info()"><i class="fas fa-book-open"></i> Estadísticas</li>
                         <div class="espaciado"></div>
                         <li onclick="javascript:cuenta()" id ="margenNav2"><i class="fas fa-user-circle"></i> Cuenta</li>
-                        <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Foro</li>
+                        <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Chat</li>
 
                         <%
                             HttpSession sesion = request.getSession();
@@ -141,80 +145,17 @@
                 </thead>
                 <tbody>
 
-                    <%                        
-                        Enfermedad f = AccionesEnfermedad.listarTranstornosUsuarios(id_usu);
-                        String[] enfNombres = new String[11];
-
-                        if (f.getAnsiedad() > 0) {
-                            enfNombres[0] = "Ansiedad";
-                        } else {
-                            enfNombres[0] = null;
-                        }
-
-                        if (f.getAsperger() > 0) {
-                            enfNombres[1] = "Asperger";
-                        } else {
-                            enfNombres[1] = null;
-                        }
-
-                        if (f.getAutismo() > 0) {
-                            enfNombres[2] = "Autismo";
-                        } else {
-                            enfNombres[2] = null;
-                        }
-
-                        if (f.getBipolaridad() > 0) {
-                            enfNombres[3] = "Bipolaridad";
-                        } else {
-                            enfNombres[3] = null;
-                        }
-
-                        if (f.getDepresion() > 0) {
-                            enfNombres[4] = "Depresion";
-                        } else {
-                            enfNombres[4] = null;
-                        }
-
-                        if (f.getDislexia() > 0) {
-                            enfNombres[5] = "Dislexia";
-                        } else {
-                            enfNombres[5] = null;
-                        }
-
-                        if (f.getT_conducta() > 0) {
-                            enfNombres[6] = "Transtornos de conducta";
-                        } else {
-                            enfNombres[6] = null;
-                        }
-
-                        if (f.getT_obsesivo_compulsivo() > 0) {
-                            enfNombres[7] = "Transtorno obsesivo compulsivo";
-                        } else {
-                            enfNombres[7] = null;
-                        }
-
-                        if (f.getTc_alimentaria() > 0) {
-                            enfNombres[8] = "Transtornos de conducta alimentaria";
-                        } else {
-                            enfNombres[8] = null;
-                        }
-
-                        if (f.getTda_tdah() > 0) {
-                            enfNombres[9] = "TDA/TDAH";
-                        } else {
-                            enfNombres[9] = null;
-                        }
-
-                        for(String pf : enfNombres){
-                            if(pf != null){
+                    <%  
+                        List<Enfermedad> listaEnfermedad = AccionesEnfermedad.listarTranstornosUsuarios(id_usu);
+                        for(Enfermedad end : listaEnfermedad){
                     %>
 
                     <tr>
-                        <th scope="row"><%= pf %></th>
+                        <th scope="row"><%= end.getNombre() %></th>
                     </tr>
 
                     <%
-                            }
+                            
                         }
                     %>
 
@@ -227,37 +168,6 @@
                 out.print("<script>location.replace('IniciarSesion.jsp');alert('Debes iniciar sesion para acceder a esta pagina');</script>");
             }
         %>
-
-
-        <script>
-            function info() {
-                location.href = "Info.jsp"
-            }
-            function cuenta() {
-                location.href = "Cuenta.jsp";
-            }
-            function formulario() {
-                location.href = "Formulario.jsp"
-            }
-            function resultado() {
-                location.href = "Resultado.jsp"
-            }
-            function chat() {
-                location.href = "https://chat-velox.herokuapp.com/"
-            }
-            function velox() {
-                window.open("https://giancarlogall.github.io/VeloxPagina/Velox.html");
-            }
-            function facebook() {
-                window.open("https://www.facebook.com/VeloxSoftware");
-            }
-            function instagram() {
-                window.open("https://www.instagram.com/veloxsoftware/");
-            }
-            function twitter() {
-                window.open("https://twitter.com/SoftwareVelox");
-            }
-        </script>
 
         <footer>
             <h3 style="color: white;">Redes Sociales</h3>
@@ -285,6 +195,13 @@
                 </ul>
             </div>
         </footer>
+        <noscript>
+        <div class="sinJS">
+            <p class="error_titulo">ERROR</p>
+            <image src = "images/Js.svg" class="error_imagen animate__animated animate__jello animate__infinite animate__slower"></image>
+            <p class="error_subtitulo">Esta página web necesita Javascript</p>
+        </div>
+        </noscript>
 
         <script>
             function info() {
@@ -300,7 +217,7 @@
                 location.href = "Resultado.jsp"
             }
             function chat() {
-                location.href = "https://chat-velox.herokuapp.com/"
+                window.open("https://chat-velox.herokuapp.com/");
             }
             function velox() {
                 window.open("https://giancarlogall.github.io/VeloxPagina/Velox.html");

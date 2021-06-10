@@ -7,6 +7,10 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <link rel = "stylesheet" type = 'text/css' href = 'Styles/Estilos.css'>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lobster&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <title>Formulario | Salud Velox</title>
         <link rel="icon" href= "images/EscudoVelox2.png">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -29,7 +33,7 @@
                         <div class="espaciado"></div>
                         <li onclick="javascript:info()"><i class="fas fa-book-open"></i> Estadísticas</li>
                         <li onclick="javascript:cuenta()" id ="margenNav2"><i class="fas fa-user-circle"></i> Cuenta</li>
-                        <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Foro</li>
+                        <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Chat</li>
 
                         <%
                             HttpSession sesion = request.getSession();
@@ -51,92 +55,105 @@
             </div>
 
         </header>
-
+        <script>window.onload = function () {
+                var fecha = new Date();
+                var mes = fecha.getMonth() + 1;
+                var dia = fecha.getDate();
+                var ano = fecha.getFullYear();
+                if (dia < 10)
+                    dia = '0' + dia;
+                if (mes < 10)
+                    mes = '0' + mes
+                document.getElementById('fechaActual').value = ano + "-" + mes + "-" + dia;
+            }</script>
         <section>
             <main class="margen_superior">
                 <ol class="formulario_cuadro">
+
                     <form action="diagObsesivo" class="formulario">
+                        <input type="hidden" name="fechaActual" id="fechaActual">
                         <input type="hidden" value="<%= id_usu%>" name="id_usu">
+                        <input type="hidden" name="id_transtorno" value="10">
                         <li class="formulario_pregunta">¿Siente usted miedo de llegar a ser responsable de que le pase algo terrible a otras personas?</li>
-                    <div class="radio">
-                        <input type="radio" name = "respuesta76" value="5" id = "Si57">
-                        <label for="Si57">Si</label>
-                        <input type="radio" name = "respuesta76" value="1" id = "No57">
-                        <label for="No57">No</label>
-                    </div>
-                    <image src = "images/images_form/Imagen.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="El objetivo de viajar no es sólo conocer tierras extrañas, sino que en última instancia se pueda volver y ver al propio país con extrañamiento. – G. K. Chesterton" alt = "No se porque no carga :c"></image>
-                    <li class="formulario_pregunta">¿Aparecen regularmente imágenes violentas o terroríficas en su mente contra su voluntad, produciéndole angustia?</li>
-                    <div class="radio">
-                        <input type="radio" name = "respuesta77" value="5" id = "Si58">
-                        <label for="Si58">Si</label>
-                        <input type="radio" name = "respuesta77" value="1" id = "No58">
-                        <label for="No58">No</label>
-                    </div>
-                    <image src = "images/images_form/Comida.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Cuando viajas, recuerda que los países extranjeros no están diseñados para que te sientas cómodo. Están diseñados para que su propia gente se sienta cómoda. – Clifton Fadiman" alt = "No se porque no carga :c"></image>
-                    <li class="formulario_pregunta">¿Aparecen regularmente imágenes obscenas o blasfemas en su mente contra su voluntad, produciéndole angustia?</li>
-                    <div class="radio">
-                        <input type="radio" name = "respuesta78" value="5" id = "Si59">
-                        <label for="Si59">Si</label>
-                        <input type="radio" name = "respuesta78" value="1" id = "No59">
-                        <label for="No59">No</label>
-                    </div>
-                    <image src = "images/images_form/Juntos.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Los soñadores son los salvadores del mundo. – James Allen." alt = "No se porque no carga :c"></image>
-                    <li class="formulario_pregunta">Presenta usted frecuentemente ideas de estar “contaminado”, “infectado” o sucio?</li>
-                    <div class="radio">
-                        <input type="radio" name = "respuesta79" value="5" id = "Si60">
-                        <label for="Si60">Si</label>
-                        <input type="radio" name = "respuesta79" value="1" id = "No60">
-                        <label for="No60">No</label>
-                    </div>
-                    <image src = "images/images_form/Musica.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Nunca dejes que tus recuerdos sean más grandes que tus sueños. – Doug Ivester." alt = "No se porque no carga :c"></image>
-                    <li class="formulario_pregunta">¿Aparecen frecuentemente en su mente otras ideas, imágenes o impulsos intrusos que le provocan angustia?</li>
-                    <div class="radio">
-                        <input type="radio" name = "respuesta80" value="5" id = "Si61">
-                        <label for="Si61">Si</label>
-                        <input type="radio" name = "respuesta80" value="1" id = "No61">
-                        <label for="No61">No</label>
-                    </div>
-                    <image src = "images/images_form/Poder.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Haz de cada día tu pieza maestra. – John Wooden." alt = "No se porque no carga :c"></image>
-                    <li class="formulario_pregunta">¿Está usted constantemente preocupado por mantener el orden, la simetría o exactitud, aunque a veces no se justifique?</li>
-                    <div class="radio">
-                        <input type="radio" name = "respuesta81" value="5" id = "Si62">
-                        <label for="Si62">Si</label>
-                        <input type="radio" name = "respuesta81" value="1" id = "No62">
-                        <label for="No62">No</label>
-                    </div>
-                    <image src = "images/images_form/Regalo.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Escribe algo que merezca la pena leer o haz algo que merezca la pena escribir. – Benjamin Franklin." alt = "No se porque no carga :c"></image>
-                    <li class="formulario_pregunta">¿Realiza usted diariamente un lavado de manos excesivo o siguiendo un ritual determinado?</li>
-                    <div class="radio">
-                        <input type="radio" name = "respuesta82" value="5" id = "Si63">
-                        <label for="Si63">Si</label>
-                        <input type="radio" name = "respuesta82" value="1" id = "No63">
-                        <label for="No63">No</label>
-                    </div>
-                    <image src = "images/images_form/Seguridad.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Puede que te disguste fallar, pero estas condenado si no lo intentas. – Beverly Sills." alt = "No se porque no carga :c"></image>
-                    <li class="formulario_pregunta">¿Realiza usted diariamente la limpieza de su casa (u otros objetos) en forma excesiva o siguiendo un ritual determinado?</li>
-                    <div class="radio">
-                        <input type="radio" name = "respuesta83" value="5" id = "Si64">
-                        <label for="Si64">Si</label>
-                        <input type="radio" name = "respuesta83" value="1" id = "No64">
-                        <label for="No64">No</label>
-                    </div>
-                    <image src = "images/images_form/Sonrisa.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="La felicidad no es algo que ya esta hecho. Viene de tus acciones. – Dalai Lama." alt = "No se porque no carga :c"></image>
-                    <li class="formulario_pregunta">¿Debe usted chequear en forma permanente y exagerada (más de una vez) las cerraduras, llaves, aparatos a gas o eléctricos, para evitar algún daño?</li>
-                    <div class="radio">
-                        <input type="radio" name = "respuesta84" value="5" id = "Si65">
-                        <label for="Si65">Si</label>
-                        <input type="radio" name = "respuesta84" value="1" id = "No65">
-                        <label for="No65">No</label>
-                    </div>
-                    <image src = "images/images_form/Viaje.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Cuando te encuentras con un bloqueo en la carretera, toma un desvío. – Mary Kay Ash." alt = "No se porque no carga :c"></image>
-                    <li class="formulario_pregunta">¿Tiene usted la necesidad de repetir, en forma ritualizada o no, actividades rutinarias (sentarse/pararse, salir/entrar, etc.)?</li>
-                    <div class="radio">
-                        <input type="radio" name = "respuesta85" value="5" id = "Si66">
-                        <label for="Si66">Si</label>
-                        <input type="radio" name = "respuesta85" value="1" id = "No66">
-                        <label for="No66">No</label>
-                    </div>
-                    <image src = "images/images_form/Camino.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Es en tus momentos de decisión cuando se forma tu destino. – Tony Robbins." alt = "No se porque no carga :c"></image>
+                        <div class="radio">
+                            <input type="radio" name = "respuesta76" value="5" id = "Si57">
+                            <label for="Si57">Si</label>
+                            <input type="radio" name = "respuesta76" value="1" id = "No57">
+                            <label for="No57">No</label>
+                        </div>
+                        <image src = "images/images_form/Imagen.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="El objetivo de viajar no es sólo conocer tierras extrañas, sino que en última instancia se pueda volver y ver al propio país con extrañamiento. – G. K. Chesterton" alt = "No se porque no carga :c"></image>
+                        <li class="formulario_pregunta">¿Aparecen regularmente imágenes violentas o terroríficas en su mente contra su voluntad, produciéndole angustia?</li>
+                        <div class="radio">
+                            <input type="radio" name = "respuesta77" value="5" id = "Si58">
+                            <label for="Si58">Si</label>
+                            <input type="radio" name = "respuesta77" value="1" id = "No58">
+                            <label for="No58">No</label>
+                        </div>
+                        <image src = "images/images_form/Comida.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Cuando viajas, recuerda que los países extranjeros no están diseñados para que te sientas cómodo. Están diseñados para que su propia gente se sienta cómoda. – Clifton Fadiman" alt = "No se porque no carga :c"></image>
+                        <li class="formulario_pregunta">¿Aparecen regularmente imágenes obscenas o blasfemas en su mente contra su voluntad, produciéndole angustia?</li>
+                        <div class="radio">
+                            <input type="radio" name = "respuesta78" value="5" id = "Si59">
+                            <label for="Si59">Si</label>
+                            <input type="radio" name = "respuesta78" value="1" id = "No59">
+                            <label for="No59">No</label>
+                        </div>
+                        <image src = "images/images_form/Juntos.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Los soñadores son los salvadores del mundo. – James Allen." alt = "No se porque no carga :c"></image>
+                        <li class="formulario_pregunta">Presenta usted frecuentemente ideas de estar “contaminado”, “infectado” o sucio?</li>
+                        <div class="radio">
+                            <input type="radio" name = "respuesta79" value="5" id = "Si60">
+                            <label for="Si60">Si</label>
+                            <input type="radio" name = "respuesta79" value="1" id = "No60">
+                            <label for="No60">No</label>
+                        </div>
+                        <image src = "images/images_form/Musica.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Nunca dejes que tus recuerdos sean más grandes que tus sueños. – Doug Ivester." alt = "No se porque no carga :c"></image>
+                        <li class="formulario_pregunta">¿Aparecen frecuentemente en su mente otras ideas, imágenes o impulsos intrusos que le provocan angustia?</li>
+                        <div class="radio">
+                            <input type="radio" name = "respuesta80" value="5" id = "Si61">
+                            <label for="Si61">Si</label>
+                            <input type="radio" name = "respuesta80" value="1" id = "No61">
+                            <label for="No61">No</label>
+                        </div>
+                        <image src = "images/images_form/Poder.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Haz de cada día tu pieza maestra. – John Wooden." alt = "No se porque no carga :c"></image>
+                        <li class="formulario_pregunta">¿Está usted constantemente preocupado por mantener el orden, la simetría o exactitud, aunque a veces no se justifique?</li>
+                        <div class="radio">
+                            <input type="radio" name = "respuesta81" value="5" id = "Si62">
+                            <label for="Si62">Si</label>
+                            <input type="radio" name = "respuesta81" value="1" id = "No62">
+                            <label for="No62">No</label>
+                        </div>
+                        <image src = "images/images_form/Regalo.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Escribe algo que merezca la pena leer o haz algo que merezca la pena escribir. – Benjamin Franklin." alt = "No se porque no carga :c"></image>
+                        <li class="formulario_pregunta">¿Realiza usted diariamente un lavado de manos excesivo o siguiendo un ritual determinado?</li>
+                        <div class="radio">
+                            <input type="radio" name = "respuesta82" value="5" id = "Si63">
+                            <label for="Si63">Si</label>
+                            <input type="radio" name = "respuesta82" value="1" id = "No63">
+                            <label for="No63">No</label>
+                        </div>
+                        <image src = "images/images_form/Seguridad.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Puede que te disguste fallar, pero estas condenado si no lo intentas. – Beverly Sills." alt = "No se porque no carga :c"></image>
+                        <li class="formulario_pregunta">¿Realiza usted diariamente la limpieza de su casa (u otros objetos) en forma excesiva o siguiendo un ritual determinado?</li>
+                        <div class="radio">
+                            <input type="radio" name = "respuesta83" value="5" id = "Si64">
+                            <label for="Si64">Si</label>
+                            <input type="radio" name = "respuesta83" value="1" id = "No64">
+                            <label for="No64">No</label>
+                        </div>
+                        <image src = "images/images_form/Sonrisa.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="La felicidad no es algo que ya esta hecho. Viene de tus acciones. – Dalai Lama." alt = "No se porque no carga :c"></image>
+                        <li class="formulario_pregunta">¿Debe usted chequear en forma permanente y exagerada (más de una vez) las cerraduras, llaves, aparatos a gas o eléctricos, para evitar algún daño?</li>
+                        <div class="radio">
+                            <input type="radio" name = "respuesta84" value="5" id = "Si65">
+                            <label for="Si65">Si</label>
+                            <input type="radio" name = "respuesta84" value="1" id = "No65">
+                            <label for="No65">No</label>
+                        </div>
+                        <image src = "images/images_form/Viaje.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Cuando te encuentras con un bloqueo en la carretera, toma un desvío. – Mary Kay Ash." alt = "No se porque no carga :c"></image>
+                        <li class="formulario_pregunta">¿Tiene usted la necesidad de repetir, en forma ritualizada o no, actividades rutinarias (sentarse/pararse, salir/entrar, etc.)?</li>
+                        <div class="radio">
+                            <input type="radio" name = "respuesta85" value="5" id = "Si66">
+                            <label for="Si66">Si</label>
+                            <input type="radio" name = "respuesta85" value="1" id = "No66">
+                            <label for="No66">No</label>
+                        </div>
+                        <image src = "images/images_form/Camino.svg" class="imagen animate__animated animate__pulse animate__infinite animate__slower" title="Es en tus momentos de decisión cuando se forma tu destino. – Tony Robbins." alt = "No se porque no carga :c"></image>
                 </ol>
                 <input type="submit" class="boton2 margen_boton" value="Terminar Fomulario">
                 </form>
@@ -178,7 +195,13 @@
             </div>
         </footer>
 
-
+        <noscript>
+        <div class="sinJS">
+            <p class="error_titulo">ERROR</p>
+            <image src = "images/Js.svg" class="error_imagen animate__animated animate__jello animate__infinite animate__slower"></image>
+            <p class="error_subtitulo">Esta página web necesita Javascript</p>
+        </div>
+        </noscript>
 
         <script>
             function info() {
@@ -194,7 +217,7 @@
                 location.href = "Resultado.jsp"
             }
             function chat() {
-                location.href = "https://chat-velox.herokuapp.com/"
+                window.open("https://chat-velox.herokuapp.com/");
             }
             function velox() {
                 window.open("https://giancarlogall.github.io/VeloxPagina/Velox.html");

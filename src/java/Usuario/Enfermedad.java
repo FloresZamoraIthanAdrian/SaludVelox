@@ -4,8 +4,8 @@ public class Enfermedad {
 
     private int id_enfermedad, tda_tdah, dislexia, autismo, bipolaridad, asperger, estres;
     private int t_obsesivo_compulsivo, depresion, ansiedad, tc_alimentaria, t_conducta;
-    private int num_diagnosticado;
-    private int resp1, resp2, resp3, resp4, resp5, resp6, resp7, resp8, resp9, resp10, resp11;
+    private int num_diagnosticado, puntaje;
+    private String fecha, nombre;
 
     public int getId_enfermedad() {
         return id_enfermedad;
@@ -111,92 +111,28 @@ public class Enfermedad {
         this.num_diagnosticado = num_diagnosticado;
     }
 
-    public int getResp1() {
-        return resp1;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setResp1(int resp1) {
-        this.resp1 = resp1;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
-    public int getResp2() {
-        return resp2;
+    public int getPuntaje() {
+        return puntaje;
     }
 
-    public void setResp2(int resp2) {
-        this.resp2 = resp2;
+    public void setPuntaje(int puntaje) {
+        this.puntaje = puntaje;
     }
 
-    public int getResp3() {
-        return resp3;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setResp3(int resp3) {
-        this.resp3 = resp3;
-    }
-
-    public int getResp4() {
-        return resp4;
-    }
-
-    public void setResp4(int resp4) {
-        this.resp4 = resp4;
-    }
-
-    public int getResp5() {
-        return resp5;
-    }
-
-    public void setResp5(int resp5) {
-        this.resp5 = resp5;
-    }
-
-    public int getResp6() {
-        return resp6;
-    }
-
-    public void setResp6(int resp6) {
-        this.resp6 = resp6;
-    }
-
-    public int getResp7() {
-        return resp7;
-    }
-
-    public void setResp7(int resp7) {
-        this.resp7 = resp7;
-    }
-
-    public int getResp8() {
-        return resp8;
-    }
-
-    public void setResp8(int resp8) {
-        this.resp8 = resp8;
-    }
-
-    public int getResp9() {
-        return resp9;
-    }
-
-    public void setResp9(int resp9) {
-        this.resp9 = resp9;
-    }
-
-    public int getResp10() {
-        return resp10;
-    }
-
-    public void setResp10(int resp10) {
-        this.resp10 = resp10;
-    }
-
-    public int getResp11() {
-        return resp11;
-    }
-
-    public void setResp11(int resp11) {
-        this.resp11 = resp11;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
 }

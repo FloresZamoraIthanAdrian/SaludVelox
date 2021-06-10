@@ -18,6 +18,9 @@ public class diagAutismo extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
 
             int id_usu, resp1, resp2, resp3, resp4, resp5, resp6, resp7, resp8, resp9;
+            String fecha;
+            fecha = request.getParameter("fechaActual");
+            int id_enfermedad = Integer.parseInt(request.getParameter("id_transtorno"));
             
             id_usu = Integer.parseInt(request.getParameter("id_usu"));
             resp1 = Integer.parseInt(request.getParameter("respuesta57"));
@@ -33,18 +36,14 @@ public class diagAutismo extends HttpServlet {
             Usuario u = new Usuario();
             Enfermedad end = new Enfermedad();
             
-            u.setId(id_usu);
-            end.setResp1(resp1);
-            end.setResp2(resp2);
-            end.setResp3(resp3);
-            end.setResp4(resp4);
-            end.setResp5(resp5);
-            end.setResp6(resp6);
-            end.setResp7(resp7);
-            end.setResp8(resp8);
-            end.setResp9(resp9);
+            int total = resp1 + resp2 + resp3 + resp4 + resp5 + resp6 + resp7 + resp8 +  resp9;
             
-            int state = AccionesEnfermedad.controlAutismo(end, u);
+            u.setId(id_usu);
+            end.setId_enfermedad(id_enfermedad);
+            end.setPuntaje(total);
+            end.setFecha(fecha);
+            
+            int state = AccionesEnfermedad.controlEnfermedad(end, u);
             
             if(state > 0){
                 response.sendRedirect("Formulario.jsp");

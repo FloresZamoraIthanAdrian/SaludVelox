@@ -12,7 +12,7 @@ public class AccionesUsuario {
         try{
             
             Connection con = Conexion.getConnection();
-            String q = "{call PruebaInsertar4(?, ?, ?, ?, ?, ?, ?, ?, ?)}";
+            String q = "{call CrearCuenta(?, ?, ?, ?, ?, ?, ?, ?, ?)}";
             
             CallableStatement  proc = con.prepareCall(q);
             proc.setString(1, u.getNombre());

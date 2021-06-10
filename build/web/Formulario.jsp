@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="Usuario.Enfermedad"%>
+<%@page import="Control.AccionesEnfermedad"%>
 <%@page import="Control.AccionesUsuario"%>
 <%@page import="Usuario.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -7,6 +10,10 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <link rel = "stylesheet" type = 'text/css' href = 'Styles/Estilos.css'>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lobster&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <title>Formulario | Salud Velox</title>
         <link rel="icon" href= "images/EscudoVelox2.png">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -15,6 +22,7 @@
         <script src="https://kit.fontawesome.com/9fb0a1aa63.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <link rel="stylesheet" href="https://bootswatch.com/5/zephyr/bootstrap.min.css">
     </head>
     <body>
         <header>
@@ -29,7 +37,7 @@
                         <div class="espaciado"></div>
                         <li onclick="javascript:info()"><i class="fas fa-book-open"></i> Estadísticas</li>
                         <li onclick="javascript:cuenta()" id ="margenNav2"><i class="fas fa-user-circle"></i> Cuenta</li>
-                        <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Foro</li>
+                        <li onclick="javascript:chat()"><i class="fas fa-comments"></i> Chat</li>
 
                         <%
                             HttpSession sesion = request.getSession();
@@ -55,6 +63,51 @@
             <main class="margen_superior">
 
                 <div class="container1">
+                    Previamente haz realizado los siguiente formularios.
+                    <br><br>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="table-danger">Formulario de diagnostico que se realizo.</th>
+                                <th class="table-danger">Fecha en que se realizo.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <%
+                                String[] presNames = new String[13];
+                                int i = 0;
+                                List<Enfermedad> listaEnfermedad = AccionesEnfermedad.listarTranstornos();
+                                for(Enfermedad end : listaEnfermedad){
+                                    
+                                    presNames[i] = end.getNombre();
+                                    i++;
+                                }
+                                i = 0;
+                                List<Enfermedad> end = AccionesEnfermedad.listarFormulariosRealizados(id_usu);
+                                for(Enfermedad enf : end){
+                            %>
+
+                            <tr>
+                                <th scope="row"><%= presNames[i] %></th>
+                                <th scope="row"><%= enf.getFecha() %></th>
+                            </tr>
+                            
+                            <%
+                                    i++;
+                                }
+                            %>
+
+
+                        </tbody>
+                    </table>
+                    <BR><br>
+                    Puedes observar si el diagnostico a 
+                    arrojado algun posible transtorno dando click en "Resultados".
+                    <a href="Resultados.jsp" class="boton"><i class="fas fa-book-open"></i>Resultados</a>
+                </div>
+
+                <div class="container1">
                     <h4 class="info_titulo">Ansiedad</h4>
                     <p>
                         La ansiedad es un sentimiento de miedo, temor e inquietud. Puede hacer que sude, se sienta inquieto y tenso, y tener palpitaciones. Puede ser una reacción normal al estrés. Por ejemplo, puede sentirse ansioso cuando se enfrenta a un problema difícil en el trabajo, antes de tomar un examen o antes de tomar una decisión importante. Si bien la ansiedad puede ayudar a enfrentar una situación, además de darle un impulso de energía o ayudarle a concentrarse, para las personas con trastornos de ansiedad el miedo no es temporal y puede ser abrumadora.
@@ -74,8 +127,8 @@
                 <div class="container1">
                     <h4 class="info_titulo">Estrés</h4>
                     <p>
-                         El estrés es un sentimiento de tensión física o emocional. Puede provenir de cualquier situación o pensamiento que lo haga sentir a uno frustrado, furioso o nervioso.
-                    El estrés es la reacción de su cuerpo a un desafío o demanda. En pequeños episodios el estrés puede ser positivo, como cuando le ayuda a evitar el peligro o cumplir con una fecha límite. Pero cuando el estrés dura mucho tiempo, puede dañar su salud.
+                        El estrés es un sentimiento de tensión física o emocional. Puede provenir de cualquier situación o pensamiento que lo haga sentir a uno frustrado, furioso o nervioso.
+                        El estrés es la reacción de su cuerpo a un desafío o demanda. En pequeños episodios el estrés puede ser positivo, como cuando le ayuda a evitar el peligro o cumplir con una fecha límite. Pero cuando el estrés dura mucho tiempo, puede dañar su salud.
                     <div id="bipo"></div>
                     </p>
                     <a href = "FormEstres.jsp" class="boton">Hacer el formulario <i class="far fa-smile"></i></a>
@@ -163,21 +216,21 @@
         <script src="./Scripts/FormularioEnfermedades.js"></script>            
 
         <footer>
-            <h3>Redes Sociales</h3>
+            <h3 style="color: white;">Redes Sociales</h3>
             <ul>
                 <li onclick="javascript:facebook()"><i class="fab fa-facebook-square"> Facebook </i></li>
                 <li onclick="javascript:instagram()"><i class="fab fa-instagram"> Instagram </i></li>
                 <li onclick="javascript:twitter()"><i class="fab fa-twitter">  Twitter </i></li>
             </ul>
-            <h3>Correo Electrónico</h3>
+            <h3 style="color: white;">Correo Electrónico</h3>
             <ul>
                 <li>velox.software.09@gmail.com</li>
             </ul>
-            <h3>Página Web</h3>
+            <h3 style="color: white;">Página Web</h3>
             <ul>
                 <li onclick="javascript:velox()">VeloxSoftware.com</a></li>
             </ul>
-            <h3>Integrantes</h3>
+            <h3 style="color: white;">Integrantes</h3>
             <div class="nombres">
                 <ul onclick="javascript:velox()">
                     <li>Castañeda Rodríguez<br>Rafael Gil</li>
@@ -189,7 +242,13 @@
             </div>
         </footer>
 
-
+        <noscript>
+        <div class="sinJS">
+            <p class="error_titulo">ERROR</p>
+            <image src = "images/Js.svg" class="error_imagen animate__animated animate__jello animate__infinite animate__slower"></image>
+            <p class="error_subtitulo">Esta página web necesita Javascript</p>
+        </div>
+        </noscript>
 
         <script>
             function info() {
@@ -205,7 +264,7 @@
                 location.href = "Resultado.jsp"
             }
             function chat() {
-                location.href = "https://chat-velox.herokuapp.com/"
+                window.open("https://chat-velox.herokuapp.com/");
             }
             function velox() {
                 window.open("https://giancarlogall.github.io/VeloxPagina/Velox.html");
