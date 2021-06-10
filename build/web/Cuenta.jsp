@@ -53,7 +53,6 @@
         </header>
         <section>
             <main>
-                <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:inicio()"></image>
                 <div class= "container1">
 
                     <p class = "logo animate__animated animate__zoomInLeft"><i class="fas fa-user-circle"></i><%= u.getNom_usu()%></p>
@@ -78,7 +77,7 @@
 
                         <input style="margin-top: 0px; font-size: 22px; border: none; border-bottom: 2px solid #9f0000;" 
                                value="<%= up.getCorreo()%>" type="email" 
-                               name = "CorreoElectrónico" class="formulario__input" placeholder="Correo Electrónico">
+                               name = "CorreoElectronico" class="formulario__input" placeholder="Correo Electrónico">
 
                         <input style="margin-top: 0px; font-size: 22px; border: none; border-bottom: 2px solid #9f0000;" 
                                value="<%= u.getNom_usu()%>"  type="text" name = "Usuario" 

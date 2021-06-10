@@ -35,7 +35,6 @@
 
         <section>
             <main>
-                <image class="imagenHumano animate__animated animate__pulse animate__infinite" src = 'images/EscudoVelox2.png' title="Presióname para regresar al inicio del sitio web <3" alt = "No se porque no carga :c" onclick="javascript:chat()"></image>
                 <div class="formulario">
 
                     <form method="post" action="IniciarSesion.jsp" id="iniciarSesion" name = "formularioInicio" >

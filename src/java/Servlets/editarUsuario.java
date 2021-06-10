@@ -23,7 +23,7 @@ public class editarUsuario extends HttpServlet {
             edad_usu = Integer.parseInt(request.getParameter("edad"));
             semestre_usu = Integer.parseInt(request.getParameter("semestre"));
             nom_usu = request.getParameter("Usuario");
-            correo_usu = request.getParameter("CorreoElectrónico");
+            correo_usu = request.getParameter("CorreoElectronico");
             pass_usu = request.getParameter("passwd");
             genero = request.getParameter("genero");
             
