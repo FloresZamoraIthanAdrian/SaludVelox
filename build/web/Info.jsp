@@ -66,18 +66,33 @@
 
         <section>
 
-            <%                Enfermedad enf = AccionesEnfermedad.padecimientosGeneralesDepresion();
-                Enfermedad enf1 = AccionesEnfermedad.padecimientosGeneralesAnsiedad();
-                Enfermedad enf2 = AccionesEnfermedad.padecimientosGeneralesTa();
-                Enfermedad enf3 = AccionesEnfermedad.padecimientosGeneralesTc();
-                Enfermedad enf4 = AccionesEnfermedad.padecimientosGeneralesTDA_TDAH();
-                Enfermedad enf5 = AccionesEnfermedad.padecimientosGeneralesDislexia();
-                Enfermedad enf6 = AccionesEnfermedad.padecimientosGeneralesAutismo();
-                Enfermedad enf7 = AccionesEnfermedad.padecimientosGeneralesBipolaridad();
-                Enfermedad enf8 = AccionesEnfermedad.padecimientosGeneralesAsperger();
-                Enfermedad enf9 = AccionesEnfermedad.padecimientosGeneralesTobCompulsivo();
-                Enfermedad enf10 = AccionesEnfermedad.padecimientosGeneralesEstres();
+            <%  
+                
                 Enfermedad enfC = AccionesEnfermedad.numUsuarioSDiagnosticados();
+                int num = 1;
+                Enfermedad enf = AccionesEnfermedad.padecimientosGenerales(num);
+                num ++;
+                Enfermedad enf1 = AccionesEnfermedad.padecimientosGenerales(num);
+                num ++;
+                Enfermedad enf2 = AccionesEnfermedad.padecimientosGenerales(num);
+                num ++;
+                Enfermedad enf3 = AccionesEnfermedad.padecimientosGenerales(num);
+                num ++;
+                Enfermedad enf4 = AccionesEnfermedad.padecimientosGenerales(num);
+                num ++;
+                Enfermedad enf5 = AccionesEnfermedad.padecimientosGenerales(num);
+                num ++;
+                Enfermedad enf6 = AccionesEnfermedad.padecimientosGenerales(num);
+                num ++;
+                Enfermedad enf7 = AccionesEnfermedad.padecimientosGenerales(num);
+                num ++;
+                Enfermedad enf8 = AccionesEnfermedad.padecimientosGenerales(num);
+                num ++;
+                Enfermedad enf9 = AccionesEnfermedad.padecimientosGenerales(num);
+                num ++;
+                Enfermedad enf10 = AccionesEnfermedad.padecimientosGenerales(num);
+                num ++;
+                
             %>
 
             <main>
@@ -96,17 +111,17 @@
                         La siguiente es una grafica, de los <em><%= enfC.getNum_diagnosticado()%></em> donde se muestra el numero de 
                         los usuarios registrados y cuantos fueron diagnosticados con cierto transtorno.
 
-                        <input type="hidden" id="depresion" value="<%= enf.getDepresion()%>">
-                        <input type="hidden" id="ansiedad" value="<%= enf1.getAnsiedad()%>">
-                        <input type="hidden" id="tc_alimentaria" value="<%= enf2.getTc_alimentaria()%>">
-                        <input type="hidden" id="t_conducta" value="<%= enf3.getT_conducta()%>">
-                        <input type="hidden" id="tda_tdah" value="<%= enf4.getTda_tdah()%>">
-                        <input type="hidden" id="dislexia" value="<%= enf5.getDislexia()%>">
-                        <input type="hidden" id="autismo" value="<%= enf6.getAutismo()%>">
-                        <input type="hidden" id="bipolaridad" value="<%= enf7.getBipolaridad()%>">
-                        <input type="hidden" id="asperger" value="<%= enf8.getAsperger()%>">
-                        <input type="hidden" id="t_obesivo" value="<%= enf9.getT_obsesivo_compulsivo()%>">
-                        <input type="hidden" id="estres" value="<%= enf10.getEstres()%>>">
+                        <input type="hidden" id="depresion" value="<%= enf.getId_enfermedad()%>">
+                        <input type="hidden" id="ansiedad" value="<%= enf1.getId_enfermedad()%>">
+                        <input type="hidden" id="tc_alimentaria" value="<%= enf2.getId_enfermedad()%>">
+                        <input type="hidden" id="t_conducta" value="<%= enf3.getId_enfermedad()%>">
+                        <input type="hidden" id="tda_tdah" value="<%= enf4.getId_enfermedad()%>">
+                        <input type="hidden" id="dislexia" value="<%= enf5.getId_enfermedad()%>">
+                        <input type="hidden" id="autismo" value="<%= enf6.getId_enfermedad()%>">
+                        <input type="hidden" id="bipolaridad" value="<%= enf7.getId_enfermedad()%>">
+                        <input type="hidden" id="asperger" value="<%= enf8.getId_enfermedad()%>">
+                        <input type="hidden" id="t_obesivo" value="<%= enf9.getId_enfermedad()%>">
+                        <input type="hidden" id="estres" value="<%= enf10.getId_enfermedad()%>>">
 
                         <div class="container">
                             <canvas id="myChart" width="100 px" height="100 px"></canvas>
@@ -139,7 +154,7 @@
                 type: 'bar',
                 data: {
                     labels: ['Depresión', 'Ansiedad', 'Transtornos Alimenticios',
-                        'Transtornos de Conducta', 'TDA/TDAH', 'Dislexia', 'Autismo', 'Bipolaridad', 'Asperger', 'Transtorno Obsesivo Compulsivo'],
+                        'Transtornos de Conducta', 'TDA/TDAH', 'Dislexia', 'Autismo', 'Bipolaridad', 'Asperger', 'Transtorno Obsesivo Compulsivo', 'Estres'],
                     datasets: [{
                             label: 'Grafica de enfermedades diagnosticadas en los usuarios',
                             data: [depresion, ansiedad, tc_alimentaria, t_conducta, tda_tdah, dislexia, autismo, bipolaridad, asperger, t_obesivo, estres],

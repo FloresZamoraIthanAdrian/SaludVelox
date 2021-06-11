@@ -104,7 +104,7 @@
                     <BR><br>
                     Puedes observar si el diagnostico a 
                     arrojado algun posible transtorno dando click en "Resultados".
-                    <a href="Resultados.jsp" class="boton"><i class="fas fa-book-open"></i>Resultados</a>
+                    <a href="Resultado.jsp" class="boton"><i class="fas fa-book-open"></i>Resultados</a>
                 </div>
 
                 <div class="container1">

@@ -156,15 +156,17 @@ public class AccionesEnfermedad {
         return listaEnfermedades;
     }
     
-    public static Enfermedad padecimientosGeneralesDepresion(){
+    public static Enfermedad padecimientosGenerales(int num){
         Enfermedad enf = new Enfermedad();
         try{
             Connection con = Conexion.getConnection();
-            String q = "select count(*) id_enfermedad from registroEnfermedades where id_enfermedad = 1";
-            PreparedStatement ps = con.prepareStatement(q);
-            ResultSet rs = ps.executeQuery();
+            String q = "{call consultaGeneral(?)}";
+            
+            CallableStatement  proc = con.prepareCall(q);
+            proc.setInt(1, num);
+            ResultSet rs = proc.executeQuery();
             if(rs.next()){
-                enf.setDepresion(rs.getInt(1));
+                enf.setId_enfermedad(rs.getInt(1));
             }
             con.close();
         }catch(Exception ed){
@@ -172,187 +174,6 @@ public class AccionesEnfermedad {
             System.out.println(ed.getMessage());
         }
         return enf;
-    }
-    
-    public static Enfermedad padecimientosGeneralesAnsiedad(){
-        Enfermedad enf1 = new Enfermedad();
-        try{
-            Connection con = Conexion.getConnection();
-            String q = "select count(*) id_enfermedad from registroEnfermedades where id_enfermedad = 2";
-            PreparedStatement ps = con.prepareStatement(q);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                enf1.setAnsiedad(rs.getInt(1));
-            }
-            con.close();
-            
-        }catch(Exception ed){
-            System.out.println("Error al tratar de listar los padecimientos generales");
-            System.out.println(ed.getMessage());
-        }
-        return enf1;
-    }
-    
-    public static Enfermedad padecimientosGeneralesTa(){
-        Enfermedad enf2 = new Enfermedad();
-        try{
-            Connection con = Conexion.getConnection();
-            String q = "select count(*) id_enfermedad from registroEnfermedades where id_enfermedad = 3";
-            PreparedStatement ps = con.prepareStatement(q);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                enf2.setTc_alimentaria(rs.getInt(1));
-            }
-            con.close();
-        }catch(Exception ed){
-            System.out.println("Error al tratar de listar los padecimientos generales");
-            System.out.println(ed.getMessage());
-        }
-        return enf2;
-    }
-    
-    public static Enfermedad padecimientosGeneralesTc(){
-        Enfermedad enf3 = new Enfermedad();
-        try{
-            Connection con = Conexion.getConnection();
-            String q = "select count(*) id_enfermedad from registroEnfermedades where id_enfermedad = 4";
-            PreparedStatement ps = con.prepareStatement(q);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                enf3.setT_conducta(rs.getInt(1));
-            }
-            con.close();
-        }catch(Exception ed){
-            System.out.println("Error al tratar de listar los padecimientos generales");
-            System.out.println(ed.getMessage());
-        }
-        return enf3;
-    }
-    
-    public static Enfermedad padecimientosGeneralesTDA_TDAH(){
-        Enfermedad enf4 = new Enfermedad();
-        try{
-            Connection con = Conexion.getConnection();
-            String q = "select count(*) id_enfermedad from registroEnfermedades where id_enfermedad = 5";
-            PreparedStatement ps = con.prepareStatement(q);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                enf4.setTda_tdah(rs.getInt(1));
-            }
-            con.close();
-        }catch(Exception ed){
-            System.out.println("Error al tratar de listar los padecimientos generales");
-            System.out.println(ed.getMessage());
-        }
-        return enf4;
-    }
-    
-    public static Enfermedad padecimientosGeneralesDislexia(){
-        Enfermedad enf5 = new Enfermedad();
-        try{
-            Connection con = Conexion.getConnection();
-            String q = "select count(*) id_enfermedad from registroEnfermedades where id_enfermedad = 6";
-            PreparedStatement ps = con.prepareStatement(q);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                enf5.setDislexia(rs.getInt(1));
-            }
-            con.close();
-        }catch(Exception ed){
-            System.out.println("Error al tratar de listar los padecimientos generales");
-            System.out.println(ed.getMessage());
-        }
-        return enf5;
-    }
-    
-    public static Enfermedad padecimientosGeneralesAutismo(){
-        Enfermedad enf6 = new Enfermedad();
-        try{
-            Connection con = Conexion.getConnection();
-            String q = "select count(*) id_enfermedad from registroEnfermedades where id_enfermedad = 7";
-            PreparedStatement ps = con.prepareStatement(q);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                enf6.setAutismo(rs.getInt(1));
-            }
-            con.close();
-        }catch(Exception ed){
-            System.out.println("Error al tratar de listar los padecimientos generales");
-            System.out.println(ed.getMessage());
-        }
-        return enf6;
-    }
-    
-    public static Enfermedad padecimientosGeneralesBipolaridad(){
-        Enfermedad enf7 = new Enfermedad();
-        try{
-            Connection con = Conexion.getConnection();
-            String q = "select count(*) id_enfermedad from registroEnfermedades where id_enfermedad = 8";
-            PreparedStatement ps = con.prepareStatement(q);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                enf7.setBipolaridad(rs.getInt(1));
-            }
-            con.close();
-        }catch(Exception ed){
-            System.out.println("Error al tratar de listar los padecimientos generales");
-            System.out.println(ed.getMessage());
-        }
-        return enf7;
-    }
-    
-    public static Enfermedad padecimientosGeneralesAsperger(){
-        Enfermedad enf8 = new Enfermedad();
-        try{
-            Connection con = Conexion.getConnection();
-            String q = "select count(*) id_enfermedad from registroEnfermedades where id_enfermedad = 9";
-            PreparedStatement ps = con.prepareStatement(q);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                enf8.setAsperger(rs.getInt(1));
-            }
-            con.close();
-        }catch(Exception ed){
-            System.out.println("Error al tratar de listar los padecimientos generales");
-            System.out.println(ed.getMessage());
-        }
-        return enf8;
-    }
-    
-    public static Enfermedad padecimientosGeneralesTobCompulsivo(){
-        Enfermedad enf9 = new Enfermedad();
-        try{
-            Connection con = Conexion.getConnection();
-            String q = "select count(*) id_enfermedad from registroEnfermedades where id_enfermedad = 10";
-            PreparedStatement ps = con.prepareStatement(q);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                enf9.setT_obsesivo_compulsivo(rs.getInt(1));
-            }
-            con.close();
-        }catch(Exception ed){
-            System.out.println("Error al tratar de listar los padecimientos generales");
-            System.out.println(ed.getMessage());
-        }
-        return enf9;
-    }
-    
-    public static Enfermedad padecimientosGeneralesEstres(){
-        Enfermedad enf10 = new Enfermedad();
-        try{
-            Connection con = Conexion.getConnection();
-            String q = "select count(*) id_enfermedad from registroEnfermedades where id_enfermedad = 11";
-            PreparedStatement ps = con.prepareStatement(q);
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                enf10.setEstres(rs.getInt(1));
-            }
-            con.close();
-        }catch(Exception ed){
-            System.out.println("Error al tratar de listar los padecimientos generales");
-            System.out.println(ed.getMessage());
-        }
-        return enf10;
     }
     
 }
